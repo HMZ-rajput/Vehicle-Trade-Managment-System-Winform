@@ -1,4 +1,4 @@
-﻿namespace DBMS_Project
+﻿namespace DBMS_ProjectV1._0
 {
     partial class Form1
     {

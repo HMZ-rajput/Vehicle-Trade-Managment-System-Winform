@@ -1,0 +1,102 @@
+
+create table Customers(
+CustomerID int primary key identity(1,1),
+Name nvarchar(30) not null,
+Address nvarchar(30),
+Phone nvarchar(30) not null 
+)
+
+create table Vendors(
+VendorID int primary key identity(1,1),
+Name nvarchar(30) not null,
+Address nvarchar(30),
+Phone nvarchar(30) not null,
+)
+
+create table Vehicles(
+VehicleID int primary key identity(1,1),
+Make nvarchar(30) not null,
+Model nvarchar(30) not null,
+Year int not null,
+Mileage int not null,
+Status varchar(10) check (Status IN ('AVAILABLE', 'SOLD')),
+VendorID int,
+foreign key(VendorID) references Vendors(VendorID)
+)
+
+create table Technicians(
+TechnicianID int primary key identity(1,1),
+Name nvarchar(30) not null
+)
+
+create table SpareParts(
+PartID int primary key identity(1,1),
+PartName nvarchar(30)not null,
+PartDescription nvarchar(100),
+PartCost int not null
+)
+
+create table Repairs(
+RepairID int primary key identity(1,1),
+VehicleID int,
+TechnicianID int,
+foreign key(VehicleID) references Vehicles(VehicleID),
+foreign key(TechnicianID) references Technicians(TechnicianID),
+RepairDescription nvarchar(100),
+RepairCost int not null,
+RepairStatus varchar(15) check (RepairStatus IN ('REPAIRED', 'NOT REPAIRED'))
+)
+
+create table RepairParts(
+RepairID int primary key identity(1,1),
+PartID nvarchar(10),
+foreign key(RepairID) references Repairs(RepairID)
+)
+
+create table RepairCost(
+RCostID int primary key identity(1,1),
+RepairID int,
+VehicleID int,
+foreign key(RepairID) references Repairs(RepairID),
+foreign key(VehicleID) references Vehicles(VehicleID),
+TotalRepairCost int
+)
+
+create table Sale(
+SaleID int primary key identity(1,1),
+VehicleID int,
+CustomerID int, 
+SalePrice int not null,
+SaleDate date,
+profit int
+foreign key(VehicleID) references Vehicles(VehicleID),
+foreign key(CustomerID) references Customers(CustomerID)
+)
+
+create table Employee(
+EmployeeID int primary key identity(1,1),
+Name nvarchar
+)
+
+
+--changes
+alter table Vendors add
+CostPrice int
+
+drop table RepairParts
+
+alter table Repairs add
+PartID int,
+foreign key(PartID) references SpareParts(PartID)
+
+alter table Technicians add
+RepairCharges int
+
+alter table Employee add
+Address nvarchar(50),
+Phone nvarchar(12),
+CommisionPercentage int
+
+alter table Sale add
+EmployeeID int
+Foreign key (EmployeeID) references Employee(EmployeeID)

@@ -108,3 +108,19 @@ foreign key (RepairID) references Repairs(RepairID),
 foreign key (PartID) references SpareParts(PartID)
 )
 
+alter table Vehicles add
+BuyDate datetime,
+SaleDate datetime
+
+alter table Repairs add
+CompletionDate datetime
+
+create table SystemLog(
+logID int primary key identity(1,1),
+TableName nvarchar(15),
+Operation nvarchar(15)
+)
+
+alter table SystemLog add
+ModifiedBy nvarchar(128),
+ModifiedDate datetime

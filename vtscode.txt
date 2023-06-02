@@ -85,9 +85,6 @@ CostPrice int
 
 drop table RepairParts
 
-alter table Repairs add
-PartID int,
-foreign key(PartID) references SpareParts(PartID)
 
 alter table Technicians add
 RepairCharges int
@@ -100,3 +97,14 @@ CommisionPercentage int
 alter table Sale add
 EmployeeID int
 Foreign key (EmployeeID) references Employee(EmployeeID)
+
+drop table RepairCost
+
+create table RepairDetails(
+rdID int primary key identity(1,1),
+RepairID int,
+PartID int,
+foreign key (RepairID) references Repairs(RepairID),
+foreign key (PartID) references SpareParts(PartID)
+)
+

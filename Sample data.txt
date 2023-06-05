@@ -1,0 +1,16 @@
+--for SpareParts table
+insert into SpareParts values ('Spark Plug', 'A small device for ignition', 2000);
+insert into SpareParts values ('Oil filter', 'Removes impurities from oil', 5000);
+insert into SpareParts values ('Brake Pad', 'Friction material for braking', 6500);
+insert into SpareParts values ('Fuel pump', 'Delivers fuel to engine', 10000);
+insert into SpareParts values ('Air filter ', 'Filters dust from air intake', 5000);
+insert into SpareParts values ('Shock Absorber', 'Dampens vehicle''s vibrations', 12000);
+insert into SpareParts values ('Front Bumper', 'Protects front of the vehicle', 15000);
+insert into SpareParts values ('Hood', 'Covers the engine', 20000);
+insert into SpareParts values ('Door', 'enter/exit points of vehicle', 25000);
+insert into SpareParts values ('Headlights', 'Illuminates the road ahead', 3500);
+insert into SpareParts values ('Taillights', 'Indicates the vehicle''s position', 3500);
+insert into SpareParts values ('Windsheild', 'Front glass for visibility', 18000);
+insert into SpareParts values ('Side Mirrors', 'Reflective surface for visibility', 13000);
+insert into SpareParts values ('Timing Belt', 'Synchronizes engine components', 16500);
+insert into SpareParts values ('Battery', 'Provides electrical energy', 11000);

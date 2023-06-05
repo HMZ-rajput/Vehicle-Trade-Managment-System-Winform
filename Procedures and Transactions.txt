@@ -26,3 +26,45 @@ begin
 end
 end
 
+
+
+
+
+--crud for spareparts
+create procedure addSparePart
+	@partName nvarchar(30),
+	@partDescription nvarchar(100),
+	@partCost int
+as
+begin
+	SET NOCOUNT ON;
+		insert into SpareParts values (@partName,@partDescription,@partCost)
+end
+
+create procedure updateSparePart
+	@partID int,
+	@partName nvarchar(30),
+	@partDescription nvarchar(100),
+	@partCost int
+as
+begin
+	SET NOCOUNT ON;
+		update SpareParts
+		set PartName = @partName, PartDescription = @partDescription, PartCost = @partCost where PartID = @partID 
+end
+
+create procedure deleteSparePart
+	@partID int
+as
+begin
+	SET NOCOUNT ON;
+		delete from SpareParts where PartID = @partID 
+end
+
+create procedure readSparePart
+as
+begin
+	SET NOCOUNT ON;
+		select * from SpareParts
+end
+

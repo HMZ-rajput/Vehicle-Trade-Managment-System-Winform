@@ -124,3 +124,7 @@ Operation nvarchar(15)
 alter table SystemLog add
 ModifiedBy nvarchar(128),
 ModifiedDate datetime
+
+--check updated by zain
+alter table Repairs
+add check (RepairStatus in ('REPAIRED','NOT REPAIRED','SOLD'))

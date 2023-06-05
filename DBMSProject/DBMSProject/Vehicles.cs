@@ -35,10 +35,12 @@ namespace DBMSProject
                 {
                     conn.Open();
                     cmd = new SqlCommand("addVehicle",conn);
+                    cmd.CommandType = CommandType.StoredProcedure; //added
                     cmd.Parameters.AddWithValue("@Make",makeTB.Text);
                     cmd.Parameters.AddWithValue("@Model",modelTB.Text);
-                    cmd.Parameters.AddWithValue("@Year",int.Parse(yearTB.Text));
-                    cmd.Parameters.AddWithValue("@Mileage",int.Parse(mileageTB.Text));
+                    cmd.Parameters.AddWithValue("@Year",yearTB.Text);
+                    cmd.Parameters.AddWithValue("@Mileage",mileageTB.Text);
+
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Car succesfully added");
@@ -68,6 +70,7 @@ namespace DBMSProject
                 {
                     conn.Open();
                     cmd = new SqlCommand("delVehicle",conn);
+                    cmd.CommandType = CommandType.StoredProcedure; //added
                     cmd.Parameters.AddWithValue("@VehicleID", int.Parse(idTB.Text));
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -89,6 +92,7 @@ namespace DBMSProject
             {
                 conn.Open();
                 cmd = new SqlCommand("getVehicle",conn);
+                cmd.CommandType = CommandType.StoredProcedure; //added
                 dr = cmd.ExecuteReader();
                 if(dr.Read())
                 {

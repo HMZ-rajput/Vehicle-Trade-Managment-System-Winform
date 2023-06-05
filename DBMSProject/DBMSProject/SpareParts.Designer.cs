@@ -36,9 +36,11 @@
             this.Namelbl = new System.Windows.Forms.Label();
             this.costlbl = new System.Windows.Forms.Label();
             this.desclbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.nametxt = new System.Windows.Forms.TextBox();
+            this.desctxt = new System.Windows.Forms.TextBox();
+            this.costtxt = new System.Windows.Forms.TextBox();
+            this.idtxt = new System.Windows.Forms.TextBox();
+            this.idlbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,33 +55,36 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(126, 356);
+            this.deleteBtn.Location = new System.Drawing.Point(141, 435);
             this.deleteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(100, 28);
             this.deleteBtn.TabIndex = 14;
             this.deleteBtn.Text = "Delete Part";
             this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // updateBtn
             // 
-            this.updateBtn.Location = new System.Drawing.Point(126, 304);
+            this.updateBtn.Location = new System.Drawing.Point(141, 383);
             this.updateBtn.Margin = new System.Windows.Forms.Padding(4);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(100, 28);
             this.updateBtn.TabIndex = 13;
             this.updateBtn.Text = "Update Part";
             this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(126, 254);
+            this.addBtn.Location = new System.Drawing.Point(141, 333);
             this.addBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(100, 28);
             this.addBtn.TabIndex = 12;
             this.addBtn.Text = "Add Part";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // dataGridView
             // 
@@ -94,7 +99,7 @@
             // Namelbl
             // 
             this.Namelbl.AutoSize = true;
-            this.Namelbl.Location = new System.Drawing.Point(12, 91);
+            this.Namelbl.Location = new System.Drawing.Point(12, 134);
             this.Namelbl.Name = "Namelbl";
             this.Namelbl.Size = new System.Drawing.Size(77, 16);
             this.Namelbl.TabIndex = 16;
@@ -103,7 +108,7 @@
             // costlbl
             // 
             this.costlbl.AutoSize = true;
-            this.costlbl.Location = new System.Drawing.Point(12, 175);
+            this.costlbl.Location = new System.Drawing.Point(12, 218);
             this.costlbl.Name = "costlbl";
             this.costlbl.Size = new System.Drawing.Size(67, 16);
             this.costlbl.TabIndex = 17;
@@ -112,44 +117,63 @@
             // desclbl
             // 
             this.desclbl.AutoSize = true;
-            this.desclbl.Location = new System.Drawing.Point(12, 133);
+            this.desclbl.Location = new System.Drawing.Point(12, 176);
             this.desclbl.Name = "desclbl";
             this.desclbl.Size = new System.Drawing.Size(108, 16);
             this.desclbl.TabIndex = 18;
             this.desclbl.Text = "Part Description: ";
             // 
-            // textBox1
+            // nametxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(170, 88);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 22);
-            this.textBox1.TabIndex = 19;
-            this.textBox1.Text = "Enter Part Name";
+            this.nametxt.Location = new System.Drawing.Point(170, 131);
+            this.nametxt.Name = "nametxt";
+            this.nametxt.Size = new System.Drawing.Size(178, 22);
+            this.nametxt.TabIndex = 19;
+            this.nametxt.Text = "Enter Part Name";
             // 
-            // textBox2
+            // desctxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(170, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(178, 22);
-            this.textBox2.TabIndex = 20;
-            this.textBox2.Text = "Enter Part Description";
+            this.desctxt.Location = new System.Drawing.Point(170, 173);
+            this.desctxt.Name = "desctxt";
+            this.desctxt.Size = new System.Drawing.Size(178, 22);
+            this.desctxt.TabIndex = 20;
+            this.desctxt.Text = "Enter Part Description";
             // 
-            // textBox3
+            // costtxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(170, 175);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(178, 22);
-            this.textBox3.TabIndex = 21;
-            this.textBox3.Text = "Enter Part Cost";
+            this.costtxt.Location = new System.Drawing.Point(170, 218);
+            this.costtxt.Name = "costtxt";
+            this.costtxt.Size = new System.Drawing.Size(178, 22);
+            this.costtxt.TabIndex = 21;
+            this.costtxt.Text = "Enter Part Cost";
+            // 
+            // idtxt
+            // 
+            this.idtxt.Location = new System.Drawing.Point(170, 88);
+            this.idtxt.Name = "idtxt";
+            this.idtxt.Size = new System.Drawing.Size(178, 22);
+            this.idtxt.TabIndex = 23;
+            this.idtxt.Text = "Enter Part ID";
+            // 
+            // idlbl
+            // 
+            this.idlbl.AutoSize = true;
+            this.idlbl.Location = new System.Drawing.Point(12, 94);
+            this.idlbl.Name = "idlbl";
+            this.idlbl.Size = new System.Drawing.Size(53, 16);
+            this.idlbl.TabIndex = 22;
+            this.idlbl.Text = "Part ID: ";
             // 
             // SpareParts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 510);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.idtxt);
+            this.Controls.Add(this.idlbl);
+            this.Controls.Add(this.costtxt);
+            this.Controls.Add(this.desctxt);
+            this.Controls.Add(this.nametxt);
             this.Controls.Add(this.desclbl);
             this.Controls.Add(this.costlbl);
             this.Controls.Add(this.Namelbl);
@@ -177,8 +201,10 @@
         private System.Windows.Forms.Label Namelbl;
         private System.Windows.Forms.Label costlbl;
         private System.Windows.Forms.Label desclbl;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox nametxt;
+        private System.Windows.Forms.TextBox desctxt;
+        private System.Windows.Forms.TextBox costtxt;
+        private System.Windows.Forms.TextBox idtxt;
+        private System.Windows.Forms.Label idlbl;
     }
 }

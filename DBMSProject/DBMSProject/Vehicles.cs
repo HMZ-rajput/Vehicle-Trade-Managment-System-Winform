@@ -44,6 +44,7 @@ namespace DBMSProject
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Car succesfully added");
+                    loadTable();
                 }
                 catch(Exception ex)
                 {
@@ -74,7 +75,9 @@ namespace DBMSProject
                     cmd.Parameters.AddWithValue("@VehicleID", int.Parse(idTB.Text));
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                }catch(Exception ex)
+                    loadTable();
+                }
+                catch(Exception ex)
                 {
                     MessageBox.Show("Unable to delete Vehicle");
                     conn.Close();

@@ -43,8 +43,7 @@ TechnicianID int,
 foreign key(VehicleID) references Vehicles(VehicleID),
 foreign key(TechnicianID) references Technicians(TechnicianID),
 RepairDescription nvarchar(100),
-RepairCost int not null,
-RepairStatus varchar(15) check (RepairStatus IN ('REPAIRED', 'NOT REPAIRED'))
+RepairCost int not null
 )
 
 create table RepairParts(
@@ -129,8 +128,7 @@ ModifiedDate datetime
 -- zain bro ye check Vehicles ma lgane ka kaha tha mene. Nashe chordo
 alter table Vehicles
 add check (Status in ('REPAIRED','NOT REPAIR','SOLD'))
-alter table Repairs
-add check (RepairStatus in ('REPAIRED','NOT REPAIRED','SOLD'))
+
 --crud for spareparts
 create procedure addSparePart
 	@partName nvarchar(30),

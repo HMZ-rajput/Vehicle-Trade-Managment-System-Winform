@@ -38,7 +38,7 @@ namespace DBMSProject
                     cmd.Parameters.AddWithValue("@",int.Parse(yearTB.Text));
                     cmd.Parameters.AddWithValue("@",int.Parse(mileageTB.Text));
                     cmd.Parameters.AddWithValue("@","UNREPAIRED");
-                    cmd.Parameters.AddWithValue("@",DateTime.Now());
+                    cmd.Parameters.AddWithValue("@",DateTime.Now);
                     conn.Close();
                     MessageBox.Show("Car succesfully added");
                 }

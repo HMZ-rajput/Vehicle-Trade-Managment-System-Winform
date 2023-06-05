@@ -14,10 +14,6 @@ namespace DBMSProject
     public partial class Home : Form
     {
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
-        //SqlCommand cmd;
-        //SqlDataAdapter adt;
-        //SqlDataReader dr;
-        //DataTable dt;
         public Home()
         {
             InitializeComponent();
@@ -67,6 +63,12 @@ namespace DBMSProject
         {
             Report report = new Report();
             report.Show();
+        }
+
+        private void sellBtn_Click(object sender, EventArgs e)
+        {
+            Sell sell  = new Sell();
+            sell.Show();
         }
     }
 }

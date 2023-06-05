@@ -19,7 +19,7 @@ Make nvarchar(30) not null,
 Model nvarchar(30) not null,
 Year int not null,
 Mileage int not null,
-Status varchar(10) check (Status IN ('AVAILABLE', 'SOLD')),
+Status varchar(10) check (Status IN ('UNREPAIRED','REPAIRED','SOLD')),
 VendorID int,
 foreign key(VendorID) references Vendors(VendorID)
 )

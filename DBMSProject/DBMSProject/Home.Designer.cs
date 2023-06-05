@@ -36,6 +36,7 @@
             this.repairBtn = new System.Windows.Forms.Button();
             this.sparepartBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
+            this.sellBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -117,11 +118,22 @@
             this.reportBtn.UseVisualStyleBackColor = true;
             this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
             // 
+            // sellBtn
+            // 
+            this.sellBtn.Location = new System.Drawing.Point(535, 238);
+            this.sellBtn.Name = "sellBtn";
+            this.sellBtn.Size = new System.Drawing.Size(75, 23);
+            this.sellBtn.TabIndex = 9;
+            this.sellBtn.Text = "Sell";
+            this.sellBtn.UseVisualStyleBackColor = true;
+            this.sellBtn.Click += new System.EventHandler(this.sellBtn_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.sellBtn);
             this.Controls.Add(this.reportBtn);
             this.Controls.Add(this.sparepartBtn);
             this.Controls.Add(this.repairBtn);
@@ -147,6 +159,7 @@
         private System.Windows.Forms.Button repairBtn;
         private System.Windows.Forms.Button sparepartBtn;
         private System.Windows.Forms.Button reportBtn;
+        private System.Windows.Forms.Button sellBtn;
     }
 }
 

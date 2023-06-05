@@ -104,7 +104,7 @@
             this.yearTB.Location = new System.Drawing.Point(133, 171);
             this.yearTB.Name = "yearTB";
             this.yearTB.Size = new System.Drawing.Size(100, 20);
-            this.yearTB.TabIndex = 7;
+            this.yearTB.TabIndex = 8;
             this.yearTB.Text = "Enter Year";
             // 
             // mileageTB
@@ -112,7 +112,7 @@
             this.mileageTB.Location = new System.Drawing.Point(548, 124);
             this.mileageTB.Name = "mileageTB";
             this.mileageTB.Size = new System.Drawing.Size(100, 20);
-            this.mileageTB.TabIndex = 8;
+            this.mileageTB.TabIndex = 7;
             this.mileageTB.Text = "Enter Mileage";
             // 
             // label5

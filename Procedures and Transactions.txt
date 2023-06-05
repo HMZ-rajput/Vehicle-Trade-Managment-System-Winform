@@ -1,0 +1,28 @@
+get car:
+create procedure getVehicle
+as
+begin
+select * from Vehicles
+end
+
+add car:
+create procedure addVehicle
+@Make nvarchar(30),
+@Model nvarchar(30),
+@Year int,
+@Mileage int
+as
+begin
+insert into Vehicles (Make,Model,Year,Mileage,Status,BuyDate) values(@Make,@Model,@Year,@Mileage,'NOT REPAIR',getdate())
+end
+
+delete car:
+create procedure delVehicle
+@VehicleID int
+as begin
+if exists (select * from Vehicles where VehicleID=@VehicleID)
+begin
+	delete from Vehicles where VehicleID=@VehicleID
+end
+end
+

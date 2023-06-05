@@ -22,6 +22,8 @@ namespace DBMSProject
         public Vehicles()
         {
             InitializeComponent();
+
+            loadTable();
         }
 
         //Add Button Click
@@ -32,13 +34,12 @@ namespace DBMSProject
                 try
                 {
                     conn.Open();
-                    cmd = new SqlCommand("",conn);
-                    cmd.Parameters.AddWithValue("@",makeTB.Text);
-                    cmd.Parameters.AddWithValue("@",modelTB.Text);
-                    cmd.Parameters.AddWithValue("@",int.Parse(yearTB.Text));
-                    cmd.Parameters.AddWithValue("@",int.Parse(mileageTB.Text));
-                    cmd.Parameters.AddWithValue("@","UNREPAIRED");
-                    cmd.Parameters.AddWithValue("@",DateTime.Now);
+                    cmd = new SqlCommand("addVehicle",conn);
+                    cmd.Parameters.AddWithValue("@Make",makeTB.Text);
+                    cmd.Parameters.AddWithValue("@Model",modelTB.Text);
+                    cmd.Parameters.AddWithValue("@Year",int.Parse(yearTB.Text));
+                    cmd.Parameters.AddWithValue("@Mileage",int.Parse(mileageTB.Text));
+                    cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Car succesfully added");
                 }
@@ -46,7 +47,6 @@ namespace DBMSProject
                 {
                     MessageBox.Show("Unable to add car\n"+ex.Message);
                     conn.Close();
-                    throw;
                 }
             }
             else
@@ -62,7 +62,52 @@ namespace DBMSProject
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
+            if(idTB.Text!="" && idTB.Text!= "Enter Car ID" && int.TryParse(idTB.Text,out n))
+            {
+                try
+                {
+                    conn.Open();
+                    cmd = new SqlCommand("delVehicle",conn);
+                    cmd.Parameters.AddWithValue("@VehicleID", int.Parse(idTB.Text));
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Unable to delete Vehicle");
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter valid numeric vehicle id to delete car");
+            }
+        }
 
+        public void loadTable()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new SqlCommand("getVehicle",conn);
+                dr = cmd.ExecuteReader();
+                if(dr.Read())
+                {
+                    dr.Close();
+                    adt = new SqlDataAdapter(cmd);
+                    dt = new DataTable();
+                    adt.Fill(dt);
+                    vehicleDGV.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Unable to read data from Vehicles");
+                }
+                conn.Close();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Unable to fetch Vehicles data");
+                conn.Close();
+            }
         }
     }
 }

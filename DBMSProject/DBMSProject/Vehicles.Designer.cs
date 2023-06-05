@@ -41,10 +41,10 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.updateBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vehicleDGV = new System.Windows.Forms.DataGridView();
             this.idTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -154,13 +154,13 @@
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // dataGridView1
+            // vehicleDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 214);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 224);
-            this.dataGridView1.TabIndex = 12;
+            this.vehicleDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vehicleDGV.Location = new System.Drawing.Point(12, 214);
+            this.vehicleDGV.Name = "vehicleDGV";
+            this.vehicleDGV.Size = new System.Drawing.Size(776, 224);
+            this.vehicleDGV.TabIndex = 12;
             // 
             // idTB
             // 
@@ -186,7 +186,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.idTB);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.vehicleDGV);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.addBtn);
@@ -201,7 +201,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Vehicles";
             this.Text = "Vehicles";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +222,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView vehicleDGV;
         private System.Windows.Forms.TextBox idTB;
         private System.Windows.Forms.Label label6;
     }

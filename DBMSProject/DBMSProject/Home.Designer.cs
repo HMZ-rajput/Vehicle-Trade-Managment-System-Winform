@@ -37,6 +37,7 @@
             this.sparepartBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
             this.sellBtn = new System.Windows.Forms.Button();
+            this.employeeBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -90,30 +91,30 @@
             // 
             // repairBtn
             // 
-            this.repairBtn.Location = new System.Drawing.Point(96, 238);
+            this.repairBtn.Location = new System.Drawing.Point(237, 238);
             this.repairBtn.Name = "repairBtn";
             this.repairBtn.Size = new System.Drawing.Size(75, 23);
-            this.repairBtn.TabIndex = 6;
+            this.repairBtn.TabIndex = 7;
             this.repairBtn.Text = "Repair";
             this.repairBtn.UseVisualStyleBackColor = true;
             this.repairBtn.Click += new System.EventHandler(this.repairBtn_Click);
             // 
             // sparepartBtn
             // 
-            this.sparepartBtn.Location = new System.Drawing.Point(222, 238);
+            this.sparepartBtn.Location = new System.Drawing.Point(377, 238);
             this.sparepartBtn.Name = "sparepartBtn";
             this.sparepartBtn.Size = new System.Drawing.Size(75, 23);
-            this.sparepartBtn.TabIndex = 7;
+            this.sparepartBtn.TabIndex = 8;
             this.sparepartBtn.Text = "Spare Parts";
             this.sparepartBtn.UseVisualStyleBackColor = true;
             this.sparepartBtn.Click += new System.EventHandler(this.sparepartBtn_Click);
             // 
             // reportBtn
             // 
-            this.reportBtn.Location = new System.Drawing.Point(377, 238);
+            this.reportBtn.Location = new System.Drawing.Point(334, 319);
             this.reportBtn.Name = "reportBtn";
             this.reportBtn.Size = new System.Drawing.Size(75, 23);
-            this.reportBtn.TabIndex = 8;
+            this.reportBtn.TabIndex = 10;
             this.reportBtn.Text = "Report";
             this.reportBtn.UseVisualStyleBackColor = true;
             this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
@@ -128,11 +129,22 @@
             this.sellBtn.UseVisualStyleBackColor = true;
             this.sellBtn.Click += new System.EventHandler(this.sellBtn_Click);
             // 
+            // employeeBtn
+            // 
+            this.employeeBtn.Location = new System.Drawing.Point(96, 238);
+            this.employeeBtn.Name = "employeeBtn";
+            this.employeeBtn.Size = new System.Drawing.Size(75, 23);
+            this.employeeBtn.TabIndex = 6;
+            this.employeeBtn.Text = "Employee";
+            this.employeeBtn.UseVisualStyleBackColor = true;
+            this.employeeBtn.Click += new System.EventHandler(this.employeeBtn_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.employeeBtn);
             this.Controls.Add(this.sellBtn);
             this.Controls.Add(this.reportBtn);
             this.Controls.Add(this.sparepartBtn);
@@ -160,6 +172,7 @@
         private System.Windows.Forms.Button sparepartBtn;
         private System.Windows.Forms.Button reportBtn;
         private System.Windows.Forms.Button sellBtn;
+        private System.Windows.Forms.Button employeeBtn;
     }
 }
 

@@ -126,5 +126,6 @@ ModifiedBy nvarchar(128),
 ModifiedDate datetime
 
 --check updated by zain
-alter table Repairs
-add check (RepairStatus in ('REPAIRED','NOT REPAIRED','SOLD'))
+-- zain bro ye check Vehicles ma lgane ka kaha tha mene. Nashe chordo
+alter table Vehicles
+add check (Status in ('REPAIRED','NOT REPAIR','SOLD'))

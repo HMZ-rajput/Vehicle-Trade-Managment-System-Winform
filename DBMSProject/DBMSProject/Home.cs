@@ -70,5 +70,11 @@ namespace DBMSProject
             Sell sell  = new Sell();
             sell.Show();
         }
+
+        private void employeeBtn_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+            employee.Show();
+        }
     }
 }

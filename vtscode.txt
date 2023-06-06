@@ -127,4 +127,10 @@ ModifiedDate datetime
 --check updated by zain
 -- zain bro ye check Vehicles ma lgane ka kaha tha mene. Nashe chordo
 
+--Cost price of car added in Vehicles and removed from Vendors
+alter table Vehicles add
+Cost int
+
+alter table Vendors drop column CostPrice
+
 

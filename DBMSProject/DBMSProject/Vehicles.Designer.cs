@@ -44,13 +44,16 @@
             this.vehicleDGV = new System.Windows.Forms.DataGridView();
             this.idTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.vendorCB = new System.Windows.Forms.ComboBox();
+            this.priceTB = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(468, 72);
+            this.label1.Location = new System.Drawing.Point(284, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 0;
@@ -77,7 +80,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(462, 127);
+            this.label4.Location = new System.Drawing.Point(284, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 3;
@@ -85,7 +88,7 @@
             // 
             // makeTB
             // 
-            this.makeTB.Location = new System.Drawing.Point(548, 69);
+            this.makeTB.Location = new System.Drawing.Point(370, 62);
             this.makeTB.Name = "makeTB";
             this.makeTB.Size = new System.Drawing.Size(100, 20);
             this.makeTB.TabIndex = 5;
@@ -109,7 +112,7 @@
             // 
             // mileageTB
             // 
-            this.mileageTB.Location = new System.Drawing.Point(548, 124);
+            this.mileageTB.Location = new System.Drawing.Point(370, 116);
             this.mileageTB.Name = "mileageTB";
             this.mileageTB.Size = new System.Drawing.Size(100, 20);
             this.mileageTB.TabIndex = 7;
@@ -129,7 +132,7 @@
             this.addBtn.Location = new System.Drawing.Point(538, 171);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(75, 23);
-            this.addBtn.TabIndex = 9;
+            this.addBtn.TabIndex = 11;
             this.addBtn.Text = "Add Car";
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.button1_Click);
@@ -139,7 +142,7 @@
             this.updateBtn.Location = new System.Drawing.Point(619, 171);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(75, 23);
-            this.updateBtn.TabIndex = 10;
+            this.updateBtn.TabIndex = 12;
             this.updateBtn.Text = "Update Car";
             this.updateBtn.UseVisualStyleBackColor = true;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
@@ -149,7 +152,7 @@
             this.deleteBtn.Location = new System.Drawing.Point(700, 171);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(75, 23);
-            this.deleteBtn.TabIndex = 11;
+            this.deleteBtn.TabIndex = 13;
             this.deleteBtn.Text = "Delete Car";
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
@@ -179,11 +182,40 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "ID";
             // 
+            // vendorCB
+            // 
+            this.vendorCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.vendorCB.FormattingEnabled = true;
+            this.vendorCB.Location = new System.Drawing.Point(573, 62);
+            this.vendorCB.Name = "vendorCB";
+            this.vendorCB.Size = new System.Drawing.Size(121, 21);
+            this.vendorCB.TabIndex = 10;
+            // 
+            // priceTB
+            // 
+            this.priceTB.Location = new System.Drawing.Point(370, 167);
+            this.priceTB.Name = "priceTB";
+            this.priceTB.Size = new System.Drawing.Size(100, 20);
+            this.priceTB.TabIndex = 9;
+            this.priceTB.Text = "Enter Price";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(284, 170);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Price";
+            // 
             // Vehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.priceTB);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.vendorCB);
             this.Controls.Add(this.idTB);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.vehicleDGV);
@@ -225,5 +257,8 @@
         private System.Windows.Forms.DataGridView vehicleDGV;
         private System.Windows.Forms.TextBox idTB;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox vendorCB;
+        private System.Windows.Forms.TextBox priceTB;
+        private System.Windows.Forms.Label label7;
     }
 }

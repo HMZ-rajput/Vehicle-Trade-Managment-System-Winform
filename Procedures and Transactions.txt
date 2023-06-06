@@ -1,3 +1,4 @@
+---------------------Vehicle
 get car:
 create procedure getVehicle
 as
@@ -26,10 +27,89 @@ begin
 end
 end
 
+--Add Car altered
+alter procedure addVehicle
+@Make nvarchar(30),
+@Model nvarchar(30),
+@Year int,
+@Mileage int,
+@Cost int,
+@VendorID int
+as
+begin
+insert into Vehicles (Make,Model,Year,Mileage,Status,BuyDate,Cost,VendorID) values(@Make,@Model,@Year,@Mileage,'NOT REPAIR',getdate(),@Cost,@VendorID)
+end
 
 
+--Upadte Vehicle
 
+create procedure updateVehicleMake
+@VehicleID int,
+@Make nvarchar(30)
+as
+begin
+if exists (select * from Vehicles where VehicleID=@VehicleID)
+begin
+	update Vehicles set Make=@Make where VehicleID=@VehicleID
+end
+end
 
+create procedure updateVehicleModel
+@VehicleID int,
+@Model nvarchar(30)
+as
+begin
+if exists (select * from Vehicles where VehicleID=@VehicleID)
+begin
+	update Vehicles set Model=@Model where VehicleID=@VehicleID
+end
+end
+
+create procedure updateVehicleYear
+@VehicleID int,
+@Year int
+as
+begin
+if exists (select * from Vehicles where VehicleID=@VehicleID)
+begin
+	update Vehicles set Year=@Year where VehicleID=@VehicleID
+end
+end
+
+create procedure updateVehicleMileage
+@VehicleID int,
+@Mileage int
+as
+begin
+if exists (select * from Vehicles where VehicleID=@VehicleID)
+begin
+	update Vehicles set Mileage=@Mileage where VehicleID=@VehicleID
+end
+end
+
+create procedure updateVehicleCost
+@VehicleID int,
+@Cost int
+as
+begin
+if exists (select * from Vehicles where VehicleID=@VehicleID)
+begin
+	update Vehicles set Cost=@Cost where VehicleID=@VehicleID
+end
+end
+
+create procedure updateVehicleVendor
+@VehicleID int,
+@VendorID int
+as
+begin
+if exists (select * from Vehicles where VehicleID=@VehicleID)
+begin
+	update Vehicles set VendorID=@VendorID where VehicleID=@VehicleID
+end
+end
+
+-------------------------Spare Parts
 --crud for spareparts
 create procedure addSparePart
 	@partName nvarchar(30),
@@ -68,3 +148,65 @@ begin
 		select * from SpareParts
 end
 
+
+----------------------------------Vendors
+--Add Vendor
+create procedure addVendors
+@Name nvarchar(30),
+@Address nvarchar(30),
+@Phone nvarchar(30)
+as
+begin
+insert into Vendors values(@Name,@Address,@Phone)
+end
+
+--get Vendors
+create procedure getVendors
+as
+begin
+select * from Vendors
+end
+
+--delete Vendors
+create procedure delVendor
+@VendorID int
+as begin
+if exists (select * from Vendors where VendorID=@VendorID)
+begin
+	delete from Vendors where VendorID=@VendorID
+end
+end
+
+--update vendors
+create procedure updateVendorName
+@VendorID int,
+@Name nvarchar(30)
+as
+begin
+if exists (select * from Vendors where VendorID=@VendorID)
+begin
+	update Vendors set Name=@Name where VendorID=@VendorID
+end
+end
+
+create procedure updateVendorAddress
+@VendorID int,
+@Address nvarchar(30)
+as
+begin
+if exists (select * from Vendors where VendorID=@VendorID)
+begin
+	update Vendors set Address=@Address where VendorID=@VendorID
+end
+end
+
+create procedure updateVendorPhone
+@VendorID int,
+@Phone nvarchar(30)
+as
+begin
+if exists (select * from Vendors where VendorID=@VendorID)
+begin
+	update Vendors set Phone=@Phone where VendorID=@VendorID
+end
+end

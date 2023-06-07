@@ -134,3 +134,15 @@ Cost int
 alter table Vendors drop column CostPrice
 
 
+--RepairCharges of technicians moved to Repairs from Technicians bc each repair has different repair charges
+alter table Technicians drop column RepairCharges
+
+alter table Repairs add
+TechnicianCharges int
+
+--Some more details added for technicians
+alter table Technicians add
+Address nvarchar(50),
+Phone nvarchar(15)
+
+

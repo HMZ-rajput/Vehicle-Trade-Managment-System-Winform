@@ -45,7 +45,7 @@ namespace DBMSProject
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Unable to add Vendors");
+                    MessageBox.Show("Unable to add Vendors\n" + ex.Message);
                     conn.Close();
                 }
             }
@@ -142,13 +142,13 @@ namespace DBMSProject
                 }
                 else
                 {
-                    MessageBox.Show("Unable to read data from Vehicles");
+                    MessageBox.Show("Unable to read data from Vendors");
                 }
                 conn.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to load Vendors");
+                MessageBox.Show("Unable to load Vendors\n" + ex.Message);
                 conn.Close();
             }
         }

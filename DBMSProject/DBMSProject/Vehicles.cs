@@ -166,7 +166,7 @@ namespace DBMSProject
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to delete Vehicle");
+                    MessageBox.Show("Unable to delete Vehicle\n" + ex.Message);
                     conn.Close();
                 }
             }
@@ -200,7 +200,7 @@ namespace DBMSProject
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to fetch Vehicles data");
+                MessageBox.Show("Unable to fetch Vehicles data\n" + ex.Message);
                 conn.Close();
             }
         }
@@ -223,7 +223,7 @@ namespace DBMSProject
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to load Vendors");
+                MessageBox.Show("Unable to load Vendors\n" + ex.Message);
                 conn.Close();
             }
         }

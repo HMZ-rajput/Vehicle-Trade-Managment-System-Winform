@@ -210,3 +210,68 @@ begin
 	update Vendors set Phone=@Phone where VendorID=@VendorID
 end
 end
+
+
+------------------Technicians
+
+--get Tech
+create procedure getTechnician
+as
+begin
+select * from Technicians
+end
+
+--add Tech
+create procedure addTechnician
+@Name nvarchar(30),
+@Address nvarchar(50),
+@Phone nvarchar(20)
+as
+begin
+insert into Technicians values(@Name,@Address,@Phone)
+end
+
+--del Tech
+create procedure delTechnician
+@TechnicianID int
+as
+begin
+if exists(select * from Technicians where TechnicianID=@TechnicianID)
+begin
+	delete from Technicians where TechnicianID=@TechnicianID
+end
+end
+
+--update Tech
+create procedure updateTechnicianName
+@TechnicianID int,
+@Name nvarchar(30)
+as
+begin
+if exists (select * from Technicians where TechnicianID=@TechnicianID)
+begin
+	update Technicians set Name=@Name where TechnicianID=@TechnicianID
+end
+end
+
+create procedure updateTechnicianAddress
+@TechnicianID int,
+@Address nvarchar(50)
+as
+begin
+if exists (select * from Technicians where TechnicianID=@TechnicianID)
+begin
+	update Technicians set Address=@Address where TechnicianID=@TechnicianID
+end
+end
+
+create procedure updateTechnicianPhone
+@TechnicianID int,
+@Phone nvarchar(20)
+as
+begin
+if exists (select * from Technicians where TechnicianID=@TechnicianID)
+begin
+	update Technicians set Phone=@Phone where TechnicianID=@TechnicianID
+end
+end

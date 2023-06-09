@@ -33,8 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\..\..\..\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
+      <HintPath>..\..\..\..\..\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\..\..\..\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -129,16 +140,11 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="SpareParts.resx">
       <DependentUpon>SpareParts.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +178,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vendor icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vendor icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vendor icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Technician icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employee icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employee icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employee icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Signout icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employee icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Repair icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repair icon1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

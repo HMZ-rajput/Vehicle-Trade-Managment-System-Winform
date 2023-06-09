@@ -28,26 +28,38 @@ namespace DBMSProject
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (nameTB.Text != "" && addressTB.Text != "" && phoneTB.Text != "")
+            if (nameTB.Text != "" && addressTB.Text != "" && phoneTB.Text != "" && commisionTB.Text != "" && int.TryParse(commisionTB.Text, out n))
             {
-                try
+                if (int.Parse(commisionTB.Text) > 0 && int.Parse(commisionTB.Text) < 100)
                 {
-                    conn.Open();
-                    cmd = new SqlCommand("addEmployees", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Name", nameTB.Text);
-                    cmd.Parameters.AddWithValue("@Phone", phoneTB.Text);
-                    cmd.Parameters.AddWithValue("Address", addressTB.Text);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    try
+                    {
+                        conn.Open();
+                        cmd = new SqlCommand("addEmployee", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Name", nameTB.Text);
+                        cmd.Parameters.AddWithValue("@Phone", phoneTB.Text);
+                        cmd.Parameters.AddWithValue("Address", addressTB.Text);
+                        cmd.Parameters.AddWithValue("CommisionPercentage", int.Parse(commisionTB.Text));
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
 
-                    loadTable();//refresh table after succesfully adding data
+                        loadTable();//refresh table after succesfully adding data
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to add Employees\n" + ex.Message);
+                        conn.Close();
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Unable to add Employees\n" + ex.Message);
-                    conn.Close();
+                    MessageBox.Show("Commission Percentage must be between 0-100");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Enter all details except ID\nCommision must be numeric");
             }
         }
 
@@ -81,6 +93,21 @@ namespace DBMSProject
                         cmd.Parameters.AddWithValue("@EmployeeID", int.Parse(idTB.Text));
                         cmd.Parameters.AddWithValue("@Phone", phoneTB.Text);
                         cmd.ExecuteNonQuery();
+                    }
+                    if(commisionTB.Text != "" && int.TryParse(commisionTB.Text,out n))
+                    {
+                        if(int.Parse(commisionTB.Text) > 0 && int.Parse(commisionTB.Text) < 100)
+                        {
+                            cmd = new SqlCommand("updateEmployeeCommission", conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@EmployeeID", int.Parse(idTB.Text));
+                            cmd.Parameters.AddWithValue("CommisionPercentage", int.Parse(commisionTB.Text));
+                            cmd.ExecuteNonQuery();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Commision must be between 0-100");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -129,7 +156,7 @@ namespace DBMSProject
             try
             {
                 conn.Open();
-                cmd = new SqlCommand("getEmployees", conn);
+                cmd = new SqlCommand("getEmployee", conn);
                 cmd.CommandType = CommandType.StoredProcedure; //added
                 dr = cmd.ExecuteReader();
                 if (dr.Read())

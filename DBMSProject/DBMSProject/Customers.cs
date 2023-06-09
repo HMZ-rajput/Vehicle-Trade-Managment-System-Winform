@@ -49,6 +49,10 @@ namespace DBMSProject
                     conn.Close();
                 }
             }
+            else
+            {
+                MessageBox.Show("Enter all details except ID");
+            }
         }
 
         private void updateBtn_Click(object sender, EventArgs e)

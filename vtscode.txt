@@ -146,3 +146,6 @@ Address nvarchar(50),
 Phone nvarchar(15)
 
 
+--6/9/23
+alter table Employee alter column Name nvarchar(30)
+

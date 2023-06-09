@@ -34,6 +34,7 @@
             this.sellBtn = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panelSell = new System.Windows.Forms.Panel();
             this.panelReport = new System.Windows.Forms.Panel();
             this.panelSpareparts = new System.Windows.Forms.Panel();
@@ -53,7 +54,7 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelLeft.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +68,7 @@
             this.sparepartBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sparepartBtn.ForeColor = System.Drawing.Color.White;
             this.sparepartBtn.Image = ((System.Drawing.Image)(resources.GetObject("sparepartBtn.Image")));
-            this.sparepartBtn.Location = new System.Drawing.Point(1, 373);
+            this.sparepartBtn.Location = new System.Drawing.Point(-1, 373);
             this.sparepartBtn.Name = "sparepartBtn";
             this.sparepartBtn.Size = new System.Drawing.Size(167, 45);
             this.sparepartBtn.TabIndex = 8;
@@ -85,7 +86,7 @@
             this.reportBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportBtn.ForeColor = System.Drawing.Color.White;
             this.reportBtn.Image = ((System.Drawing.Image)(resources.GetObject("reportBtn.Image")));
-            this.reportBtn.Location = new System.Drawing.Point(1, 418);
+            this.reportBtn.Location = new System.Drawing.Point(-1, 418);
             this.reportBtn.Name = "reportBtn";
             this.reportBtn.Size = new System.Drawing.Size(167, 47);
             this.reportBtn.TabIndex = 10;
@@ -103,7 +104,7 @@
             this.sellBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sellBtn.ForeColor = System.Drawing.Color.White;
             this.sellBtn.Image = ((System.Drawing.Image)(resources.GetObject("sellBtn.Image")));
-            this.sellBtn.Location = new System.Drawing.Point(1, 465);
+            this.sellBtn.Location = new System.Drawing.Point(-1, 465);
             this.sellBtn.Name = "sellBtn";
             this.sellBtn.Size = new System.Drawing.Size(167, 45);
             this.sellBtn.TabIndex = 9;
@@ -116,11 +117,11 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Felix Titling", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(98)))), ((int)(((byte)(96)))));
-            this.lblTitle.Location = new System.Drawing.Point(1, 28);
+            this.lblTitle.Location = new System.Drawing.Point(6, 11);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(112, 38);
+            this.lblTitle.Size = new System.Drawing.Size(160, 55);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Home";
             this.lblTitle.Click += new System.EventHandler(this.label1_Click);
@@ -151,13 +152,23 @@
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(167, 608);
+            this.panelLeft.Size = new System.Drawing.Size(167, 703);
             this.panelLeft.TabIndex = 11;
+            // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(167, 105);
+            this.panel5.TabIndex = 13;
             // 
             // panelSell
             // 
             this.panelSell.BackColor = System.Drawing.Color.Yellow;
-            this.panelSell.Location = new System.Drawing.Point(0, 472);
+            this.panelSell.Location = new System.Drawing.Point(0, 457);
             this.panelSell.Name = "panelSell";
             this.panelSell.Size = new System.Drawing.Size(5, 45);
             this.panelSell.TabIndex = 11;
@@ -166,7 +177,7 @@
             // panelReport
             // 
             this.panelReport.BackColor = System.Drawing.Color.Yellow;
-            this.panelReport.Location = new System.Drawing.Point(0, 426);
+            this.panelReport.Location = new System.Drawing.Point(0, 413);
             this.panelReport.Name = "panelReport";
             this.panelReport.Size = new System.Drawing.Size(5, 45);
             this.panelReport.TabIndex = 10;
@@ -175,7 +186,7 @@
             // panelSpareparts
             // 
             this.panelSpareparts.BackColor = System.Drawing.Color.Yellow;
-            this.panelSpareparts.Location = new System.Drawing.Point(0, 381);
+            this.panelSpareparts.Location = new System.Drawing.Point(0, 369);
             this.panelSpareparts.Name = "panelSpareparts";
             this.panelSpareparts.Size = new System.Drawing.Size(5, 45);
             this.panelSpareparts.TabIndex = 9;
@@ -184,7 +195,7 @@
             // panelRepair
             // 
             this.panelRepair.BackColor = System.Drawing.Color.Yellow;
-            this.panelRepair.Location = new System.Drawing.Point(0, 334);
+            this.panelRepair.Location = new System.Drawing.Point(0, 325);
             this.panelRepair.Name = "panelRepair";
             this.panelRepair.Size = new System.Drawing.Size(5, 45);
             this.panelRepair.TabIndex = 8;
@@ -193,7 +204,7 @@
             // panelCustomer
             // 
             this.panelCustomer.BackColor = System.Drawing.Color.Yellow;
-            this.panelCustomer.Location = new System.Drawing.Point(0, 287);
+            this.panelCustomer.Location = new System.Drawing.Point(0, 280);
             this.panelCustomer.Name = "panelCustomer";
             this.panelCustomer.Size = new System.Drawing.Size(5, 45);
             this.panelCustomer.TabIndex = 7;
@@ -202,7 +213,7 @@
             // panelTechnician
             // 
             this.panelTechnician.BackColor = System.Drawing.Color.Yellow;
-            this.panelTechnician.Location = new System.Drawing.Point(0, 237);
+            this.panelTechnician.Location = new System.Drawing.Point(0, 235);
             this.panelTechnician.Name = "panelTechnician";
             this.panelTechnician.Size = new System.Drawing.Size(5, 45);
             this.panelTechnician.TabIndex = 6;
@@ -211,7 +222,7 @@
             // panelEmployee
             // 
             this.panelEmployee.BackColor = System.Drawing.Color.Yellow;
-            this.panelEmployee.Location = new System.Drawing.Point(0, 194);
+            this.panelEmployee.Location = new System.Drawing.Point(0, 192);
             this.panelEmployee.Name = "panelEmployee";
             this.panelEmployee.Size = new System.Drawing.Size(5, 45);
             this.panelEmployee.TabIndex = 5;
@@ -279,7 +290,7 @@
             this.employeeBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeBtn.ForeColor = System.Drawing.Color.White;
             this.employeeBtn.Image = ((System.Drawing.Image)(resources.GetObject("employeeBtn.Image")));
-            this.employeeBtn.Location = new System.Drawing.Point(2, 193);
+            this.employeeBtn.Location = new System.Drawing.Point(0, 193);
             this.employeeBtn.Name = "employeeBtn";
             this.employeeBtn.Size = new System.Drawing.Size(167, 45);
             this.employeeBtn.TabIndex = 6;
@@ -317,7 +328,7 @@
             this.technicianBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.technicianBtn.ForeColor = System.Drawing.Color.White;
             this.technicianBtn.Image = ((System.Drawing.Image)(resources.GetObject("technicianBtn.Image")));
-            this.technicianBtn.Location = new System.Drawing.Point(2, 238);
+            this.technicianBtn.Location = new System.Drawing.Point(0, 238);
             this.technicianBtn.Name = "technicianBtn";
             this.technicianBtn.Size = new System.Drawing.Size(167, 45);
             this.technicianBtn.TabIndex = 5;
@@ -335,7 +346,7 @@
             this.repairBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.repairBtn.ForeColor = System.Drawing.Color.White;
             this.repairBtn.Image = ((System.Drawing.Image)(resources.GetObject("repairBtn.Image")));
-            this.repairBtn.Location = new System.Drawing.Point(1, 328);
+            this.repairBtn.Location = new System.Drawing.Point(-1, 328);
             this.repairBtn.Name = "repairBtn";
             this.repairBtn.Size = new System.Drawing.Size(167, 45);
             this.repairBtn.TabIndex = 7;
@@ -353,7 +364,7 @@
             this.customerBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerBtn.ForeColor = System.Drawing.Color.White;
             this.customerBtn.Image = ((System.Drawing.Image)(resources.GetObject("customerBtn.Image")));
-            this.customerBtn.Location = new System.Drawing.Point(1, 283);
+            this.customerBtn.Location = new System.Drawing.Point(-1, 283);
             this.customerBtn.Name = "customerBtn";
             this.customerBtn.Size = new System.Drawing.Size(167, 45);
             this.customerBtn.TabIndex = 4;
@@ -366,9 +377,9 @@
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(27)))));
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMain.Location = new System.Drawing.Point(167, 79);
+            this.panelMain.Location = new System.Drawing.Point(167, 86);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(708, 529);
+            this.panelMain.Size = new System.Drawing.Size(858, 617);
             this.panelMain.TabIndex = 12;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -383,29 +394,30 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(27)))));
+            this.panel4.Controls.Add(this.panel1);
             this.panel4.Controls.Add(this.lblTitle);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(23)))), ((int)(((byte)(27)))));
             this.panel4.Location = new System.Drawing.Point(167, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(708, 80);
+            this.panel4.Size = new System.Drawing.Size(858, 97);
             this.panel4.TabIndex = 14;
             // 
-            // panel5
+            // panel1
             // 
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.Location = new System.Drawing.Point(11, 25);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(154, 78);
-            this.panel5.TabIndex = 13;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(98)))), ((int)(((byte)(96)))));
+            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(98)))), ((int)(((byte)(96)))));
+            this.panel1.Location = new System.Drawing.Point(6, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(830, 1);
+            this.panel1.TabIndex = 2;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(875, 608);
+            this.ClientSize = new System.Drawing.Size(1025, 703);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelMain);
@@ -448,6 +460,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

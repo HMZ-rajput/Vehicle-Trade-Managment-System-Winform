@@ -145,6 +145,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="RepairCar.resx">
+      <DependentUpon>RepairCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sell.resx">
+      <DependentUpon>Sell.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpareParts.resx">
       <DependentUpon>SpareParts.cs</DependentUpon>
     </EmbeddedResource>

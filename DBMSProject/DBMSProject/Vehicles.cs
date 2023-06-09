@@ -8,9 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace DBMSProject
 {
+    
     public partial class Vehicles : Form
     {
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
@@ -19,6 +22,15 @@ namespace DBMSProject
         SqlDataReader dr;
         DataTable dt;
         int n;
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeft,
+            int nTop,
+            int nRight,
+            int nBottom, 
+            int nWidthEllipse,
+            int nHeightEllipse);
+
         public Vehicles()
         {
             InitializeComponent();
@@ -228,6 +240,13 @@ namespace DBMSProject
                 MessageBox.Show("Unable to load Vendors\n" + ex.Message);
                 conn.Close();
             }
+        }
+
+        private void Vehicles_Load(object sender, EventArgs e)
+        {
+            addBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 30, 30));
+            deleteBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, deleteBtn.Width, deleteBtn.Height, 30, 30));
+            updateBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, updateBtn.Width, updateBtn.Height, 30, 30));
         }
     }
 }

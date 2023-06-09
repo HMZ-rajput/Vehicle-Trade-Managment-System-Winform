@@ -275,3 +275,66 @@ begin
 	update Technicians set Phone=@Phone where TechnicianID=@TechnicianID
 end
 end
+
+
+------------------Customer
+--Add Customer
+create procedure addCustomers
+@Name nvarchar(30),
+@Address nvarchar(30),
+@Phone nvarchar(30)
+as
+begin
+insert into Customers values(@Name,@Address,@Phone)
+end
+
+--get Customers
+create procedure getCustomers
+as
+begin
+select * from Customers
+end
+
+--delete Customers
+create procedure delCustomer
+@CustomerID int
+as begin
+if exists (select * from Customers where CustomerID=@CustomerID)
+begin
+	delete from Customers where CustomerID=@CustomerID
+end
+end
+
+--update Customers
+create procedure updateCustomerName
+@CustomerID int,
+@Name nvarchar(30)
+as
+begin
+if exists (select * from Customers where CustomerID=@CustomerID)
+begin
+	update Customers set Name=@Name where CustomerID=@CustomerID
+end
+end
+
+create procedure updateCustomerAddress
+@CustomerID int,
+@Address nvarchar(30)
+as
+begin
+if exists (select * from Customers where CustomerID=@CustomerID)
+begin
+	update Customers set Address=@Address where CustomerID=@CustomerID
+end
+end
+
+create procedure updateCustomerPhone
+@CustomerID int,
+@Phone nvarchar(30)
+as
+begin
+if exists (select * from Customers where CustomerID=@CustomerID)
+begin
+	update Customers set Phone=@Phone where CustomerID=@CustomerID
+end
+end

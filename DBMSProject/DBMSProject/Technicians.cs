@@ -142,7 +142,9 @@ namespace DBMSProject
                 }
                 else
                 {
-                    MessageBox.Show("Unable to read data from Technician");
+                    MessageBox.Show("No data found in Technician\nInsert some data");
+                    dt = new DataTable();
+                    technicianDGV.DataSource = null;
                 }
                 conn.Close();
             }

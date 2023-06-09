@@ -194,7 +194,9 @@ namespace DBMSProject
                 }
                 else
                 {
-                    MessageBox.Show("Unable to read data from Vehicles");
+                    MessageBox.Show("No data in Vehicles\nInsert some data");
+                    dt = new DataTable();
+                    vehicleDGV.DataSource = null;
                 }
                 conn.Close();
             }

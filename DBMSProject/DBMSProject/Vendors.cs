@@ -142,7 +142,9 @@ namespace DBMSProject
                 }
                 else
                 {
-                    MessageBox.Show("Unable to read data from Vendors");
+                    MessageBox.Show("No data in Vendors\nInsert some data");
+                    dt = new DataTable();
+                    vendorDGV.DataSource = null; ;
                 }
                 conn.Close();
             }

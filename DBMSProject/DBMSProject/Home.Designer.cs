@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.vehicleBtn = new System.Windows.Forms.Button();
             this.vendorBtn = new System.Windows.Forms.Button();
             this.customerBtn = new System.Windows.Forms.Button();
@@ -38,33 +37,37 @@
             this.reportBtn = new System.Windows.Forms.Button();
             this.sellBtn = new System.Windows.Forms.Button();
             this.employeeBtn = new System.Windows.Forms.Button();
+            this.panelLeft = new System.Windows.Forms.Panel();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.panelLeft.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(374, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 37);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Home";
             // 
             // vehicleBtn
             // 
-            this.vehicleBtn.Location = new System.Drawing.Point(96, 176);
+            this.vehicleBtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.vehicleBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.vehicleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vehicleBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vehicleBtn.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.vehicleBtn.Location = new System.Drawing.Point(0, 95);
             this.vehicleBtn.Name = "vehicleBtn";
-            this.vehicleBtn.Size = new System.Drawing.Size(75, 23);
+            this.vehicleBtn.Size = new System.Drawing.Size(139, 45);
             this.vehicleBtn.TabIndex = 2;
             this.vehicleBtn.Text = "Vehicle";
-            this.vehicleBtn.UseVisualStyleBackColor = true;
+            this.vehicleBtn.UseVisualStyleBackColor = false;
             this.vehicleBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // vendorBtn
             // 
-            this.vendorBtn.Location = new System.Drawing.Point(222, 176);
+            this.vendorBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vendorBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vendorBtn.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.vendorBtn.Location = new System.Drawing.Point(0, 139);
             this.vendorBtn.Name = "vendorBtn";
-            this.vendorBtn.Size = new System.Drawing.Size(90, 23);
+            this.vendorBtn.Size = new System.Drawing.Size(139, 45);
             this.vendorBtn.TabIndex = 3;
             this.vendorBtn.Text = "Vendor";
             this.vendorBtn.UseVisualStyleBackColor = true;
@@ -132,7 +135,7 @@
             // 
             // employeeBtn
             // 
-            this.employeeBtn.Location = new System.Drawing.Point(96, 238);
+            this.employeeBtn.Location = new System.Drawing.Point(194, 280);
             this.employeeBtn.Name = "employeeBtn";
             this.employeeBtn.Size = new System.Drawing.Size(75, 23);
             this.employeeBtn.TabIndex = 6;
@@ -140,11 +143,64 @@
             this.employeeBtn.UseVisualStyleBackColor = true;
             this.employeeBtn.Click += new System.EventHandler(this.employeeBtn_Click);
             // 
+            // panelLeft
+            // 
+            this.panelLeft.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelLeft.Controls.Add(this.panelLogo);
+            this.panelLeft.Controls.Add(this.vehicleBtn);
+            this.panelLeft.Controls.Add(this.vendorBtn);
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(139, 496);
+            this.panelLeft.TabIndex = 11;
+            this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
+            // 
+            // panelTop
+            // 
+            this.panelTop.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelTop.BackgroundImage = global::DBMSProject.Properties.Resources.download;
+            this.panelTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelTop.Controls.Add(this.label1);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(139, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(699, 96);
+            this.panelTop.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Felix Titling", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label1.Location = new System.Drawing.Point(279, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 38);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Home";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelLogo.BackgroundImage = global::DBMSProject.Properties.Resources.Blaze_Wheel_Logo;
+            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelLogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(139, 96);
+            this.panelLogo.TabIndex = 0;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(838, 496);
+            this.Controls.Add(this.panelTop);
+            this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.employeeBtn);
             this.Controls.Add(this.sellBtn);
             this.Controls.Add(this.reportBtn);
@@ -152,13 +208,13 @@
             this.Controls.Add(this.repairBtn);
             this.Controls.Add(this.technicianBtn);
             this.Controls.Add(this.customerBtn);
-            this.Controls.Add(this.vendorBtn);
-            this.Controls.Add(this.vehicleBtn);
-            this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.Name = "Home";
             this.Text = "Form1";
+            this.panelLeft.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -174,6 +230,9 @@
         private System.Windows.Forms.Button reportBtn;
         private System.Windows.Forms.Button sellBtn;
         private System.Windows.Forms.Button employeeBtn;
+        private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.Panel panelTop;
     }
 }
 

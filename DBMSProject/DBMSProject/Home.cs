@@ -13,6 +13,7 @@ namespace DBMSProject
 {
     public partial class Home : Form
     {
+        private Form activeForm;
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
         public Home()
         {
@@ -29,7 +30,7 @@ namespace DBMSProject
             panelVehicle.Show();
             vehicleBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
             Vehicles vehicles = new Vehicles();
-            vehicles.Show();
+            OpenChildForm(vehicles, sender);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -37,8 +38,9 @@ namespace DBMSProject
             hidepanels();
             panelVendor.Show();
             vendorBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
-            Vendors vendors = new Vendors();
-            vendors.Show();
+            Vendors vendor = new Vendors();
+            OpenChildForm(vendor, sender);
+
         }
 
         private void customerBtn_Click(object sender, EventArgs e)
@@ -46,17 +48,16 @@ namespace DBMSProject
             hidepanels();
             panelCustomer.Show();
             customerBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
-            Customers customers = new Customers();
-            customers.Show();
+            Customers customer = new Customers();
+            OpenChildForm(customer, sender);
         }
-
-        private void technicianBtn_Click(object sender, EventArgs e)
+            private void technicianBtn_Click(object sender, EventArgs e)
         {
             hidepanels();
             panelTechnician.Show();
             technicianBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
-            Technicians technicians = new Technicians();
-            technicians.Show();
+            Technicians technician = new Technicians();
+            OpenChildForm(technician, sender);
         }
 
         private void repairBtn_Click(object sender, EventArgs e)
@@ -64,8 +65,8 @@ namespace DBMSProject
             hidepanels();
             panelRepair.Show();
             repairBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
-            RepairCar repairCar = new RepairCar();
-            repairCar.Show();
+            RepairCar repair = new RepairCar();
+            OpenChildForm(repair, sender);
         }
 
         private void sparepartBtn_Click(object sender, EventArgs e)
@@ -73,8 +74,8 @@ namespace DBMSProject
             hidepanels();
             panelSpareparts.Show();
             sparepartBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
-            SpareParts spareParts = new SpareParts();
-            spareParts.Show();
+            SpareParts spareParts = new SpareParts(); 
+            OpenChildForm(spareParts, sender);
         }
 
         private void reportBtn_Click(object sender, EventArgs e)
@@ -83,7 +84,7 @@ namespace DBMSProject
             panelReport.Show();
             reportBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
             Report report = new Report();
-            report.Show();
+            OpenChildForm(report, sender);
         }
 
         private void sellBtn_Click(object sender, EventArgs e)
@@ -91,8 +92,8 @@ namespace DBMSProject
             hidepanels();
             panelSell.Show();
             sellBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
-            Sell sell  = new Sell();
-            sell.Show();
+            Sell sell = new Sell();
+            OpenChildForm(sell, sender);
         }
 
         private void employeeBtn_Click(object sender, EventArgs e)
@@ -101,7 +102,7 @@ namespace DBMSProject
             panelEmployee.Show();
             employeeBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
             Employee employee = new Employee();
-            employee.Show();
+            OpenChildForm( employee, sender);
         }
 
         private void panelLeft_Paint(object sender, PaintEventArgs e)
@@ -144,6 +145,30 @@ namespace DBMSProject
             vehicleBtn.BackColor = Color.FromArgb(64, 64, 64);
             panelVendor.Hide();
             vendorBtn.BackColor = Color.FromArgb(64, 64, 64);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.panelMain.Controls.Add(childForm);
+            this.panelMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblTitle.Text = childForm.Text;
         }
     }
 }

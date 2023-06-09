@@ -338,3 +338,116 @@ begin
 	update Customers set Phone=@Phone where CustomerID=@CustomerID
 end
 end
+
+-----------------------SpareParts
+create procedure updateSparePartsName
+@PartID int,
+@PartName nvarchar(30)
+as
+begin
+if exists(select 1 from SpareParts where PartID=@PartID)
+begin
+	update SpareParts set PartName=@PartName where PartID=@PartID
+end
+end
+
+create procedure updateSparePartsDesc
+@PartID int,
+@Description nvarchar(100)
+as
+begin
+if exists(select 1 from SpareParts where PartID=@PartID)
+begin
+	update SpareParts set PartDescription=@Description where PartID=@PartID
+end
+end
+
+create procedure updateSparePartsCost
+@PartID int,
+@Cost int
+as
+begin
+if exists(select 1 from SpareParts where PartID=@PartID)
+begin
+	update SpareParts set PartCost=@Cost where PartID=@PartID
+end
+end
+
+
+--Employee
+
+
+------------------Employee
+
+--Add Employee
+create procedure addEmployee
+@Name nvarchar(30),
+@Address nvarchar(30),
+@Phone nvarchar(30),
+@CommisionPercentage int
+as
+begin
+insert into Employee values(@Name, @Address, @Phone, @CommisionPercentage)
+end
+
+--get Employees
+create procedure getEmployee
+as
+begin
+select* from Employee
+end
+
+--delete Employees
+create procedure delEmployee
+@EmployeeID int
+as begin
+if exists(select * from Employee where EmployeeID = @EmployeeID)
+begin
+    delete from Employee where EmployeeID = @EmployeeID
+end
+end
+
+--update Employees
+create procedure updateEmployeeName
+@EmployeeID int,
+@Name nvarchar(30)
+as
+begin
+if exists(select * from Employee where EmployeeID = @EmployeeID)
+begin
+    update Employee set Name = @Name where EmployeeID = @EmployeeID
+end
+end
+
+create procedure updateEmployeeCommission
+@EmployeeID int,
+@CommisionPercentage int
+as
+begin
+if exists(select * from Employee where EmployeeID = @EmployeeID)
+begin
+    update Employee set CommisionPercentage = @CommisionPercentage where EmployeeID = @EmployeeID
+end
+end
+
+create procedure updateEmployeeAddress
+@EmployeeID int,
+@Address nvarchar(30)
+as
+begin
+if exists(select * from Employee where EmployeeID = @EmployeeID)
+begin
+    update Employee set Address = @Address where EmployeeID = @EmployeeID
+end
+end
+
+create procedure updateEmployeePhone
+@EmployeeID int,
+@Phone nvarchar(30)
+as
+begin
+if exists(select * from Employee where EmployeeID = @EmployeeID)
+begin
+    update Employee set Phone = @Phone where EmployeeID = @EmployeeID
+end
+end

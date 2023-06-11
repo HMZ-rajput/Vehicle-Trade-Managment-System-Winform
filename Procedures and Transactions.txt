@@ -451,3 +451,36 @@ begin
     update Employee set Phone = @Phone where EmployeeID = @EmployeeID
 end
 end
+--------------------------------6/11-23 By Hamza the Great
+--------------Repairs and RepairDetails
+--Get Repair of vehicle
+create procedure getRepair
+@TechnicianID int
+as
+begin
+select * from Repairs where TechnicianID=@TechnicianID
+end
+
+--Get RepairDetails of vehicles of a tech
+create procedure getRepairDetails
+@TechnicianID int
+as
+begin
+select * from RepairDetails rd inner join Repairs r on rd.RepairID=r.RepairID where r.TechnicianID=@TechnicianID
+end
+
+--get AvailaleVehicles which are not repaired
+create procedure getAvailaleVehicles
+as
+begin
+select * from Vehicles where Status='NOT REPAIR'
+end
+
+create procedure startVehicleRepair
+@TechnicianID int,
+@VehicleID int
+as
+begin
+insert into Repairs (VehicleID,TechnicianID) values(@VehicleID,@TechnicianID)
+update Vehicles set Status='REPAIRING' where VehicleID=@VehicleID
+end

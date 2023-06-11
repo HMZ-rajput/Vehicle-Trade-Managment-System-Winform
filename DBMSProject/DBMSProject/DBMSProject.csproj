@@ -119,6 +119,12 @@
     <Compile Include="Technicians.Designer.cs">
       <DependentUpon>Technicians.cs</DependentUpon>
     </Compile>
+    <Compile Include="TechnicianVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TechnicianVehicle.Designer.cs">
+      <DependentUpon>TechnicianVehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehicles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,11 +151,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="RepairCar.resx">
+      <DependentUpon>RepairCar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpareParts.resx">
       <DependentUpon>SpareParts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Technicians.resx">
       <DependentUpon>Technicians.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TechnicianVehicle.resx">
+      <DependentUpon>TechnicianVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicles.resx">
       <DependentUpon>Vehicles.cs</DependentUpon>

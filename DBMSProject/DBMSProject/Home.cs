@@ -105,6 +105,14 @@ namespace DBMSProject
             OpenChildForm( employee, sender);
         }
 
+        private void techVehicleBtn_Click(object sender, EventArgs e)
+        {
+            hidepanels();
+            PaneltechVehicle.Show();
+            techVehicleBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
+            TechnicianVehicle techVehicle = new TechnicianVehicle();
+            OpenChildForm(techVehicle, sender);
+        }
         private void panelLeft_Paint(object sender, PaintEventArgs e)
         {
 
@@ -170,5 +178,7 @@ namespace DBMSProject
             childForm.Show();
             lblTitle.Text = childForm.Text;
         }
+
+        
     }
 }

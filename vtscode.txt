@@ -146,6 +146,25 @@ Address nvarchar(50),
 Phone nvarchar(15)
 
 
---6/9/23
+--9/6/23
 alter table Employee alter column Name nvarchar(30)
 
+--11/6/23
+--Added Quantity to RepairDetails
+alter table RepairDetails add Quantity int
+
+
+--Status constraint changed in Vehicles
+--First manually delete the constraint from vehicles and then remove Status column then run this query
+alter table Vehicles add
+Status varchar(10) check (Status IN ('NOT REPAIR','REPAIRING','REPAIRED','SOLD'))
+
+
+--RepairStatus removed from Repairs
+--Note: Manully Remove all constraints from Repairs before this query
+
+alter table Repairs drop column RepairStatus
+
+
+--Repair table allowing null value in RepairCost
+alter table Repairs alter column RepairCost int

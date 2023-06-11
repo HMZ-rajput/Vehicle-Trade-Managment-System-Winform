@@ -37,7 +37,7 @@ namespace DBMSProject
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Name", nameTB.Text);
                     cmd.Parameters.AddWithValue("@Phone", phoneTB.Text);
-                    cmd.Parameters.AddWithValue("Address", addressTB.Text);
+                    cmd.Parameters.AddWithValue("@Address", addressTB.Text);
                     cmd.ExecuteNonQuery();
                     conn.Close();
 
@@ -135,6 +135,7 @@ namespace DBMSProject
                 conn.Open();
                 cmd = new SqlCommand("getTechnician", conn);
                 cmd.CommandType = CommandType.StoredProcedure; //added
+                cmd.ExecuteNonQuery();
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {

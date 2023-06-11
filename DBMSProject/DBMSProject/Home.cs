@@ -128,23 +128,23 @@ namespace DBMSProject
         {
             
             panelCustomer.Hide();
-           customerBtn.BackColor = Color.FromArgb(64, 64, 64);
+           customerBtn.BackColor = Color.FromArgb(32, 33, 37);
             panelEmployee.Hide();
-            employeeBtn.BackColor = Color.FromArgb(64, 64, 64);
+            employeeBtn.BackColor = Color.FromArgb(32, 33, 37);
             panelRepair.Hide();
-            repairBtn.BackColor = Color.FromArgb(64, 64, 64);
+            repairBtn.BackColor = Color.FromArgb(32, 33, 37);
             panelReport.Hide();
-            reportBtn.BackColor = Color.FromArgb(64, 64, 64);
+            reportBtn.BackColor = Color.FromArgb(32, 33, 37);
             panelSell.Hide();
-            sellBtn.BackColor = Color.FromArgb(64,64,64);
+            sellBtn.BackColor = Color.FromArgb(32, 33, 37);
             panelSpareparts.Hide();
-            sparepartBtn.BackColor = Color.FromArgb(64, 64, 64);
+            sparepartBtn.BackColor = Color.FromArgb(32, 33, 37);
             panelTechnician.Hide();
-            technicianBtn.BackColor = Color.FromArgb(64, 64, 64);
+            technicianBtn.BackColor = Color.FromArgb(32, 33, 37);
             panelVehicle.Hide();
-            vehicleBtn.BackColor = Color.FromArgb(64, 64, 64);
+            vehicleBtn.BackColor = Color.FromArgb(32, 33, 37);
             panelVendor.Hide();
-            vendorBtn.BackColor = Color.FromArgb(64, 64, 64);
+            vendorBtn.BackColor = Color.FromArgb(32, 33, 37);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

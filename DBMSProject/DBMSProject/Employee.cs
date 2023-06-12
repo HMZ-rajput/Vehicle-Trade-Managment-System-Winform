@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace DBMSProject
 {
@@ -19,6 +20,14 @@ namespace DBMSProject
         SqlDataReader dr;
         DataTable dt;
         int n;  //random variable used int int.TryParse
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+           int nLeft,
+           int nTop,
+           int nRight,
+           int nBottom,
+           int nWidthEllipse,
+           int nHeightEllipse);
         public Employee()
         {
             InitializeComponent();
@@ -180,6 +189,13 @@ namespace DBMSProject
                 MessageBox.Show("Unable to load Employees\n" + ex.Message);
                 conn.Close();
             }
+        }
+
+        private void Employee_Load(object sender, EventArgs e)
+        {
+            addBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 5, 5));
+            deleteBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, deleteBtn.Width, deleteBtn.Height, 5, 5));
+            updateBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, updateBtn.Width, updateBtn.Height, 5, 5));
         }
     }
 }

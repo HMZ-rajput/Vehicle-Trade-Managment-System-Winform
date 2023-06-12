@@ -248,5 +248,11 @@ namespace DBMSProject
             deleteBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, deleteBtn.Width, deleteBtn.Height, 5,5));
             updateBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, updateBtn.Width, updateBtn.Height, 5,5));
         }
+
+        private void vehicleDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        
     }
 }

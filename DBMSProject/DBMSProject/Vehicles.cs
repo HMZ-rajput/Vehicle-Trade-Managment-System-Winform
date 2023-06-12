@@ -25,6 +25,7 @@ namespace DBMSProject
 
             loadTable();
             loadComboBox();
+            
         }
 
         //Add Button Click
@@ -226,6 +227,11 @@ namespace DBMSProject
                 MessageBox.Show("Unable to load Vendors\n" + ex.Message);
                 conn.Close();
             }
+        }
+
+        private void vehicleDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

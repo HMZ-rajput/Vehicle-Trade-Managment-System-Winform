@@ -113,6 +113,7 @@ namespace DBMSProject
             TechnicianVehicle techVehicle = new TechnicianVehicle();
             OpenChildForm(techVehicle, sender);
         }
+        
         private void panelLeft_Paint(object sender, PaintEventArgs e)
         {
 
@@ -179,6 +180,24 @@ namespace DBMSProject
             lblTitle.Text = childForm.Text;
         }
 
-        
+        private void Home_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Do you really want to exit?", "Dialog Title", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

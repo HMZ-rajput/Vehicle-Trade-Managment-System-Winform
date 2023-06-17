@@ -16,7 +16,8 @@ namespace DBMSProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            new Login().Show();
+            Application.Run();
         }
     }
 }

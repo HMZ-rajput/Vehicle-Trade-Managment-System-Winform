@@ -168,3 +168,18 @@ alter table Repairs drop column RepairStatus
 
 --Repair table allowing null value in RepairCost
 alter table Repairs alter column RepairCost int
+
+--- by zain 17/6/2023
+alter table Customers 
+add SessionStatus varchar(10) check (SessionStatus IN ('ACTIVE','INACTIVE')), Password varchar(100)
+
+alter table Employee
+add SessionStatus varchar(10) check (SessionStatus IN ('ACTIVE','INACTIVE')), Password varchar(100)
+
+
+create table Admin(
+Name varchar(30),
+Password varchar(100),
+SessionStatus varchar(10) check (SessionStatus IN ('ACTIVE','INACTIVE')),
+)
+

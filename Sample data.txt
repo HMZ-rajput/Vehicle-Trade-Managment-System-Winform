@@ -14,3 +14,7 @@ insert into SpareParts values ('Windsheild', 'Front glass for visibility', 18000
 insert into SpareParts values ('Side Mirrors', 'Reflective surface for visibility', 13000);
 insert into SpareParts values ('Timing Belt', 'Synchronizes engine components', 16500);
 insert into SpareParts values ('Battery', 'Provides electrical energy', 11000);
+
+
+-- for Admin table
+insert into Admin values('admin','jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=','INACTIVE')

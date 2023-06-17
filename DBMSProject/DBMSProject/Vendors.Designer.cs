@@ -52,10 +52,9 @@
             this.nameLB.AutoSize = true;
             this.nameLB.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.nameLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.nameLB.Location = new System.Drawing.Point(509, 62);
-            this.nameLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameLB.Location = new System.Drawing.Point(382, 50);
             this.nameLB.Name = "nameLB";
-            this.nameLB.Size = new System.Drawing.Size(59, 25);
+            this.nameLB.Size = new System.Drawing.Size(49, 20);
             this.nameLB.TabIndex = 1;
             this.nameLB.Text = "Name";
             // 
@@ -64,10 +63,9 @@
             this.phoneLB.AutoSize = true;
             this.phoneLB.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.phoneLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.phoneLB.Location = new System.Drawing.Point(508, 126);
-            this.phoneLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.phoneLB.Location = new System.Drawing.Point(381, 102);
             this.phoneLB.Name = "phoneLB";
-            this.phoneLB.Size = new System.Drawing.Size(62, 25);
+            this.phoneLB.Size = new System.Drawing.Size(50, 20);
             this.phoneLB.TabIndex = 2;
             this.phoneLB.Text = "Phone";
             // 
@@ -76,49 +74,45 @@
             this.addressLB.AutoSize = true;
             this.addressLB.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.addressLB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.addressLB.Location = new System.Drawing.Point(32, 126);
-            this.addressLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.addressLB.Location = new System.Drawing.Point(24, 102);
             this.addressLB.Name = "addressLB";
-            this.addressLB.Size = new System.Drawing.Size(77, 25);
+            this.addressLB.Size = new System.Drawing.Size(62, 20);
             this.addressLB.TabIndex = 13;
             this.addressLB.Text = "Address";
             // 
             // nameTB
             // 
-            this.nameTB.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.nameTB.BackColor = System.Drawing.Color.Black;
             this.nameTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameTB.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.nameTB.ForeColor = System.Drawing.Color.White;
-            this.nameTB.Location = new System.Drawing.Point(637, 66);
-            this.nameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameTB.ForeColor = System.Drawing.Color.Yellow;
+            this.nameTB.Location = new System.Drawing.Point(478, 54);
             this.nameTB.Name = "nameTB";
-            this.nameTB.Size = new System.Drawing.Size(205, 24);
+            this.nameTB.Size = new System.Drawing.Size(154, 20);
             this.nameTB.TabIndex = 4;
             this.nameTB.Text = "Enter Name";
             // 
             // phoneTB
             // 
-            this.phoneTB.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.phoneTB.BackColor = System.Drawing.Color.Black;
             this.phoneTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.phoneTB.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.phoneTB.ForeColor = System.Drawing.Color.White;
-            this.phoneTB.Location = new System.Drawing.Point(637, 126);
-            this.phoneTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.phoneTB.ForeColor = System.Drawing.Color.Yellow;
+            this.phoneTB.Location = new System.Drawing.Point(478, 102);
             this.phoneTB.Name = "phoneTB";
-            this.phoneTB.Size = new System.Drawing.Size(205, 24);
+            this.phoneTB.Size = new System.Drawing.Size(154, 20);
             this.phoneTB.TabIndex = 5;
             this.phoneTB.Text = "Enter Phone";
             // 
             // addressTB
             // 
-            this.addressTB.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.addressTB.BackColor = System.Drawing.Color.Black;
             this.addressTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.addressTB.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.addressTB.ForeColor = System.Drawing.Color.White;
-            this.addressTB.Location = new System.Drawing.Point(156, 128);
-            this.addressTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addressTB.ForeColor = System.Drawing.Color.Yellow;
+            this.addressTB.Location = new System.Drawing.Point(117, 104);
             this.addressTB.Name = "addressTB";
-            this.addressTB.Size = new System.Drawing.Size(205, 24);
+            this.addressTB.Size = new System.Drawing.Size(154, 20);
             this.addressTB.TabIndex = 6;
             this.addressTB.Text = "Enter Address";
             // 
@@ -130,10 +124,9 @@
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.addBtn.ForeColor = System.Drawing.Color.Black;
-            this.addBtn.Location = new System.Drawing.Point(651, 191);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addBtn.Location = new System.Drawing.Point(488, 155);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(128, 34);
+            this.addBtn.Size = new System.Drawing.Size(96, 28);
             this.addBtn.TabIndex = 7;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = false;
@@ -148,10 +141,9 @@
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.updateBtn.ForeColor = System.Drawing.Color.Black;
-            this.updateBtn.Location = new System.Drawing.Point(787, 191);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.updateBtn.Location = new System.Drawing.Point(590, 155);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(128, 34);
+            this.updateBtn.Size = new System.Drawing.Size(96, 28);
             this.updateBtn.TabIndex = 8;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
@@ -166,10 +158,9 @@
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.deleteBtn.ForeColor = System.Drawing.Color.Black;
-            this.deleteBtn.Location = new System.Drawing.Point(923, 191);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteBtn.Location = new System.Drawing.Point(692, 155);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(128, 34);
+            this.deleteBtn.Size = new System.Drawing.Size(96, 28);
             this.deleteBtn.TabIndex = 9;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = false;
@@ -199,8 +190,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.vendorDGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.vendorDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(98)))), ((int)(((byte)(96)))));
-            this.vendorDGV.Location = new System.Drawing.Point(37, 262);
-            this.vendorDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vendorDGV.Location = new System.Drawing.Point(28, 213);
             this.vendorDGV.Name = "vendorDGV";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(98)))), ((int)(((byte)(96)))));
@@ -220,19 +210,18 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.vendorDGV.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.vendorDGV.Size = new System.Drawing.Size(1013, 277);
+            this.vendorDGV.Size = new System.Drawing.Size(760, 225);
             this.vendorDGV.TabIndex = 10;
             // 
             // idTB
             // 
-            this.idTB.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.idTB.BackColor = System.Drawing.Color.Black;
             this.idTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.idTB.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.idTB.ForeColor = System.Drawing.Color.White;
-            this.idTB.Location = new System.Drawing.Point(156, 65);
-            this.idTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.idTB.ForeColor = System.Drawing.Color.Yellow;
+            this.idTB.Location = new System.Drawing.Point(117, 53);
             this.idTB.Name = "idTB";
-            this.idTB.Size = new System.Drawing.Size(205, 24);
+            this.idTB.Size = new System.Drawing.Size(154, 20);
             this.idTB.TabIndex = 4;
             this.idTB.Text = "Enter Vendor ID";
             // 
@@ -241,19 +230,18 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label2.Location = new System.Drawing.Point(65, 62);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(49, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 25);
+            this.label2.Size = new System.Drawing.Size(24, 20);
             this.label2.TabIndex = 13;
             this.label2.Text = "ID";
             // 
             // Vendors
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.ClientSize = new System.Drawing.Size(1083, 576);
+            this.ClientSize = new System.Drawing.Size(812, 468);
             this.Controls.Add(this.idTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.vendorDGV);
@@ -266,7 +254,6 @@
             this.Controls.Add(this.addressLB);
             this.Controls.Add(this.phoneLB);
             this.Controls.Add(this.nameLB);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Vendors";
             this.Text = "Vendors";
             this.Load += new System.EventHandler(this.Vendors_Load);

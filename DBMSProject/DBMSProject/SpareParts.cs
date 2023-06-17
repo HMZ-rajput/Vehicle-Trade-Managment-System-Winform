@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,11 +23,25 @@ namespace DBMSProject
         SqlDataAdapter da;
         SqlDataReader dr;
         int n;
-
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+           int nLeft,
+           int nTop,
+           int nRight,
+           int nBottom,
+           int nWidthEllipse,
+           int nHeightEllipse);
         private void SpareParts_Load(object sender, EventArgs e)
         {
             con = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
             getSparePartsRecord();
+            addBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 5, 5));
+            deleteBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, deleteBtn.Width, deleteBtn.Height, 5, 5));
+            updateBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, updateBtn.Width, updateBtn.Height, 5, 5));
+            idtxt.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, idtxt.Width, idtxt.Height, 5, 5));
+            desctxt.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, desctxt.Width, desctxt.Height, 5, 5));
+            nametxt.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, nametxt.Width, nametxt.Height, 5, 5));
+            costtxt.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, costtxt.Width, costtxt.Height, 5, 5));
         }
         private void getSparePartsRecord()
         {

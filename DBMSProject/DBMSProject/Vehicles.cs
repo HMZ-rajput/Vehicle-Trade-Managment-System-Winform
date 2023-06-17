@@ -247,6 +247,12 @@ namespace DBMSProject
             addBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 5,5));
             deleteBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, deleteBtn.Width, deleteBtn.Height, 5,5));
             updateBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, updateBtn.Width, updateBtn.Height, 5,5));
+            idTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, idTB.Width, idTB.Height, 5, 5));
+            makeTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, makeTB.Width, makeTB.Height, 5, 5));
+            modelTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, modelTB.Width, modelTB.Height, 5, 5));
+            mileageTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, mileageTB.Width, mileageTB.Height, 5, 5));
+            yearTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, yearTB.Width, yearTB.Height, 5, 5));
+            priceTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, priceTB.Width, priceTB.Height, 5, 5));
         }
 
         private void vehicleDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)

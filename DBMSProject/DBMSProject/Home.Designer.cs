@@ -33,7 +33,8 @@
             this.reportBtn = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.PaneltechVehicle = new System.Windows.Forms.Panel();
+            this.techVehicleBtn = new System.Windows.Forms.Button();
             this.panelSell = new System.Windows.Forms.Panel();
             this.panelReport = new System.Windows.Forms.Panel();
             this.panelSpareparts = new System.Windows.Forms.Panel();
@@ -45,6 +46,7 @@
             this.Signoutbtn = new System.Windows.Forms.Button();
             this.panelVehicle = new System.Windows.Forms.Panel();
             this.vehicleBtn = new System.Windows.Forms.Button();
+            this.sellBtn = new System.Windows.Forms.Button();
             this.employeeBtn = new System.Windows.Forms.Button();
             this.vendorBtn = new System.Windows.Forms.Button();
             this.technicianBtn = new System.Windows.Forms.Button();
@@ -54,9 +56,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.sellBtn = new System.Windows.Forms.Button();
-            this.PaneltechVehicle = new System.Windows.Forms.Panel();
-            this.techVehicleBtn = new System.Windows.Forms.Button();
+            this.Logobtn = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -117,9 +117,9 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.panelLeft.Controls.Add(this.Logobtn);
             this.panelLeft.Controls.Add(this.PaneltechVehicle);
             this.panelLeft.Controls.Add(this.techVehicleBtn);
-            this.panelLeft.Controls.Add(this.panel5);
             this.panelLeft.Controls.Add(this.panelSell);
             this.panelLeft.Controls.Add(this.panelReport);
             this.panelLeft.Controls.Add(this.panelSpareparts);
@@ -142,18 +142,37 @@
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(167, 703);
+            this.panelLeft.Size = new System.Drawing.Size(167, 618);
             this.panelLeft.TabIndex = 11;
             // 
-            // panel5
+            // PaneltechVehicle
             // 
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(167, 105);
-            this.panel5.TabIndex = 13;
+            this.PaneltechVehicle.BackColor = System.Drawing.Color.Yellow;
+            this.PaneltechVehicle.Location = new System.Drawing.Point(1, 510);
+            this.PaneltechVehicle.Name = "PaneltechVehicle";
+            this.PaneltechVehicle.Size = new System.Drawing.Size(5, 45);
+            this.PaneltechVehicle.TabIndex = 15;
+            this.PaneltechVehicle.Visible = false;
+            // 
+            // techVehicleBtn
+            // 
+            this.techVehicleBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.techVehicleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.techVehicleBtn.FlatAppearance.BorderSize = 0;
+            this.techVehicleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.techVehicleBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.techVehicleBtn.ForeColor = System.Drawing.Color.White;
+            this.techVehicleBtn.Image = ((System.Drawing.Image)(resources.GetObject("techVehicleBtn.Image")));
+            this.techVehicleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.techVehicleBtn.Location = new System.Drawing.Point(0, 510);
+            this.techVehicleBtn.Name = "techVehicleBtn";
+            this.techVehicleBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.techVehicleBtn.Size = new System.Drawing.Size(167, 45);
+            this.techVehicleBtn.TabIndex = 14;
+            this.techVehicleBtn.Text = "Tech Vehicle";
+            this.techVehicleBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.techVehicleBtn.UseVisualStyleBackColor = false;
+            this.techVehicleBtn.Click += new System.EventHandler(this.techVehicleBtn_Click);
             // 
             // panelSell
             // 
@@ -236,7 +255,7 @@
             this.Signoutbtn.ForeColor = System.Drawing.Color.White;
             this.Signoutbtn.Image = ((System.Drawing.Image)(resources.GetObject("Signoutbtn.Image")));
             this.Signoutbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Signoutbtn.Location = new System.Drawing.Point(-1, 594);
+            this.Signoutbtn.Location = new System.Drawing.Point(0, 579);
             this.Signoutbtn.Name = "Signoutbtn";
             this.Signoutbtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.Signoutbtn.Size = new System.Drawing.Size(168, 37);
@@ -274,6 +293,26 @@
             this.vehicleBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.vehicleBtn.UseVisualStyleBackColor = false;
             this.vehicleBtn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // sellBtn
+            // 
+            this.sellBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.sellBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sellBtn.FlatAppearance.BorderSize = 0;
+            this.sellBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sellBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sellBtn.ForeColor = System.Drawing.Color.White;
+            this.sellBtn.Image = ((System.Drawing.Image)(resources.GetObject("sellBtn.Image")));
+            this.sellBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sellBtn.Location = new System.Drawing.Point(-1, 462);
+            this.sellBtn.Name = "sellBtn";
+            this.sellBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.sellBtn.Size = new System.Drawing.Size(167, 45);
+            this.sellBtn.TabIndex = 9;
+            this.sellBtn.Text = "    Sales";
+            this.sellBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.sellBtn.UseVisualStyleBackColor = false;
+            this.sellBtn.Click += new System.EventHandler(this.sellBtn_Click);
             // 
             // employeeBtn
             // 
@@ -380,10 +419,9 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelMain.Location = new System.Drawing.Point(167, 86);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(858, 617);
+            this.panelMain.Size = new System.Drawing.Size(828, 617);
             this.panelMain.TabIndex = 12;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -404,7 +442,7 @@
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
             this.panel4.Location = new System.Drawing.Point(167, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(858, 97);
+            this.panel4.Size = new System.Drawing.Size(812, 97);
             this.panel4.TabIndex = 14;
             // 
             // panel1
@@ -416,61 +454,25 @@
             this.panel1.Size = new System.Drawing.Size(830, 1);
             this.panel1.TabIndex = 2;
             // 
-            // sellBtn
+            // Logobtn
             // 
-            this.sellBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
-            this.sellBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sellBtn.FlatAppearance.BorderSize = 0;
-            this.sellBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sellBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sellBtn.ForeColor = System.Drawing.Color.White;
-            this.sellBtn.Image = ((System.Drawing.Image)(resources.GetObject("sellBtn.Image")));
-            this.sellBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sellBtn.Location = new System.Drawing.Point(-1, 462);
-            this.sellBtn.Name = "sellBtn";
-            this.sellBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
-            this.sellBtn.Size = new System.Drawing.Size(167, 45);
-            this.sellBtn.TabIndex = 9;
-            this.sellBtn.Text = "    Sales";
-            this.sellBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.sellBtn.UseVisualStyleBackColor = false;
-            this.sellBtn.Click += new System.EventHandler(this.sellBtn_Click);
-            // 
-            // PaneltechVehicle
-            // 
-            this.PaneltechVehicle.BackColor = System.Drawing.Color.Yellow;
-            this.PaneltechVehicle.Location = new System.Drawing.Point(1, 510);
-            this.PaneltechVehicle.Name = "PaneltechVehicle";
-            this.PaneltechVehicle.Size = new System.Drawing.Size(5, 45);
-            this.PaneltechVehicle.TabIndex = 15;
-            this.PaneltechVehicle.Visible = false;
-            // 
-            // techVehicleBtn
-            // 
-            this.techVehicleBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
-            this.techVehicleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.techVehicleBtn.FlatAppearance.BorderSize = 0;
-            this.techVehicleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.techVehicleBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.techVehicleBtn.ForeColor = System.Drawing.Color.White;
-            this.techVehicleBtn.Image = ((System.Drawing.Image)(resources.GetObject("techVehicleBtn.Image")));
-            this.techVehicleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.techVehicleBtn.Location = new System.Drawing.Point(0, 510);
-            this.techVehicleBtn.Name = "techVehicleBtn";
-            this.techVehicleBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
-            this.techVehicleBtn.Size = new System.Drawing.Size(167, 45);
-            this.techVehicleBtn.TabIndex = 14;
-            this.techVehicleBtn.Text = "Tech Vehicle";
-            this.techVehicleBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.techVehicleBtn.UseVisualStyleBackColor = false;
-            this.techVehicleBtn.Click += new System.EventHandler(this.techVehicleBtn_Click);
+            this.Logobtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Logobtn.BackgroundImage")));
+            this.Logobtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Logobtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Logobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logobtn.Location = new System.Drawing.Point(0, 0);
+            this.Logobtn.Name = "Logobtn";
+            this.Logobtn.Size = new System.Drawing.Size(167, 106);
+            this.Logobtn.TabIndex = 16;
+            this.Logobtn.UseVisualStyleBackColor = true;
+            this.Logobtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1025, 703);
+            this.ClientSize = new System.Drawing.Size(979, 618);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelMain);
@@ -511,11 +513,11 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel PaneltechVehicle;
         private System.Windows.Forms.Button techVehicleBtn;
         private System.Windows.Forms.Button sellBtn;
+        private System.Windows.Forms.Button Logobtn;
     }
 }
 

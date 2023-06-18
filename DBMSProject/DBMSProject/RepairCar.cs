@@ -159,7 +159,10 @@ namespace DBMSProject
                         cmd.Parameters.AddWithValue("@Charges", int.Parse(chargesTB.Text));
                         cmd.ExecuteNonQuery();
                         conn.Close();
-                    }catch (Exception ex)
+                        loadTable();
+                        loadVehiclesCB();
+                    }
+                    catch (Exception ex)
                     {
                         conn.Close();
                         MessageBox.Show("Unable to mark vehicle as repaired\n"+ex.Message);
@@ -180,6 +183,7 @@ namespace DBMSProject
         {
             try
             {
+                vehicleCB.DataSource = null;
                 conn.Open();
                 cmd = new SqlCommand("getTechnicianVehicles", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -242,6 +246,7 @@ namespace DBMSProject
 
         public void loadTable()
         {
+            repairDGV.DataSource = null;
             repairDGV.DataSource = null;
             try
             {

@@ -166,21 +166,28 @@ namespace DBMSProject
         {
             if (idTB.Text != "" && idTB.Text != "Enter Car ID" && int.TryParse(idTB.Text, out n))
             {
-                try
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete Vehicle?\nAll the record related to it will also be deleted", "Delete Confirmation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    conn.Open();
-                    cmd = new SqlCommand("delVehicle", conn);
-                    cmd.CommandType = CommandType.StoredProcedure; //added
-                    cmd.Parameters.AddWithValue("@VehicleID", int.Parse(idTB.Text));
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    loadTable();
+                    try
+                    {
+                        conn.Open();
+                        cmd = new SqlCommand("delVehicle", conn);
+                        cmd.CommandType = CommandType.StoredProcedure; //added
+                        cmd.Parameters.AddWithValue("@VehicleID", int.Parse(idTB.Text));
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        loadTable();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to delete Vehicle\n" + ex.Message);
+                        conn.Close();
+                    }
                 }
-                catch (Exception ex)
+                else if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("Unable to delete Vehicle\n" + ex.Message);
-                    conn.Close();
-                }
+                }    
             }
             else
             {

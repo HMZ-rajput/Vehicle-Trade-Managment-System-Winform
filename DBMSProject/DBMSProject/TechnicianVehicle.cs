@@ -65,37 +65,53 @@ namespace DBMSProject
             {
                 MessageBox.Show("No Vehicle Selected");
             }
+            loadTable();
+            loadComboBox();
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            if(idTB.Text!="" && int.TryParse(idTB.Text,out n))
+            
+            if (idTB.Text!="" && int.TryParse(idTB.Text,out n))
             {
-                try
+                DialogResult dialogResult = MessageBox.Show("Warning, If you remove a vehicle then all the repairs done to it will also be removed.\nAre you sure you want to remove vehicle?", "Delete Confirmation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    conn.Open();
-                    cmd = new SqlCommand("VehicleRepairUpdate",conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@TechnicianID",TechID);
-                    cmd.Parameters.AddWithValue("@VehicleID",int.Parse(idTB.Text));
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    loadTable();
-                    loadComboBox();
-                }catch(Exception ex)
-                {
-                    conn.Close();
-                    MessageBox.Show("Unable to remove vehicle");
+                    try
+                    {
+                        conn.Open();
+                        cmd = new SqlCommand("VehicleRepairUpdate", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@TechnicianID", TechID);
+                        cmd.Parameters.AddWithValue("@VehicleID", int.Parse(idTB.Text));
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                        loadTable();
+                        loadComboBox();
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        MessageBox.Show("Unable to remove vehicle");
+                    }
                 }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                } 
             }
             else
             {
                 MessageBox.Show("Enter a valid numeric vehicle id");
             }
+            loadTable();
+            loadComboBox();
         }
 
         public void loadTable()
         {
+            repairdetailDGV.DataSource = null;
+            repairDGV.DataSource=null;
             // Load Repairs
             try
             {
@@ -158,6 +174,7 @@ namespace DBMSProject
 
         public void loadComboBox()
         {
+            vehicleCB.DataSource = null;
             try
             {
                 conn.Open();

@@ -74,8 +74,14 @@ namespace DBMSProject
                 try
                 {
                     conn.Open();
-
+                    cmd = new SqlCommand("VehicleRepairUpdate",conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@TechnicianID",TechID);
+                    cmd.Parameters.AddWithValue("@VehicleID",int.Parse(idTB.Text));
+                    cmd.ExecuteNonQuery();
                     conn.Close();
+                    loadTable();
+                    loadComboBox();
                 }catch(Exception ex)
                 {
                     conn.Close();
@@ -105,7 +111,7 @@ namespace DBMSProject
                     dt = new DataTable();
                     adt.Fill(dt);
                     repairDGV.DataSource = dt;
-                }
+                } 
                 else
                 {
                     MessageBox.Show("No data in Past Repairs\nRepair Some Vehicles for data");

@@ -1,6 +1,6 @@
 ﻿namespace DBMSProject
 {
-    partial class Home
+    partial class IHome
     {
         /// <summary>
         /// Required designer variable.
@@ -26,9 +26,9 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public virtual void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IHome));
             this.sparepartBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -525,34 +525,34 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button customerBtn;
-        private System.Windows.Forms.Button technicianBtn;
-        private System.Windows.Forms.Button repairBtn;
-        private System.Windows.Forms.Button sparepartBtn;
-        private System.Windows.Forms.Button reportBtn;
-        private System.Windows.Forms.Button employeeBtn;
-        private System.Windows.Forms.Button vehicleBtn;
-        private System.Windows.Forms.Button vendorBtn;
-        private System.Windows.Forms.Panel panelLeft;
-        private System.Windows.Forms.Panel panelVehicle;
-        private System.Windows.Forms.Button Signoutbtn;
-        private System.Windows.Forms.Panel panelSell;
-        private System.Windows.Forms.Panel panelReport;
-        private System.Windows.Forms.Panel panelSpareparts;
-        private System.Windows.Forms.Panel panelRepair;
-        private System.Windows.Forms.Panel panelCustomer;
-        private System.Windows.Forms.Panel panelTechnician;
-        private System.Windows.Forms.Panel panelEmployee;
-        private System.Windows.Forms.Panel panelVendor;
-        private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel PaneltechVehicle;
-        private System.Windows.Forms.Button techVehicleBtn;
-        private System.Windows.Forms.Button sellBtn;
-        private System.Windows.Forms.Button Logobtn;
+        protected System.Windows.Forms.Label lblTitle;
+        protected System.Windows.Forms.Button customerBtn;
+        protected System.Windows.Forms.Button technicianBtn;
+        protected System.Windows.Forms.Button repairBtn;
+        protected System.Windows.Forms.Button sparepartBtn;
+        protected System.Windows.Forms.Button reportBtn;
+        protected System.Windows.Forms.Button employeeBtn;
+        protected System.Windows.Forms.Button vehicleBtn;
+        protected System.Windows.Forms.Button vendorBtn;
+        protected System.Windows.Forms.Panel panelLeft;
+        protected System.Windows.Forms.Panel panelVehicle;
+        protected System.Windows.Forms.Button Signoutbtn;
+        protected System.Windows.Forms.Panel panelSell;
+        protected System.Windows.Forms.Panel panelReport;
+        protected System.Windows.Forms.Panel panelSpareparts;
+        protected System.Windows.Forms.Panel panelRepair;
+        protected System.Windows.Forms.Panel panelCustomer;
+        protected System.Windows.Forms.Panel panelTechnician;
+        protected System.Windows.Forms.Panel panelEmployee;
+        protected System.Windows.Forms.Panel panelVendor;
+        protected System.Windows.Forms.Panel panelMain;
+        protected System.Windows.Forms.Panel panel3;
+        protected System.Windows.Forms.Panel panel4;
+        protected System.Windows.Forms.Panel panel1;
+        protected System.Windows.Forms.Panel PaneltechVehicle;
+        protected System.Windows.Forms.Button techVehicleBtn;
+        protected System.Windows.Forms.Button sellBtn;
+        protected System.Windows.Forms.Button Logobtn;
     }
 }
 

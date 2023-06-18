@@ -91,11 +91,20 @@
     <Compile Include="EmployeeHome.Designer.cs">
       <DependentUpon>EmployeeHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="Home Decorator\AHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="Home Decorator\EHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home Decorator\IHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home Decorator\IHome.Designer.cs">
+      <DependentUpon>IHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Decorator\THome.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login Singleton\Login.cs">
       <SubType>Form</SubType>
@@ -169,8 +178,8 @@
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="Home Decorator\IHome.resx">
+      <DependentUpon>IHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login Singleton\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -274,5 +283,6 @@
   <ItemGroup>
     <Content Include="Resources\garagebg.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

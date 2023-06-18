@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace DBMSProject
 {
-    public partial class Home : Form
+    public partial class IHome : Form
     {
         private Form activeForm;
         int usertype;
         string name;
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
-        public Home(int usertype, string name)
+        public IHome(int usertype, string name)
         {
             this.usertype = usertype;
             this.name = name;
@@ -152,7 +152,7 @@ namespace DBMSProject
                 OpenChildForm(dashboard, sender);
             }
         }
-        private void hidepanels()
+        protected void hidepanels()
         {
             
             panelCustomer.Hide();

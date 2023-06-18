@@ -87,7 +87,7 @@ namespace DBMSProject
                         form1.Username = IdTB.Text;
                         form1.Category = optionCB.Text;
                         conn.Close();
-                        new Home(1, name).Show();
+                        new IHome(1, name).Show();
                         this.Hide();
                     }
                     else
@@ -112,7 +112,7 @@ namespace DBMSProject
                         // Note!
                         //Also send Id to next form to get correct records
                         conn.Close();
-                        new Home(2, name).Show();
+                        new IHome(2, name).Show();
                         this.Hide();
                     }
                     else
@@ -137,7 +137,7 @@ namespace DBMSProject
                         form1.Username = IdTB.Text;
                         form1.Category = optionCB.Text;
                         conn.Close();
-                        new Home(3, name).Show();
+                        new IHome(3, name).Show();
                         this.Hide();
                     }
                     else

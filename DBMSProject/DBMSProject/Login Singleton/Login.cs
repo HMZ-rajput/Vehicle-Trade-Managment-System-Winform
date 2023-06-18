@@ -93,8 +93,8 @@ namespace DBMSProject
                         cmd1.Parameters.AddWithValue("@Name", IdTB.Text);
                         cmd1.ExecuteNonQuery();
                         conn.Close();
-                        new IHome(1, name).Show();
                         this.Hide();
+                        new AHome(1, name).Show();
                     }
                     else
                     {
@@ -121,8 +121,9 @@ namespace DBMSProject
                         // Note!
                         //Also send Id to next form to get correct records
                         conn.Close();
-                        new IHome(2, name).Show();
                         this.Hide();
+                        new EHome(2, name).Show();
+                        
                     }
                     else
                     {
@@ -149,8 +150,9 @@ namespace DBMSProject
                         cmd1.Parameters.AddWithValue("@Name", IdTB.Text);
                         cmd1.ExecuteNonQuery();
                         conn.Close();
-                        new IHome(3, name).Show();
                         this.Hide();
+                        new THome(3, name).Show();
+                        
                     }
                     else
                     {

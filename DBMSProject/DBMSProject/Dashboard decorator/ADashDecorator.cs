@@ -37,8 +37,19 @@ namespace DBMSProject
         public override void InitializeComponent() 
         {
             base.InitializeComponent();
-            usertypelbl.Text = "Administrator";
             setGreetinglbl();
+            conn.Open();
+            SqlCommand soldcmd = new SqlCommand("select count(Status) from Vehicles where Status = 'SOLD'", conn);
+            soldcountlbl.Text = Convert.ToString(soldcmd.ExecuteScalar());
+            SqlCommand vencmd = new SqlCommand("select count(*) from Vendors", conn);
+            SqlCommand custcmd = new SqlCommand("select count(*) from Customers", conn);
+            SqlCommand empcmd = new SqlCommand("select count(*) from Employee", conn);
+            SqlCommand techcmd = new SqlCommand("select count(*) from Technicians", conn);
+            vendorcountlbl.Text = Convert.ToString(vencmd.ExecuteScalar());
+            custcountlbl.Text = Convert.ToString(custcmd.ExecuteScalar());
+            empcountlbl.Text = Convert.ToString(empcmd.ExecuteScalar());
+            techcountlbl.Text = Convert.ToString(techcmd.ExecuteScalar());
+            conn.Close();
         }
        
     }

@@ -45,7 +45,7 @@ namespace DBMSProject
             conn.Open();
             SqlCommand veh = new SqlCommand("select count(*) from Vehicles",conn);
             boughtlbl.Text = Convert.ToString(veh.ExecuteScalar());
-            SqlCommand ven = new SqlCommand("select count(Status) from Vehicles where Status = 'REPAIR'", conn);
+            SqlCommand ven = new SqlCommand("select count(Status) from Vehicles where Status = 'REPAIRED'", conn);
             repaircountlbl.Text = Convert.ToString(ven.ExecuteScalar());
             conn.Close();
         }

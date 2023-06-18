@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DBMSProject.Home_Decorator
+namespace DBMSProject
 {
-    internal class EHome : IHome
+    public class EHome : IHome
     {
         public EHome(int usertype, string name) : base(usertype, name)
         {
@@ -31,8 +31,8 @@ namespace DBMSProject.Home_Decorator
             panelSpareparts.Hide();
             techVehicleBtn.Hide();
             PaneltechVehicle.Hide();
-            
-            
+
+            userlbl.Text = "Employee";
             customerBtn.Location = new Point(0, 103);
             panelCustomer.Location = new Point(0, 103);
             sellBtn.Location = new Point(0, 148);

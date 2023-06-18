@@ -40,7 +40,6 @@ namespace DBMSProject
             base.InitializeComponent();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IDashboard));
             setgreetinglbl();
-            usertypelbl.Text = "Technician";
             vendorlbl.Text = "Unrepaired";
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             Losslbl.Text = "Your Profit Today";
@@ -60,13 +59,13 @@ namespace DBMSProject
             custpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             techpanel.BackColor = System.Drawing.Color.Black;
             techlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
+            techcountlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             emplbl.ForeColor = System.Drawing.Color.Black;
             emplbl.Text = "Spare Parts";
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             emppanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             emplbl.ForeColor = System.Drawing.Color.Black;
-            label15.ForeColor = System.Drawing.Color.Black;
+            empcountlbl.ForeColor = System.Drawing.Color.Black;
             topselllbl.Text = "Most Repaired Vehicle";
         }
     }

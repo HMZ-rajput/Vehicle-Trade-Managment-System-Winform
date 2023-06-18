@@ -17,13 +17,14 @@ namespace DBMSProject
 {
     public partial class TechnicianVehicle : Form
     {
-        int TechID = 1002;    //Temprary Technician id, it will be replaced by id of technician that login
+            //Temprary Technician id, it will be replaced by id of technician that login
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
         SqlCommand cmd;
         SqlDataAdapter adt;
         SqlDataReader dr;
         DataTable dt;
         int n;
+        int TechID;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
             int nLeft,
@@ -38,6 +39,8 @@ namespace DBMSProject
 
             loadTable();
             loadComboBox();
+            SqlCommand techcmd = new SqlCommand("Select Name from Technicians where SessionStatus = 'ACTIVE'");
+            TechID = (int)techcmd.ExecuteScalar();
         }
 
         private void addBtn_Click(object sender, EventArgs e)

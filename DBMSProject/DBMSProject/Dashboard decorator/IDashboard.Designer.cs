@@ -59,11 +59,11 @@
             this.emppanel = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.emplbl = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.empcountlbl = new System.Windows.Forms.Label();
             this.techpanel = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.techlbl = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.techcountlbl = new System.Windows.Forms.Label();
             this.losspanel = new System.Windows.Forms.Panel();
             this.Losslbl = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@
             this.profitlbl = new System.Windows.Forms.Label();
             this.profitamt = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.usertypelbl = new System.Windows.Forms.Label();
+            this.citylbl = new System.Windows.Forms.Label();
             this.timelbl = new System.Windows.Forms.Label();
             this.BuyPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -249,7 +249,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(812, 51);
+            this.label7.Location = new System.Drawing.Point(71, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(186, 31);
             this.label7.TabIndex = 6;
@@ -400,7 +400,7 @@
             this.emppanel.BackColor = System.Drawing.Color.Black;
             this.emppanel.Controls.Add(this.pictureBox7);
             this.emppanel.Controls.Add(this.emplbl);
-            this.emppanel.Controls.Add(this.label15);
+            this.emppanel.Controls.Add(this.empcountlbl);
             this.emppanel.Location = new System.Drawing.Point(394, 266);
             this.emppanel.Name = "emppanel";
             this.emppanel.Size = new System.Drawing.Size(136, 126);
@@ -429,25 +429,25 @@
             this.emplbl.TabIndex = 1;
             this.emplbl.Text = "Employees";
             // 
-            // label15
+            // empcountlbl
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label15.Location = new System.Drawing.Point(3, 37);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 62);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "28";
+            this.empcountlbl.AutoSize = true;
+            this.empcountlbl.BackColor = System.Drawing.Color.Transparent;
+            this.empcountlbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.empcountlbl.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empcountlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
+            this.empcountlbl.Location = new System.Drawing.Point(3, 37);
+            this.empcountlbl.Name = "empcountlbl";
+            this.empcountlbl.Size = new System.Drawing.Size(81, 62);
+            this.empcountlbl.TabIndex = 1;
+            this.empcountlbl.Text = "28";
             // 
             // techpanel
             // 
             this.techpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             this.techpanel.Controls.Add(this.pictureBox8);
             this.techpanel.Controls.Add(this.techlbl);
-            this.techpanel.Controls.Add(this.label17);
+            this.techpanel.Controls.Add(this.techcountlbl);
             this.techpanel.Location = new System.Drawing.Point(551, 266);
             this.techpanel.Name = "techpanel";
             this.techpanel.Size = new System.Drawing.Size(136, 126);
@@ -475,17 +475,17 @@
             this.techlbl.TabIndex = 1;
             this.techlbl.Text = "Technicians";
             // 
-            // label17
+            // techcountlbl
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(-1, 37);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(81, 62);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "10";
+            this.techcountlbl.AutoSize = true;
+            this.techcountlbl.BackColor = System.Drawing.Color.Transparent;
+            this.techcountlbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.techcountlbl.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.techcountlbl.Location = new System.Drawing.Point(-1, 37);
+            this.techcountlbl.Name = "techcountlbl";
+            this.techcountlbl.Size = new System.Drawing.Size(81, 62);
+            this.techcountlbl.TabIndex = 1;
+            this.techcountlbl.Text = "10";
             // 
             // losspanel
             // 
@@ -594,25 +594,26 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // usertypelbl
+            // citylbl
             // 
-            this.usertypelbl.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usertypelbl.ForeColor = System.Drawing.Color.White;
-            this.usertypelbl.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.usertypelbl.Location = new System.Drawing.Point(72, 20);
-            this.usertypelbl.Name = "usertypelbl";
-            this.usertypelbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.usertypelbl.Size = new System.Drawing.Size(214, 31);
-            this.usertypelbl.TabIndex = 10;
-            this.usertypelbl.Text = "Usertype";
-            this.usertypelbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.citylbl.AutoSize = true;
+            this.citylbl.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.citylbl.ForeColor = System.Drawing.Color.White;
+            this.citylbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.citylbl.Location = new System.Drawing.Point(911, 54);
+            this.citylbl.Name = "citylbl";
+            this.citylbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.citylbl.Size = new System.Drawing.Size(89, 31);
+            this.citylbl.TabIndex = 10;
+            this.citylbl.Text = "Karachi";
+            this.citylbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // timelbl
             // 
             this.timelbl.AutoSize = true;
             this.timelbl.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timelbl.ForeColor = System.Drawing.Color.White;
-            this.timelbl.Location = new System.Drawing.Point(889, 20);
+            this.timelbl.Location = new System.Drawing.Point(891, 25);
             this.timelbl.Name = "timelbl";
             this.timelbl.Size = new System.Drawing.Size(109, 31);
             this.timelbl.TabIndex = 11;
@@ -625,7 +626,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1083, 576);
             this.Controls.Add(this.timelbl);
-            this.Controls.Add(this.usertypelbl);
+            this.Controls.Add(this.citylbl);
             this.Controls.Add(this.profitpanel);
             this.Controls.Add(this.topsellpanel);
             this.Controls.Add(this.losspanel);
@@ -706,11 +707,11 @@
         protected System.Windows.Forms.Panel emppanel;
         protected System.Windows.Forms.PictureBox pictureBox7;
         protected System.Windows.Forms.Label emplbl;
-        protected System.Windows.Forms.Label label15;
+        protected System.Windows.Forms.Label empcountlbl;
         protected System.Windows.Forms.Panel techpanel;
         protected System.Windows.Forms.PictureBox pictureBox8;
         protected System.Windows.Forms.Label techlbl;
-        protected System.Windows.Forms.Label label17;
+        protected System.Windows.Forms.Label techcountlbl;
         protected System.Windows.Forms.Label avgpartlbl;
         protected System.Windows.Forms.Panel losspanel;
         protected System.Windows.Forms.Label Losslbl;
@@ -722,7 +723,7 @@
         protected System.Windows.Forms.Label profitlbl;
         protected System.Windows.Forms.Label profitamt;
         protected System.Windows.Forms.Timer timer1;
-        protected System.Windows.Forms.Label usertypelbl;
+        protected System.Windows.Forms.Label citylbl;
         protected System.Windows.Forms.Label timelbl;
     }
 }

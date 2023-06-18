@@ -203,12 +203,28 @@ namespace DBMSProject
 
         private void Home_FormClosing_1(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            if (e.CloseReason == CloseReason.UserClosing || e.CloseReason == CloseReason.WindowsShutDown || e.CloseReason == CloseReason.TaskManagerClosing || e.CloseReason == CloseReason.None)
             {
                 DialogResult result = MessageBox.Show("Are you sure you want to exit?", "BlazeWheel", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    Signoutbtn_Click(sender,e);
+                    conn.Open();
+                    if (usertype == 1)
+                    {
+                        SqlCommand cmd = new SqlCommand("update Admin set SessionStatus = 'INACTIVE' where SessionStatus = 'ACTIVE'", conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                    else if (usertype == 2)
+                    {
+                        SqlCommand cmd = new SqlCommand("update Employee set SessionStatus = 'INACTIVE' where SessionStatus = 'ACTIVE'", conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                    else if (usertype == 3)
+                    {
+                        SqlCommand cmd = new SqlCommand("update Technicians set SessionStatus = 'INACTIVE' where SessionStatus = 'ACTIVE'", conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
                     Environment.Exit(0);
                 }
                 else
@@ -272,6 +288,11 @@ namespace DBMSProject
             conn.Close();
             this.Hide();
             new Login().Show();
+        }
+
+        private void userlbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

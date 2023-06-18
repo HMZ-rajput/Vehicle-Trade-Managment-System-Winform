@@ -249,6 +249,7 @@ namespace DBMSProject
                 cmd = new SqlCommand("getVehicleRepairDetails", conn);
                 cmd.CommandType = CommandType.StoredProcedure; //added
                 cmd.Parameters.AddWithValue("@VehicleID", vehicleCB.SelectedValue);
+                
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {

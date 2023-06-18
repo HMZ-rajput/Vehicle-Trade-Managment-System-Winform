@@ -56,9 +56,12 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.userlbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelLeft.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sparepartBtn
@@ -192,7 +195,7 @@
             this.techVehicleBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.techVehicleBtn.Size = new System.Drawing.Size(223, 55);
             this.techVehicleBtn.TabIndex = 14;
-            this.techVehicleBtn.Text = "Tech Vehicle";
+            this.techVehicleBtn.Text = "    TechVehicle";
             this.techVehicleBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.techVehicleBtn.UseVisualStyleBackColor = false;
             this.techVehicleBtn.Click += new System.EventHandler(this.techVehicleBtn_Click);
@@ -479,6 +482,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
+            this.panel4.Controls.Add(this.userlbl);
+            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Controls.Add(this.lblTitle);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -488,6 +493,29 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1082, 119);
             this.panel4.TabIndex = 14;
+            // 
+            // userlbl
+            // 
+            this.userlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userlbl.ForeColor = System.Drawing.Color.White;
+            this.userlbl.Location = new System.Drawing.Point(831, 27);
+            this.userlbl.Name = "userlbl";
+            this.userlbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.userlbl.Size = new System.Drawing.Size(169, 28);
+            this.userlbl.TabIndex = 4;
+            this.userlbl.Text = "Administrator";
+            this.userlbl.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.userlbl.Click += new System.EventHandler(this.userlbl_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1005, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -499,7 +527,7 @@
             this.panel1.Size = new System.Drawing.Size(1107, 1);
             this.panel1.TabIndex = 2;
             // 
-            // Home
+            // IHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -511,7 +539,7 @@
             this.Controls.Add(this.panelLeft);
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Home";
+            this.Name = "IHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing_1);
@@ -519,6 +547,7 @@
             this.panelLeft.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -553,6 +582,8 @@
         protected System.Windows.Forms.Button techVehicleBtn;
         protected System.Windows.Forms.Button sellBtn;
         protected System.Windows.Forms.Button Logobtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label userlbl;
     }
 }
 

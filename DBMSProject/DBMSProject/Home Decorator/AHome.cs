@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DBMSProject.Home_Decorator
+namespace DBMSProject
 {
-    internal class AHome : IHome
+    public class AHome : IHome
     {
         public AHome(int usertype, string name) : base(usertype, name)
         {

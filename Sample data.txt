@@ -17,4 +17,5 @@ insert into SpareParts values ('Battery', 'Provides electrical energy', 11000);
 
 
 -- for Admin table
+-----------id: admin  pass: admin
 insert into Admin values('admin','jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=','INACTIVE')

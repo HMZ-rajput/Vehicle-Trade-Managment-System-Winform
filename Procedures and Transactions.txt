@@ -595,6 +595,85 @@ update Vehicles set Cost=(select RepairCost+TechnicianCharges from Repairs where
 end
 
 
+--Some fixes by hamza zafar 6/18/23
+alter procedure MarkVehicleRepaired
+@VehicleID int,
+@Description nvarchar(100),
+@Charges int
+as
+begin
+update Repairs set RepairDescription=@Description, 
+RepairCost=(select top 1 sum(sp.PartCost*rd.Quantity) as Total from 
+			SpareParts sp inner join  RepairDetails rd on sp.PartID=rd.PartID 
+			inner join Repairs r on rd.RepairID=r.RepairID 
+			where r.VehicleID=@VehicleID group by rollup(sp.PartCost,rd.Quantity) order by Total desc)+@Charges, 
+CompletionDate=getdate(), 
+TechnicianCharges=@Charges 
+where VehicleID=@VehicleID
+
+update Vehicles set Status='REPAIRED' where VehicleID=@VehicleID
+end
+
+alter procedure MarkVehicleRepaired
+@VehicleID int,
+@Description nvarchar(100),
+@Charges int
+as
+begin
+update Repairs set RepairDescription=@Description, 
+RepairCost=(select top 1 sum(sp.PartCost*rd.Quantity) as Total from 
+			SpareParts sp inner join  RepairDetails rd on sp.PartID=rd.PartID 
+			inner join Repairs r on rd.RepairID=r.RepairID 
+			where r.VehicleID=@VehicleID group by rollup(sp.PartCost,rd.Quantity) order by Total desc)+@Charges, 
+CompletionDate=getdate(), 
+TechnicianCharges=@Charges 
+where VehicleID=@VehicleID
+
+update Vehicles set Status='REPAIRED' where VehicleID=@VehicleID
+end
+
+--Fixing anomsly:
+--Vehicle Delete ultimate
+alter procedure delVehicle
+@VehicleID int
+as begin
+if exists (select * from Vehicles where VehicleID=@VehicleID)
+begin
+	delete from RepairDetails where RepairID=(select RepairID from Repairs where VehicleID=@VehicleID)
+	delete from Repairs where VehicleID=@VehicleID
+	delete from Vehicles where VehicleID=@VehicleID
+end
+end
+
+--Vendor delete ultimate
+alter procedure delVendor
+@VendorID int
+as begin
+if exists (select * from Vendors where VendorID=@VendorID)
+begin
+	delete from RepairDetails where RepairID=(select RepairID from Repairs where VehicleID=(select VehicleID from Vehicles where VendorID=@VendorID))
+	delete from Repairs where VehicleID=(select VehicleID from Vehicles where VendorID=@VendorID)
+	delete from Vehicles where VendorID=@VendorID
+	delete from Vendors where VendorID=@VendorID
+end
+end
+
+--Technician delete ultimate
+alter procedure delTechnician
+@TechnicianID int
+as
+begin
+if exists(select * from Technicians where TechnicianID=@TechnicianID)
+begin
+	update Vehicles set Status='NOT REPAIR' where VehicleID=(select VehicleID from Repairs where TechnicianID=@TechnicianID)
+	delete from RepairDetails where RepairID=(select RepairID from Repairs where TechnicianID=@TechnicianID)
+	delete from Repairs where TechnicianID=@TechnicianID
+	delete from Technicians where TechnicianID=@TechnicianID
+end
+end
+end
+
+
 ------------------------------------------------------ 18/6/2023 by ZAIN
 
 alter procedure addEmployee

@@ -115,22 +115,30 @@ namespace DBMSProject
         {
             if(idTB.Text!="" && int.TryParse(idTB.Text, out n))
             {
-                try
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this vendor?\nAll the record related to it will also be dleted", "Delete Confirmation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    conn.Open();
-                    cmd = new SqlCommand("delVendor", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("VendorID", idTB.Text);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    try
+                    {
+                        conn.Open();
+                        cmd = new SqlCommand("delVendor", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("VendorID", idTB.Text);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
 
-                    loadTable();
+                        loadTable();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to delete Vendor\n" + ex.Message);
+                        conn.Close();
+                    }
                 }
-                catch (Exception ex)
+                else if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("Unable to delete Vendor\n"+ex.Message);
-                    conn.Close();
-                }
+                    //do something else
+                }  
             }
             else
             {

@@ -23,6 +23,7 @@ namespace DBMSProject
             this.name = name;
             InitializeComponent();
             hidepanels();
+            panelLeft.BackColor = Color.Black;
             //Check connection to database
             conn.Open();
             conn.Close();
@@ -32,7 +33,7 @@ namespace DBMSProject
         {
             hidepanels();
             panelVehicle.Show();
-            vehicleBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
+            vehicleBtn.BackColor = Color.FromArgb(44, 44, 37);
             Vehicles vehicles = new Vehicles();
             OpenChildForm(vehicles, sender);
         }
@@ -41,7 +42,7 @@ namespace DBMSProject
         {
             hidepanels();
             panelVendor.Show();
-            vendorBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
+            vendorBtn.BackColor = Color.FromArgb(44, 44, 37);
             Vendors vendor = new Vendors();
             OpenChildForm(vendor, sender);
 
@@ -51,7 +52,7 @@ namespace DBMSProject
         {
             hidepanels();
             panelCustomer.Show();
-            customerBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
+            customerBtn.BackColor = Color.FromArgb(44, 44, 37);
             Customers customer = new Customers();
             OpenChildForm(customer, sender);
         }
@@ -59,7 +60,7 @@ namespace DBMSProject
         {
             hidepanels();
             panelTechnician.Show();
-            technicianBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
+            technicianBtn.BackColor = Color.FromArgb(44, 44, 37);
             Technicians technician = new Technicians();
             OpenChildForm(technician, sender);
         }
@@ -68,7 +69,7 @@ namespace DBMSProject
         {
             hidepanels();
             panelRepair.Show();
-            repairBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
+            repairBtn.BackColor = Color.FromArgb(44, 44, 37);
             RepairCar repair = new RepairCar();
             OpenChildForm(repair, sender);
         }
@@ -77,7 +78,7 @@ namespace DBMSProject
         {
             hidepanels();
             panelSpareparts.Show();
-            sparepartBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
+            sparepartBtn.BackColor = Color.FromArgb(44, 44, 37);
             SpareParts spareParts = new SpareParts(); 
             OpenChildForm(spareParts, sender);
         }
@@ -86,7 +87,7 @@ namespace DBMSProject
         {
             hidepanels();
             panelReport.Show();
-            reportBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
+            reportBtn.BackColor = Color.FromArgb(44, 44, 37);
             Report report = new Report();
             OpenChildForm(report, sender);
         }
@@ -95,7 +96,7 @@ namespace DBMSProject
         {
             hidepanels();
             panelSell.Show();
-            sellBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
+            sellBtn.BackColor = Color.FromArgb(44, 44, 37);
             Sell sell = new Sell();
             OpenChildForm(sell, sender);
         }
@@ -104,7 +105,7 @@ namespace DBMSProject
         {
             hidepanels();
             panelEmployee.Show();
-            employeeBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
+            employeeBtn.BackColor = Color.FromArgb(44, 44, 37);
             Employee employee = new Employee();
             OpenChildForm( employee, sender);
         }
@@ -113,7 +114,7 @@ namespace DBMSProject
         {
             hidepanels();
             PaneltechVehicle.Show();
-            techVehicleBtn.BackColor = Color.FromArgb(20, 201, 177, 40);
+            techVehicleBtn.BackColor = Color.FromArgb(44, 44, 37);
             TechnicianVehicle techVehicle = new TechnicianVehicle();
             OpenChildForm(techVehicle, sender);
         }
@@ -156,23 +157,24 @@ namespace DBMSProject
         {
             
             panelCustomer.Hide();
-            customerBtn.BackColor = Color.FromArgb(32, 33, 37);
+            customerBtn.BackColor = Color.Black;
             panelEmployee.Hide();
-            employeeBtn.BackColor = Color.FromArgb(32, 33, 37);
+            employeeBtn.BackColor = Color.Black;
             panelRepair.Hide();
-            repairBtn.BackColor = Color.FromArgb(32, 33, 37);
+            repairBtn.BackColor = Color.Black;
             panelReport.Hide();
-            reportBtn.BackColor = Color.FromArgb(32, 33, 37);
+            reportBtn.BackColor = Color.Black;
             panelSell.Hide();
-            sellBtn.BackColor = Color.FromArgb(32, 33, 37);
+            sellBtn.BackColor = Color.Black;
             panelSpareparts.Hide();
-            sparepartBtn.BackColor = Color.FromArgb(32, 33, 37);
+            sparepartBtn.BackColor = Color.Black;
             panelTechnician.Hide();
-            technicianBtn.BackColor = Color.FromArgb(32, 33, 37);
+            technicianBtn.BackColor = Color.Black;
             panelVehicle.Hide();
-            vehicleBtn.BackColor = Color.FromArgb(32, 33, 37);
+            vehicleBtn.BackColor = Color.Black;
             panelVendor.Hide();
-            vendorBtn.BackColor = Color.FromArgb(32, 33, 37);
+            vendorBtn.BackColor = Color.Black;
+            techVehicleBtn.BackColor = Color.Black;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -206,6 +208,7 @@ namespace DBMSProject
                 DialogResult result = MessageBox.Show("Are you sure you want to exit?", "BlazeWheel", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
+                    Signoutbtn_Click(sender,e);
                     Environment.Exit(0);
                 }
                 else
@@ -237,6 +240,38 @@ namespace DBMSProject
                 TDashDecorator dashboard = new TDashDecorator(name);
                 OpenChildForm(dashboard, sender);
             }
+        }
+
+        private void Signoutbtn_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            if (usertype == 1)
+            {
+                SqlCommand cmd = new SqlCommand("update Admin set SessionStatus = 'INACTIVE' where SessionStatus = 'ACTIVE'",conn);
+                cmd.ExecuteNonQuery();
+                signout();
+            }
+            else if (usertype == 2)
+            {
+                SqlCommand cmd = new SqlCommand("update Employee set SessionStatus = 'INACTIVE' where SessionStatus = 'ACTIVE'",conn);
+                cmd.ExecuteNonQuery();
+                signout();
+            }
+            else if (usertype == 3)
+            {
+                SqlCommand cmd = new SqlCommand("update Technicians set SessionStatus = 'INACTIVE' where SessionStatus = 'ACTIVE'",conn);
+                cmd.ExecuteNonQuery();
+                signout();
+            }
+            
+        }
+        private void signout()
+        {
+
+            LoginSingleton.DestroyInstance();
+            conn.Close();
+            this.Hide();
+            new Login().Show();
         }
     }
 }

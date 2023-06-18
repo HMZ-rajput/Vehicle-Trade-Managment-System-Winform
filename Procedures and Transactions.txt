@@ -484,3 +484,43 @@ begin
 insert into Repairs (VehicleID,TechnicianID) values(@VehicleID,@TechnicianID)
 update Vehicles set Status='REPAIRING' where VehicleID=@VehicleID
 end
+
+------------------------------------------------------ 18/6/2023 by ZAIN
+
+alter procedure addEmployee
+@Name nvarchar(30),
+@Address nvarchar(30),
+@Phone nvarchar(30),
+@CommisionPercentage int,
+@Password varchar(100)
+as begin
+insert into Employee values(@Name, @Address, @Phone, @CommisionPercentage, 'INACTIVE', @Password)
+end
+
+create procedure updateEmployeePassword
+@EmployeeID int,
+@Password varchar(100)
+as begin
+update Employee set Password = @Password where EmployeeID = @EmployeeID 
+end
+
+
+alter procedure addTechnician
+@Name nvarchar(30),
+@Address nvarchar(50),
+@Phone nvarchar(20),
+@Password varchar(100)
+as
+begin
+insert into Technicians values(@Name,@Address,@Phone,'INACTIVE',@Password)
+end
+
+
+create procedure updateTechnicianPassword
+@TechnicianID int,
+@Password varchar(100)
+as 
+begin
+update Technicians set Password = @Password where TechnicianID = @TechnicianID
+end
+

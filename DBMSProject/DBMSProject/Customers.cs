@@ -35,7 +35,51 @@ namespace DBMSProject
             loadTable();
         }
 
-        private void addBtn_Click(object sender, EventArgs e)
+
+        public void loadTable()
+        {
+            try
+            {
+                conn.Open();
+                cmd = new SqlCommand("getCustomers", conn);
+                cmd.CommandType = CommandType.StoredProcedure; //added
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    dr.Close();
+                    adt = new SqlDataAdapter(cmd);
+                    dt = new DataTable();
+                    adt.Fill(dt);
+                    vendorDGV.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("No data in Customers\nInsert some data");
+                    dt = new DataTable();
+                    vendorDGV.DataSource = null; ;
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to load Customers\n" + ex.Message);
+                conn.Close();
+            }
+        }
+
+
+        private void Customers_Load(object sender, EventArgs e)
+        {
+            addBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 5, 5));
+            deleteBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, deleteBtn.Width, deleteBtn.Height, 5, 5));
+            updateBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, updateBtn.Width, updateBtn.Height, 5, 5));
+            idTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, idTB.Width, idTB.Height, 5, 5));
+            nameTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, nameTB.Width, nameTB.Height, 5, 5));
+            addressTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addressTB.Width, addressTB.Height, 5, 5));
+            phoneTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, phoneTB.Width, phoneTB.Height, 5, 5));
+        }
+
+        private void addBtn_Click_1(object sender, EventArgs e)
         {
             if (nameTB.Text != "" && addressTB.Text != "" && phoneTB.Text != "")
             {
@@ -46,7 +90,7 @@ namespace DBMSProject
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Name", nameTB.Text);
                     cmd.Parameters.AddWithValue("@Phone", phoneTB.Text);
-                    cmd.Parameters.AddWithValue("Address", addressTB.Text);
+                    cmd.Parameters.AddWithValue("@Address", addressTB.Text);
                     cmd.ExecuteNonQuery();
                     conn.Close();
 
@@ -64,7 +108,7 @@ namespace DBMSProject
             }
         }
 
-        private void updateBtn_Click(object sender, EventArgs e)
+        private void updateBtn_Click_1(object sender, EventArgs e)
         {
             if (idTB.Text != "" && int.TryParse(idTB.Text, out n))
             {
@@ -135,53 +179,6 @@ namespace DBMSProject
             {
                 MessageBox.Show("Customer id must be numeric");
             }
-        }
-
-        public void loadTable()
-        {
-            try
-            {
-                conn.Open();
-                cmd = new SqlCommand("getCustomers", conn);
-                cmd.CommandType = CommandType.StoredProcedure; //added
-                dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    dr.Close();
-                    adt = new SqlDataAdapter(cmd);
-                    dt = new DataTable();
-                    adt.Fill(dt);
-                    vendorDGV.DataSource = dt;
-                }
-                else
-                {
-                    MessageBox.Show("No data in Customers\nInsert some data");
-                    dt = new DataTable();
-                    vendorDGV.DataSource = null; ;
-                }
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unable to load Customers\n" + ex.Message);
-                conn.Close();
-            }
-        }
-
-        private void vendorDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void Customers_Load(object sender, EventArgs e)
-        {
-            addBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 5, 5));
-            deleteBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, deleteBtn.Width, deleteBtn.Height, 5, 5));
-            updateBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, updateBtn.Width, updateBtn.Height, 5, 5));
-            idTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, idTB.Width, idTB.Height, 5, 5));
-            nameTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, nameTB.Width, nameTB.Height, 5, 5));
-            addressTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addressTB.Width, addressTB.Height, 5, 5));
-            phoneTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, phoneTB.Width, phoneTB.Height, 5, 5));
         }
     }
 }

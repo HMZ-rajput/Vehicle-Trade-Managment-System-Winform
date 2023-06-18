@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 
 namespace DBMSProject
 {
@@ -37,19 +38,22 @@ namespace DBMSProject
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (nameTB.Text != "" && addressTB.Text != "" && phoneTB.Text != "" && commisionTB.Text != "" && int.TryParse(commisionTB.Text, out n))
+            if (nameTB.Text != "" && addressTB.Text != "" && phoneTB.Text != "" && commisionTB.Text != "" && int.TryParse(commisionTB.Text, out n) && passTB.Text != "")
             {
                 if (int.Parse(commisionTB.Text) > 0 && int.Parse(commisionTB.Text) < 100)
                 {
                     try
-                    {
+                    {   
                         conn.Open();
+                        string password = passTB.Text;
+                        EncryptPass(ref password);
                         cmd = new SqlCommand("addEmployee", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Name", nameTB.Text);
                         cmd.Parameters.AddWithValue("@Phone", phoneTB.Text);
-                        cmd.Parameters.AddWithValue("Address", addressTB.Text);
-                        cmd.Parameters.AddWithValue("CommisionPercentage", int.Parse(commisionTB.Text));
+                        cmd.Parameters.AddWithValue("@Address", addressTB.Text);
+                        cmd.Parameters.AddWithValue("@CommisionPercentage", int.Parse(commisionTB.Text));
+                        cmd.Parameters.AddWithValue("@Password",password);
                         cmd.ExecuteNonQuery();
                         conn.Close();
 
@@ -117,6 +121,14 @@ namespace DBMSProject
                         {
                             MessageBox.Show("Commision must be between 0-100");
                         }
+                    }
+                    if (passTB.Text != "")
+                    {
+                        cmd = new SqlCommand("updateEmployeePassword", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@EmployeeID", int.Parse(idTB.Text));
+                        cmd.Parameters.AddWithValue("@Password", passTB.Text);
+                        cmd.ExecuteNonQuery();
                     }
                 }
                 catch (Exception ex)
@@ -196,6 +208,14 @@ namespace DBMSProject
             addBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 5, 5));
             deleteBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, deleteBtn.Width, deleteBtn.Height, 5, 5));
             updateBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, updateBtn.Width, updateBtn.Height, 5, 5));
+        }
+        public void EncryptPass(ref string password)
+        {
+            var sha = SHA256.Create();
+            var ByteArr = Encoding.Default.GetBytes(password);
+            var encryptPass = sha.ComputeHash(ByteArr);
+
+            password = Convert.ToBase64String(encryptPass);
         }
     }
 }

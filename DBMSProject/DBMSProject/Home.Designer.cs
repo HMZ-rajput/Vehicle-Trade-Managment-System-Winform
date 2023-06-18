@@ -63,7 +63,7 @@
             // 
             // sparepartBtn
             // 
-            this.sparepartBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.sparepartBtn.BackColor = System.Drawing.Color.Black;
             this.sparepartBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sparepartBtn.FlatAppearance.BorderSize = 0;
             this.sparepartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -71,7 +71,7 @@
             this.sparepartBtn.ForeColor = System.Drawing.Color.White;
             this.sparepartBtn.Image = ((System.Drawing.Image)(resources.GetObject("sparepartBtn.Image")));
             this.sparepartBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sparepartBtn.Location = new System.Drawing.Point(-1, 457);
+            this.sparepartBtn.Location = new System.Drawing.Point(0, 457);
             this.sparepartBtn.Margin = new System.Windows.Forms.Padding(4);
             this.sparepartBtn.Name = "sparepartBtn";
             this.sparepartBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -84,7 +84,7 @@
             // 
             // reportBtn
             // 
-            this.reportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.reportBtn.BackColor = System.Drawing.Color.Black;
             this.reportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.reportBtn.FlatAppearance.BorderSize = 0;
             this.reportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -92,7 +92,7 @@
             this.reportBtn.ForeColor = System.Drawing.Color.White;
             this.reportBtn.Image = ((System.Drawing.Image)(resources.GetObject("reportBtn.Image")));
             this.reportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportBtn.Location = new System.Drawing.Point(-1, 512);
+            this.reportBtn.Location = new System.Drawing.Point(0, 512);
             this.reportBtn.Margin = new System.Windows.Forms.Padding(4);
             this.reportBtn.Name = "reportBtn";
             this.reportBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -119,7 +119,7 @@
             // 
             // panelLeft
             // 
-            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.panelLeft.BackColor = System.Drawing.Color.Black;
             this.panelLeft.Controls.Add(this.Logobtn);
             this.panelLeft.Controls.Add(this.PaneltechVehicle);
             this.panelLeft.Controls.Add(this.techVehicleBtn);
@@ -143,6 +143,7 @@
             this.panelLeft.Controls.Add(this.repairBtn);
             this.panelLeft.Controls.Add(this.customerBtn);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Margin = new System.Windows.Forms.Padding(4);
             this.panelLeft.Name = "panelLeft";
@@ -151,22 +152,24 @@
             // 
             // Logobtn
             // 
+            this.Logobtn.BackColor = System.Drawing.Color.Black;
             this.Logobtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Logobtn.BackgroundImage")));
             this.Logobtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Logobtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Logobtn.FlatAppearance.BorderSize = 0;
             this.Logobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Logobtn.Location = new System.Drawing.Point(0, 0);
+            this.Logobtn.Location = new System.Drawing.Point(1, 1);
             this.Logobtn.Margin = new System.Windows.Forms.Padding(4);
             this.Logobtn.Name = "Logobtn";
             this.Logobtn.Size = new System.Drawing.Size(223, 130);
             this.Logobtn.TabIndex = 16;
-            this.Logobtn.UseVisualStyleBackColor = true;
+            this.Logobtn.UseVisualStyleBackColor = false;
             this.Logobtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // PaneltechVehicle
             // 
             this.PaneltechVehicle.BackColor = System.Drawing.Color.Yellow;
-            this.PaneltechVehicle.Location = new System.Drawing.Point(1, 628);
+            this.PaneltechVehicle.Location = new System.Drawing.Point(0, 625);
             this.PaneltechVehicle.Margin = new System.Windows.Forms.Padding(4);
             this.PaneltechVehicle.Name = "PaneltechVehicle";
             this.PaneltechVehicle.Size = new System.Drawing.Size(7, 55);
@@ -175,7 +178,7 @@
             // 
             // techVehicleBtn
             // 
-            this.techVehicleBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.techVehicleBtn.BackColor = System.Drawing.Color.Black;
             this.techVehicleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.techVehicleBtn.FlatAppearance.BorderSize = 0;
             this.techVehicleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -183,7 +186,7 @@
             this.techVehicleBtn.ForeColor = System.Drawing.Color.White;
             this.techVehicleBtn.Image = ((System.Drawing.Image)(resources.GetObject("techVehicleBtn.Image")));
             this.techVehicleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.techVehicleBtn.Location = new System.Drawing.Point(0, 628);
+            this.techVehicleBtn.Location = new System.Drawing.Point(0, 624);
             this.techVehicleBtn.Margin = new System.Windows.Forms.Padding(4);
             this.techVehicleBtn.Name = "techVehicleBtn";
             this.techVehicleBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -276,7 +279,7 @@
             // 
             // Signoutbtn
             // 
-            this.Signoutbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.Signoutbtn.BackColor = System.Drawing.Color.Black;
             this.Signoutbtn.FlatAppearance.BorderSize = 0;
             this.Signoutbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Signoutbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -289,9 +292,10 @@
             this.Signoutbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.Signoutbtn.Size = new System.Drawing.Size(224, 46);
             this.Signoutbtn.TabIndex = 11;
-            this.Signoutbtn.Text = "    Sign Out";
+            this.Signoutbtn.Text = "    Log Out";
             this.Signoutbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Signoutbtn.UseVisualStyleBackColor = false;
+            this.Signoutbtn.Click += new System.EventHandler(this.Signoutbtn_Click);
             // 
             // panelVehicle
             // 
@@ -305,7 +309,7 @@
             // 
             // vehicleBtn
             // 
-            this.vehicleBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.vehicleBtn.BackColor = System.Drawing.Color.Black;
             this.vehicleBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.vehicleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.vehicleBtn.FlatAppearance.BorderSize = 0;
@@ -327,7 +331,7 @@
             // 
             // sellBtn
             // 
-            this.sellBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.sellBtn.BackColor = System.Drawing.Color.Black;
             this.sellBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sellBtn.FlatAppearance.BorderSize = 0;
             this.sellBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -335,7 +339,7 @@
             this.sellBtn.ForeColor = System.Drawing.Color.White;
             this.sellBtn.Image = ((System.Drawing.Image)(resources.GetObject("sellBtn.Image")));
             this.sellBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sellBtn.Location = new System.Drawing.Point(-1, 569);
+            this.sellBtn.Location = new System.Drawing.Point(0, 569);
             this.sellBtn.Margin = new System.Windows.Forms.Padding(4);
             this.sellBtn.Name = "sellBtn";
             this.sellBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -348,7 +352,7 @@
             // 
             // employeeBtn
             // 
-            this.employeeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.employeeBtn.BackColor = System.Drawing.Color.Black;
             this.employeeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.employeeBtn.FlatAppearance.BorderSize = 0;
             this.employeeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -369,7 +373,7 @@
             // 
             // vendorBtn
             // 
-            this.vendorBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.vendorBtn.BackColor = System.Drawing.Color.Black;
             this.vendorBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.vendorBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.vendorBtn.FlatAppearance.BorderSize = 0;
@@ -392,7 +396,7 @@
             // 
             // technicianBtn
             // 
-            this.technicianBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.technicianBtn.BackColor = System.Drawing.Color.Black;
             this.technicianBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.technicianBtn.FlatAppearance.BorderSize = 0;
             this.technicianBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -413,7 +417,7 @@
             // 
             // repairBtn
             // 
-            this.repairBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.repairBtn.BackColor = System.Drawing.Color.Black;
             this.repairBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.repairBtn.FlatAppearance.BorderSize = 0;
             this.repairBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -421,7 +425,7 @@
             this.repairBtn.ForeColor = System.Drawing.Color.White;
             this.repairBtn.Image = ((System.Drawing.Image)(resources.GetObject("repairBtn.Image")));
             this.repairBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.repairBtn.Location = new System.Drawing.Point(-1, 402);
+            this.repairBtn.Location = new System.Drawing.Point(0, 402);
             this.repairBtn.Margin = new System.Windows.Forms.Padding(4);
             this.repairBtn.Name = "repairBtn";
             this.repairBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -434,7 +438,7 @@
             // 
             // customerBtn
             // 
-            this.customerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.customerBtn.BackColor = System.Drawing.Color.Black;
             this.customerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.customerBtn.FlatAppearance.BorderSize = 0;
             this.customerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -442,7 +446,7 @@
             this.customerBtn.ForeColor = System.Drawing.Color.White;
             this.customerBtn.Image = ((System.Drawing.Image)(resources.GetObject("customerBtn.Image")));
             this.customerBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customerBtn.Location = new System.Drawing.Point(-1, 348);
+            this.customerBtn.Location = new System.Drawing.Point(0, 348);
             this.customerBtn.Margin = new System.Windows.Forms.Padding(4);
             this.customerBtn.Name = "customerBtn";
             this.customerBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -508,6 +512,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing_1);
             this.Load += new System.EventHandler(this.Home_Load);

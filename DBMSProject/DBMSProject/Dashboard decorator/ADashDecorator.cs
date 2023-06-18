@@ -17,23 +17,22 @@ namespace DBMSProject
         }
         public void setGreetinglbl()
         {
-            //conn.Open();
-            //SqlCommand cmd = new SqlCommand("select Name from Admin where Name = 'Admin'",conn);
-            ////cmd.Parameters.AddWithValue("@Name",username);
-            //string Username = (string)cmd.ExecuteScalar();
-            //conn.Close();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select Name from Admin where SessionStatus = 'ACTIVE'", conn);
+            string username = (string)cmd.ExecuteScalar();
             if (DateTime.Now.Hour < 12)
             {
-                greetinglbl.Text = "Good morning";
+                greetinglbl.Text = "Good morning, " + username;
             }
             else if (DateTime.Now.Hour < 18)
             {
-                greetinglbl.Text = "Good afternoon";
+                greetinglbl.Text = "Good afternoon, " + username;
             }
             else
             {
-                greetinglbl.Text = "Good evening";
+                greetinglbl.Text = "Good evening, " + username;
             }
+            conn.Close();
         }
         public override void InitializeComponent() 
         {

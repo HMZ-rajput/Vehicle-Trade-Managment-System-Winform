@@ -31,6 +31,9 @@ namespace DBMSProject
             loginpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, loginpanel.Width, loginpanel.Height, 5, 5));
             loginBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, loginBtn.Width, loginBtn.Height, 5, 5));
             clearBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, clearBtn.Width, clearBtn.Height, 5, 5));
+            IdTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, IdTB.Width, IdTB.Height, 5, 5));
+            passwordTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, passwordTB.Width, passwordTB.Height, 5, 5));
+            optionCB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, optionCB.Width, optionCB.Height, 5, 5));
             optionCB.SelectedIndex = 0;
             
         }
@@ -86,9 +89,13 @@ namespace DBMSProject
                         LoginSingleton form1 = LoginSingleton.GetInstance();
                         form1.Username = IdTB.Text;
                         form1.Category = optionCB.Text;
+                        SqlCommand cmd1 = new SqlCommand("update Admin set SessionStatus = 'ACTIVE' where Name = @Name", conn);
+                        cmd1.Parameters.AddWithValue("@Name", IdTB.Text);
+                        cmd1.ExecuteNonQuery();
                         conn.Close();
-                        new Home(1, name).Show();
                         this.Hide();
+                        new Home(1, name).Show();
+                        
                     }
                     else
                     {
@@ -98,7 +105,7 @@ namespace DBMSProject
                 }
                 if (optionCB.Text == "Employee")
                 {
-                    SqlCommand cmd = new SqlCommand("Select Count(*) From Customers Where Name = @Name and Password = @Password", conn);
+                    SqlCommand cmd = new SqlCommand("Select Count(*) From Employee Where Name = @Name and Password = @Password", conn);
                     cmd.Parameters.AddWithValue("@Name", IdTB.Text);
                     cmd.Parameters.AddWithValue("@Password", password);
 
@@ -109,11 +116,14 @@ namespace DBMSProject
                         LoginSingleton form1 = LoginSingleton.GetInstance();
                         form1.Username = IdTB.Text;
                         form1.Category = optionCB.Text;
+                        SqlCommand cmd1 = new SqlCommand("update Employee set SessionStatus = 'ACTIVE' where Name = @Name", conn);
+                        cmd1.Parameters.AddWithValue("@Name", IdTB.Text);
+                        cmd1.ExecuteNonQuery();
                         // Note!
                         //Also send Id to next form to get correct records
                         conn.Close();
-                        new Home(2, name).Show();
                         this.Hide();
+                        new Home(2, name).Show();
                     }
                     else
                     {
@@ -136,9 +146,12 @@ namespace DBMSProject
                         LoginSingleton form1 = LoginSingleton.GetInstance();
                         form1.Username = IdTB.Text;
                         form1.Category = optionCB.Text;
+                        SqlCommand cmd1 = new SqlCommand("update Technicians set SessionStatus = 'ACTIVE' where Name = @Name", conn);
+                        cmd1.Parameters.AddWithValue("@Name", IdTB.Text);
+                        cmd1.ExecuteNonQuery();
                         conn.Close();
-                        new Home(3, name).Show();
                         this.Hide();
+                        new Home(3, name).Show();
                     }
                     else
                     {

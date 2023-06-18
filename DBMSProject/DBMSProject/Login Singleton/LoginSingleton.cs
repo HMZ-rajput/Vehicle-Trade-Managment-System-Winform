@@ -30,5 +30,9 @@ namespace DBMSProject
             }
             return instance;
         }
+        public static void  DestroyInstance()
+        {
+            instance = null;
+        }
     }
 }

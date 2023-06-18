@@ -33,21 +33,21 @@
             this.BuyPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buylbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.boughtlbl = new System.Windows.Forms.Label();
             this.RepairPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.repairlbl = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.repaircountlbl = new System.Windows.Forms.Label();
             this.SoldPanel = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.soldlbl = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.soldcountlbl = new System.Windows.Forms.Label();
             this.greetinglbl = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.vendorpanel = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.vendorlbl = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.vendorcountlbl = new System.Windows.Forms.Label();
             this.partspanel = new System.Windows.Forms.Panel();
             this.avgpartlbl = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -55,7 +55,7 @@
             this.custpanel = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.custlbl = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.custcountlbl = new System.Windows.Forms.Label();
             this.emppanel = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.emplbl = new System.Windows.Forms.Label();
@@ -102,7 +102,7 @@
             this.BuyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             this.BuyPanel.Controls.Add(this.pictureBox1);
             this.BuyPanel.Controls.Add(this.buylbl);
-            this.BuyPanel.Controls.Add(this.label2);
+            this.BuyPanel.Controls.Add(this.boughtlbl);
             this.BuyPanel.Location = new System.Drawing.Point(76, 119);
             this.BuyPanel.Name = "BuyPanel";
             this.BuyPanel.Size = new System.Drawing.Size(293, 126);
@@ -131,24 +131,24 @@
             this.buylbl.TabIndex = 1;
             this.buylbl.Text = "Vehicles Bought";
             // 
-            // label2
+            // boughtlbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 89);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "69";
+            this.boughtlbl.AutoSize = true;
+            this.boughtlbl.BackColor = System.Drawing.Color.Transparent;
+            this.boughtlbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.boughtlbl.Font = new System.Drawing.Font("Segoe UI", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boughtlbl.Location = new System.Drawing.Point(4, 26);
+            this.boughtlbl.Name = "boughtlbl";
+            this.boughtlbl.Size = new System.Drawing.Size(116, 89);
+            this.boughtlbl.TabIndex = 1;
+            this.boughtlbl.Text = "69";
             // 
             // RepairPanel
             // 
             this.RepairPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             this.RepairPanel.Controls.Add(this.pictureBox2);
             this.RepairPanel.Controls.Add(this.repairlbl);
-            this.RepairPanel.Controls.Add(this.label4);
+            this.RepairPanel.Controls.Add(this.repaircountlbl);
             this.RepairPanel.Location = new System.Drawing.Point(76, 266);
             this.RepairPanel.Name = "RepairPanel";
             this.RepairPanel.Size = new System.Drawing.Size(293, 126);
@@ -176,24 +176,24 @@
             this.repairlbl.TabIndex = 1;
             this.repairlbl.Text = "Vehicles Repaired";
             // 
-            // label4
+            // repaircountlbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 89);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "31";
+            this.repaircountlbl.AutoSize = true;
+            this.repaircountlbl.BackColor = System.Drawing.Color.Transparent;
+            this.repaircountlbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.repaircountlbl.Font = new System.Drawing.Font("Segoe UI", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repaircountlbl.Location = new System.Drawing.Point(4, 26);
+            this.repaircountlbl.Name = "repaircountlbl";
+            this.repaircountlbl.Size = new System.Drawing.Size(116, 89);
+            this.repaircountlbl.TabIndex = 1;
+            this.repaircountlbl.Text = "31";
             // 
             // SoldPanel
             // 
             this.SoldPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             this.SoldPanel.Controls.Add(this.pictureBox3);
             this.SoldPanel.Controls.Add(this.soldlbl);
-            this.SoldPanel.Controls.Add(this.label6);
+            this.SoldPanel.Controls.Add(this.soldcountlbl);
             this.SoldPanel.Location = new System.Drawing.Point(76, 413);
             this.SoldPanel.Name = "SoldPanel";
             this.SoldPanel.Size = new System.Drawing.Size(293, 126);
@@ -221,17 +221,17 @@
             this.soldlbl.TabIndex = 1;
             this.soldlbl.Text = "Vehicles Sold";
             // 
-            // label6
+            // soldcountlbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 26);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 89);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "24";
+            this.soldcountlbl.AutoSize = true;
+            this.soldcountlbl.BackColor = System.Drawing.Color.Transparent;
+            this.soldcountlbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.soldcountlbl.Font = new System.Drawing.Font("Segoe UI", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.soldcountlbl.Location = new System.Drawing.Point(4, 26);
+            this.soldcountlbl.Name = "soldcountlbl";
+            this.soldcountlbl.Size = new System.Drawing.Size(116, 89);
+            this.soldcountlbl.TabIndex = 1;
+            this.soldcountlbl.Text = "24";
             // 
             // greetinglbl
             // 
@@ -261,7 +261,7 @@
             this.vendorpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             this.vendorpanel.Controls.Add(this.pictureBox4);
             this.vendorpanel.Controls.Add(this.vendorlbl);
-            this.vendorpanel.Controls.Add(this.label9);
+            this.vendorpanel.Controls.Add(this.vendorcountlbl);
             this.vendorpanel.Location = new System.Drawing.Point(394, 119);
             this.vendorpanel.Name = "vendorpanel";
             this.vendorpanel.Size = new System.Drawing.Size(136, 126);
@@ -289,18 +289,18 @@
             this.vendorlbl.TabIndex = 1;
             this.vendorlbl.Text = "Vendors";
             // 
-            // label9
+            // vendorcountlbl
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 37);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 62);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "5";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.vendorcountlbl.AutoSize = true;
+            this.vendorcountlbl.BackColor = System.Drawing.Color.Transparent;
+            this.vendorcountlbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vendorcountlbl.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vendorcountlbl.Location = new System.Drawing.Point(3, 37);
+            this.vendorcountlbl.Name = "vendorcountlbl";
+            this.vendorcountlbl.Size = new System.Drawing.Size(54, 62);
+            this.vendorcountlbl.TabIndex = 1;
+            this.vendorcountlbl.Text = "5";
+            this.vendorcountlbl.Click += new System.EventHandler(this.label9_Click);
             // 
             // partspanel
             // 
@@ -353,7 +353,7 @@
             this.custpanel.BackColor = System.Drawing.Color.Black;
             this.custpanel.Controls.Add(this.pictureBox6);
             this.custpanel.Controls.Add(this.custlbl);
-            this.custpanel.Controls.Add(this.label13);
+            this.custpanel.Controls.Add(this.custcountlbl);
             this.custpanel.Location = new System.Drawing.Point(551, 119);
             this.custpanel.Name = "custpanel";
             this.custpanel.Size = new System.Drawing.Size(136, 126);
@@ -382,18 +382,18 @@
             this.custlbl.TabIndex = 1;
             this.custlbl.Text = "Customers";
             // 
-            // label13
+            // custcountlbl
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label13.Location = new System.Drawing.Point(3, 37);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(81, 62);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "57";
+            this.custcountlbl.AutoSize = true;
+            this.custcountlbl.BackColor = System.Drawing.Color.Transparent;
+            this.custcountlbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.custcountlbl.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.custcountlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
+            this.custcountlbl.Location = new System.Drawing.Point(3, 37);
+            this.custcountlbl.Name = "custcountlbl";
+            this.custcountlbl.Size = new System.Drawing.Size(81, 62);
+            this.custcountlbl.TabIndex = 1;
+            this.custcountlbl.Text = "57";
             // 
             // emppanel
             // 
@@ -680,29 +680,29 @@
 
         protected System.Windows.Forms.Panel BuyPanel;
         protected System.Windows.Forms.Label buylbl;
-        protected System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.Label boughtlbl;
         protected System.Windows.Forms.PictureBox pictureBox1;
         protected System.Windows.Forms.Panel RepairPanel;
         protected System.Windows.Forms.PictureBox pictureBox2;
         protected System.Windows.Forms.Label repairlbl;
-        protected System.Windows.Forms.Label label4;
+        protected System.Windows.Forms.Label repaircountlbl;
         protected System.Windows.Forms.Panel SoldPanel;
         protected System.Windows.Forms.PictureBox pictureBox3;
         protected System.Windows.Forms.Label soldlbl;
-        protected System.Windows.Forms.Label label6;
+        protected System.Windows.Forms.Label soldcountlbl;
         protected System.Windows.Forms.Label greetinglbl;
         protected System.Windows.Forms.Label label7;
         protected System.Windows.Forms.Panel vendorpanel;
         protected System.Windows.Forms.PictureBox pictureBox4;
         protected System.Windows.Forms.Label vendorlbl;
-        protected System.Windows.Forms.Label label9;
+        protected System.Windows.Forms.Label vendorcountlbl;
         protected System.Windows.Forms.Panel partspanel;
         protected System.Windows.Forms.PictureBox pictureBox5;
         protected System.Windows.Forms.Label label11;
         protected System.Windows.Forms.Panel custpanel;
         protected System.Windows.Forms.PictureBox pictureBox6;
         protected System.Windows.Forms.Label custlbl;
-        protected System.Windows.Forms.Label label13;
+        protected System.Windows.Forms.Label custcountlbl;
         protected System.Windows.Forms.Panel emppanel;
         protected System.Windows.Forms.PictureBox pictureBox7;
         protected System.Windows.Forms.Label emplbl;

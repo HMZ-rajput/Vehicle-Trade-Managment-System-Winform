@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -14,6 +15,7 @@ namespace DBMSProject
 {
     public partial class IDashboard : Form
     {
+        SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
            int nLeft,
@@ -24,6 +26,7 @@ namespace DBMSProject
            int nHeightEllipse);
         public IDashboard()
         {
+            
             InitializeComponent();
             //Application.VisualStyleState = VisualStyleState.NoneEnabled;
             BuyPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BuyPanel.Width, BuyPanel.Height, 5, 5));
@@ -39,8 +42,13 @@ namespace DBMSProject
             topsellpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, topsellpanel.Width, topsellpanel.Height, 5, 5));
             label7.Text = DateTime.Now.ToString("dddd, dd MMMM");
             timer1.Start();
+            conn.Open();
+            SqlCommand veh = new SqlCommand("select count(*) from Vehicles",conn);
+            boughtlbl.Text = Convert.ToString(veh.ExecuteScalar());
+            SqlCommand ven = new SqlCommand("select count(Status) from Vehicles where Status = 'REPAIR'", conn);
+            repaircountlbl.Text = Convert.ToString(ven.ExecuteScalar());
+            conn.Close();
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 

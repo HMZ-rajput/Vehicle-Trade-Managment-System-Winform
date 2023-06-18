@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,14 @@ namespace DBMSProject
         SqlDataReader dr;
         DataTable dt;
         int n;  //random variable used int int.TryParse
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+      int nLeft,
+      int nTop,
+      int nRight,
+      int nBottom,
+      int nWidthEllipse,
+      int nHeightEllipse);
         public Customers()
         {
             InitializeComponent();
@@ -157,6 +166,22 @@ namespace DBMSProject
                 MessageBox.Show("Unable to load Customers\n" + ex.Message);
                 conn.Close();
             }
+        }
+
+        private void vendorDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Customers_Load(object sender, EventArgs e)
+        {
+            addBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 5, 5));
+            deleteBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, deleteBtn.Width, deleteBtn.Height, 5, 5));
+            updateBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, updateBtn.Width, updateBtn.Height, 5, 5));
+            idTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, idTB.Width, idTB.Height, 5, 5));
+            nameTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, nameTB.Width, nameTB.Height, 5, 5));
+            addressTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addressTB.Width, addressTB.Height, 5, 5));
+            phoneTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, phoneTB.Width, phoneTB.Height, 5, 5));
         }
     }
 }

@@ -58,10 +58,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label1.Location = new System.Drawing.Point(319, 59);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(239, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 25);
+            this.label1.Size = new System.Drawing.Size(45, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Make";
             // 
@@ -70,10 +69,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label2.Location = new System.Drawing.Point(32, 126);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(24, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 25);
+            this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Model";
             // 
@@ -82,10 +80,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label3.Location = new System.Drawing.Point(51, 190);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(38, 154);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 25);
+            this.label3.Size = new System.Drawing.Size(37, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Year";
             // 
@@ -94,62 +91,57 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label4.Location = new System.Drawing.Point(300, 126);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(225, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 25);
+            this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Mileage";
             // 
             // makeTB
             // 
-            this.makeTB.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.makeTB.BackColor = System.Drawing.Color.Black;
             this.makeTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.makeTB.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.makeTB.ForeColor = System.Drawing.Color.White;
-            this.makeTB.Location = new System.Drawing.Point(381, 60);
-            this.makeTB.Margin = new System.Windows.Forms.Padding(4);
+            this.makeTB.ForeColor = System.Drawing.Color.Yellow;
+            this.makeTB.Location = new System.Drawing.Point(286, 49);
             this.makeTB.Name = "makeTB";
-            this.makeTB.Size = new System.Drawing.Size(141, 24);
+            this.makeTB.Size = new System.Drawing.Size(106, 20);
             this.makeTB.TabIndex = 5;
             this.makeTB.Text = "Enter Make";
             // 
             // modelTB
             // 
-            this.modelTB.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.modelTB.BackColor = System.Drawing.Color.Black;
             this.modelTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.modelTB.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modelTB.ForeColor = System.Drawing.Color.White;
-            this.modelTB.Location = new System.Drawing.Point(101, 126);
-            this.modelTB.Margin = new System.Windows.Forms.Padding(4);
+            this.modelTB.ForeColor = System.Drawing.Color.Yellow;
+            this.modelTB.Location = new System.Drawing.Point(76, 102);
             this.modelTB.Name = "modelTB";
-            this.modelTB.Size = new System.Drawing.Size(141, 24);
+            this.modelTB.Size = new System.Drawing.Size(106, 20);
             this.modelTB.TabIndex = 6;
             this.modelTB.Text = "Enter Model";
             // 
             // yearTB
             // 
-            this.yearTB.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.yearTB.BackColor = System.Drawing.Color.Black;
             this.yearTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.yearTB.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yearTB.ForeColor = System.Drawing.Color.White;
-            this.yearTB.Location = new System.Drawing.Point(101, 191);
-            this.yearTB.Margin = new System.Windows.Forms.Padding(4);
+            this.yearTB.ForeColor = System.Drawing.Color.Yellow;
+            this.yearTB.Location = new System.Drawing.Point(76, 155);
             this.yearTB.Name = "yearTB";
-            this.yearTB.Size = new System.Drawing.Size(141, 24);
+            this.yearTB.Size = new System.Drawing.Size(106, 20);
             this.yearTB.TabIndex = 8;
             this.yearTB.Text = "Enter Year";
             // 
             // mileageTB
             // 
-            this.mileageTB.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.mileageTB.BackColor = System.Drawing.Color.Black;
             this.mileageTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mileageTB.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mileageTB.ForeColor = System.Drawing.Color.White;
-            this.mileageTB.Location = new System.Drawing.Point(381, 126);
-            this.mileageTB.Margin = new System.Windows.Forms.Padding(4);
+            this.mileageTB.ForeColor = System.Drawing.Color.Yellow;
+            this.mileageTB.Location = new System.Drawing.Point(286, 102);
             this.mileageTB.Name = "mileageTB";
-            this.mileageTB.Size = new System.Drawing.Size(141, 24);
+            this.mileageTB.Size = new System.Drawing.Size(106, 20);
             this.mileageTB.TabIndex = 7;
             this.mileageTB.Text = "Enter Mileage";
             // 
@@ -162,10 +154,9 @@
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.Black;
-            this.addBtn.Location = new System.Drawing.Point(651, 191);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addBtn.Location = new System.Drawing.Point(488, 155);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(128, 34);
+            this.addBtn.Size = new System.Drawing.Size(96, 28);
             this.addBtn.TabIndex = 11;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = false;
@@ -180,10 +171,9 @@
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateBtn.ForeColor = System.Drawing.Color.Black;
-            this.updateBtn.Location = new System.Drawing.Point(787, 191);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.updateBtn.Location = new System.Drawing.Point(590, 155);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(128, 34);
+            this.updateBtn.Size = new System.Drawing.Size(96, 28);
             this.updateBtn.TabIndex = 11;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
@@ -197,10 +187,9 @@
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.ForeColor = System.Drawing.Color.Black;
-            this.deleteBtn.Location = new System.Drawing.Point(923, 191);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteBtn.Location = new System.Drawing.Point(692, 155);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(128, 34);
+            this.deleteBtn.Size = new System.Drawing.Size(96, 28);
             this.deleteBtn.TabIndex = 13;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = false;
@@ -230,8 +219,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.vehicleDGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.vehicleDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(98)))), ((int)(((byte)(96)))));
-            this.vehicleDGV.Location = new System.Drawing.Point(37, 262);
-            this.vehicleDGV.Margin = new System.Windows.Forms.Padding(4);
+            this.vehicleDGV.Location = new System.Drawing.Point(28, 213);
             this.vehicleDGV.Name = "vehicleDGV";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(98)))), ((int)(((byte)(96)))));
@@ -250,20 +238,19 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Yellow;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             this.vehicleDGV.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.vehicleDGV.Size = new System.Drawing.Size(1013, 277);
+            this.vehicleDGV.Size = new System.Drawing.Size(760, 225);
             this.vehicleDGV.TabIndex = 12;
             this.vehicleDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vehicleDGV_CellContentClick);
             // 
             // idTB
             // 
-            this.idTB.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.idTB.BackColor = System.Drawing.Color.Black;
             this.idTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.idTB.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idTB.ForeColor = System.Drawing.Color.White;
-            this.idTB.Location = new System.Drawing.Point(101, 62);
-            this.idTB.Margin = new System.Windows.Forms.Padding(4);
+            this.idTB.ForeColor = System.Drawing.Color.Yellow;
+            this.idTB.Location = new System.Drawing.Point(76, 50);
             this.idTB.Name = "idTB";
-            this.idTB.Size = new System.Drawing.Size(141, 24);
+            this.idTB.Size = new System.Drawing.Size(106, 20);
             this.idTB.TabIndex = 4;
             this.idTB.Text = "Enter Car ID";
             // 
@@ -272,35 +259,33 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label6.Location = new System.Drawing.Point(65, 62);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(49, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 25);
+            this.label6.Size = new System.Drawing.Size(24, 20);
             this.label6.TabIndex = 13;
             this.label6.Text = "ID";
             // 
             // vendorCB
             // 
-            this.vendorCB.BackColor = System.Drawing.Color.DimGray;
+            this.vendorCB.BackColor = System.Drawing.Color.Black;
             this.vendorCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vendorCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vendorCB.ForeColor = System.Drawing.Color.Yellow;
             this.vendorCB.FormattingEnabled = true;
-            this.vendorCB.Location = new System.Drawing.Point(651, 59);
-            this.vendorCB.Margin = new System.Windows.Forms.Padding(4);
+            this.vendorCB.Location = new System.Drawing.Point(488, 48);
             this.vendorCB.Name = "vendorCB";
-            this.vendorCB.Size = new System.Drawing.Size(160, 32);
+            this.vendorCB.Size = new System.Drawing.Size(121, 26);
             this.vendorCB.TabIndex = 10;
             // 
             // priceTB
             // 
-            this.priceTB.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.priceTB.BackColor = System.Drawing.Color.Black;
             this.priceTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.priceTB.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceTB.ForeColor = System.Drawing.Color.White;
-            this.priceTB.Location = new System.Drawing.Point(381, 191);
-            this.priceTB.Margin = new System.Windows.Forms.Padding(4);
+            this.priceTB.ForeColor = System.Drawing.Color.Yellow;
+            this.priceTB.Location = new System.Drawing.Point(286, 155);
             this.priceTB.Name = "priceTB";
-            this.priceTB.Size = new System.Drawing.Size(141, 24);
+            this.priceTB.Size = new System.Drawing.Size(106, 20);
             this.priceTB.TabIndex = 9;
             this.priceTB.Text = "Enter Price";
             // 
@@ -309,19 +294,18 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label7.Location = new System.Drawing.Point(325, 190);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(244, 154);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 25);
+            this.label7.Size = new System.Drawing.Size(41, 20);
             this.label7.TabIndex = 14;
             this.label7.Text = "Price";
             // 
             // Vehicles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.ClientSize = new System.Drawing.Size(1083, 576);
+            this.ClientSize = new System.Drawing.Size(812, 468);
             this.Controls.Add(this.priceTB);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.vendorCB);
@@ -339,7 +323,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Vehicles";
             this.Text = "Vehicles";
             this.Load += new System.EventHandler(this.Vehicles_Load);

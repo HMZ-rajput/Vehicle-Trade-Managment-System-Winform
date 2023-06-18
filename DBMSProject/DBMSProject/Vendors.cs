@@ -174,6 +174,10 @@ namespace DBMSProject
             addBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addBtn.Width, addBtn.Height, 5, 5));
             deleteBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, deleteBtn.Width, deleteBtn.Height, 5, 5));
             updateBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, updateBtn.Width, updateBtn.Height, 5, 5));
+            idTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, idTB.Width, idTB.Height, 5, 5));
+            nameTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, nameTB.Width, nameTB.Height, 5, 5));
+            addressTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, addressTB.Width, addressTB.Height, 5, 5));
+            phoneTB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, phoneTB.Width, phoneTB.Height, 5, 5));
         }
     }
 }

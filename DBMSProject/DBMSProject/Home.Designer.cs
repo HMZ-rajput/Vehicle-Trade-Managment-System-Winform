@@ -35,7 +35,6 @@
             this.panelLeft = new System.Windows.Forms.Panel();
             this.PaneltechVehicle = new System.Windows.Forms.Panel();
             this.techVehicleBtn = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panelSell = new System.Windows.Forms.Panel();
             this.panelReport = new System.Windows.Forms.Panel();
             this.panelSpareparts = new System.Windows.Forms.Panel();
@@ -57,6 +56,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Logobtn = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -71,11 +71,10 @@
             this.sparepartBtn.ForeColor = System.Drawing.Color.White;
             this.sparepartBtn.Image = ((System.Drawing.Image)(resources.GetObject("sparepartBtn.Image")));
             this.sparepartBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sparepartBtn.Location = new System.Drawing.Point(-1, 457);
-            this.sparepartBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sparepartBtn.Location = new System.Drawing.Point(-1, 371);
             this.sparepartBtn.Name = "sparepartBtn";
-            this.sparepartBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.sparepartBtn.Size = new System.Drawing.Size(223, 55);
+            this.sparepartBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.sparepartBtn.Size = new System.Drawing.Size(167, 45);
             this.sparepartBtn.TabIndex = 6;
             this.sparepartBtn.Text = "    Spare Parts";
             this.sparepartBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -92,11 +91,10 @@
             this.reportBtn.ForeColor = System.Drawing.Color.White;
             this.reportBtn.Image = ((System.Drawing.Image)(resources.GetObject("reportBtn.Image")));
             this.reportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportBtn.Location = new System.Drawing.Point(-1, 512);
-            this.reportBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportBtn.Location = new System.Drawing.Point(-1, 416);
             this.reportBtn.Name = "reportBtn";
-            this.reportBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.reportBtn.Size = new System.Drawing.Size(223, 58);
+            this.reportBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.reportBtn.Size = new System.Drawing.Size(167, 47);
             this.reportBtn.TabIndex = 6;
             this.reportBtn.Text = "    Report";
             this.reportBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -109,10 +107,9 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 34.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(4, 2);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(3, 2);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(194, 76);
+            this.lblTitle.Size = new System.Drawing.Size(157, 62);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Home";
             this.lblTitle.Click += new System.EventHandler(this.label1_Click);
@@ -120,9 +117,9 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.panelLeft.Controls.Add(this.Logobtn);
             this.panelLeft.Controls.Add(this.PaneltechVehicle);
             this.panelLeft.Controls.Add(this.techVehicleBtn);
-            this.panelLeft.Controls.Add(this.panel5);
             this.panelLeft.Controls.Add(this.panelSell);
             this.panelLeft.Controls.Add(this.panelReport);
             this.panelLeft.Controls.Add(this.panelSpareparts);
@@ -144,18 +141,16 @@
             this.panelLeft.Controls.Add(this.customerBtn);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(223, 865);
+            this.panelLeft.Size = new System.Drawing.Size(167, 618);
             this.panelLeft.TabIndex = 11;
             // 
             // PaneltechVehicle
             // 
             this.PaneltechVehicle.BackColor = System.Drawing.Color.Yellow;
-            this.PaneltechVehicle.Location = new System.Drawing.Point(1, 628);
-            this.PaneltechVehicle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PaneltechVehicle.Location = new System.Drawing.Point(1, 510);
             this.PaneltechVehicle.Name = "PaneltechVehicle";
-            this.PaneltechVehicle.Size = new System.Drawing.Size(7, 55);
+            this.PaneltechVehicle.Size = new System.Drawing.Size(5, 45);
             this.PaneltechVehicle.TabIndex = 15;
             this.PaneltechVehicle.Visible = false;
             // 
@@ -169,105 +164,85 @@
             this.techVehicleBtn.ForeColor = System.Drawing.Color.White;
             this.techVehicleBtn.Image = ((System.Drawing.Image)(resources.GetObject("techVehicleBtn.Image")));
             this.techVehicleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.techVehicleBtn.Location = new System.Drawing.Point(0, 628);
-            this.techVehicleBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.techVehicleBtn.Location = new System.Drawing.Point(0, 510);
             this.techVehicleBtn.Name = "techVehicleBtn";
-            this.techVehicleBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.techVehicleBtn.Size = new System.Drawing.Size(223, 55);
+            this.techVehicleBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.techVehicleBtn.Size = new System.Drawing.Size(167, 45);
             this.techVehicleBtn.TabIndex = 14;
             this.techVehicleBtn.Text = "Tech Vehicle";
             this.techVehicleBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.techVehicleBtn.UseVisualStyleBackColor = false;
             this.techVehicleBtn.Click += new System.EventHandler(this.techVehicleBtn_Click);
             // 
-            // panel5
-            // 
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(223, 129);
-            this.panel5.TabIndex = 13;
-            // 
             // panelSell
             // 
             this.panelSell.BackColor = System.Drawing.Color.Yellow;
-            this.panelSell.Location = new System.Drawing.Point(0, 569);
-            this.panelSell.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelSell.Location = new System.Drawing.Point(0, 462);
             this.panelSell.Name = "panelSell";
-            this.panelSell.Size = new System.Drawing.Size(7, 55);
+            this.panelSell.Size = new System.Drawing.Size(5, 45);
             this.panelSell.TabIndex = 11;
             this.panelSell.Visible = false;
             // 
             // panelReport
             // 
             this.panelReport.BackColor = System.Drawing.Color.Yellow;
-            this.panelReport.Location = new System.Drawing.Point(0, 513);
-            this.panelReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelReport.Location = new System.Drawing.Point(0, 417);
             this.panelReport.Name = "panelReport";
-            this.panelReport.Size = new System.Drawing.Size(7, 55);
+            this.panelReport.Size = new System.Drawing.Size(5, 45);
             this.panelReport.TabIndex = 10;
             this.panelReport.Visible = false;
             // 
             // panelSpareparts
             // 
             this.panelSpareparts.BackColor = System.Drawing.Color.Yellow;
-            this.panelSpareparts.Location = new System.Drawing.Point(0, 457);
-            this.panelSpareparts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelSpareparts.Location = new System.Drawing.Point(0, 371);
             this.panelSpareparts.Name = "panelSpareparts";
-            this.panelSpareparts.Size = new System.Drawing.Size(7, 55);
+            this.panelSpareparts.Size = new System.Drawing.Size(5, 45);
             this.panelSpareparts.TabIndex = 9;
             this.panelSpareparts.Visible = false;
             // 
             // panelRepair
             // 
             this.panelRepair.BackColor = System.Drawing.Color.Yellow;
-            this.panelRepair.Location = new System.Drawing.Point(0, 402);
-            this.panelRepair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelRepair.Location = new System.Drawing.Point(0, 327);
             this.panelRepair.Name = "panelRepair";
-            this.panelRepair.Size = new System.Drawing.Size(7, 55);
+            this.panelRepair.Size = new System.Drawing.Size(5, 45);
             this.panelRepair.TabIndex = 6;
             this.panelRepair.Visible = false;
             // 
             // panelCustomer
             // 
             this.panelCustomer.BackColor = System.Drawing.Color.Yellow;
-            this.panelCustomer.Location = new System.Drawing.Point(0, 348);
-            this.panelCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelCustomer.Location = new System.Drawing.Point(0, 283);
             this.panelCustomer.Name = "panelCustomer";
-            this.panelCustomer.Size = new System.Drawing.Size(7, 55);
+            this.panelCustomer.Size = new System.Drawing.Size(5, 45);
             this.panelCustomer.TabIndex = 7;
             this.panelCustomer.Visible = false;
             // 
             // panelTechnician
             // 
             this.panelTechnician.BackColor = System.Drawing.Color.Yellow;
-            this.panelTechnician.Location = new System.Drawing.Point(0, 293);
-            this.panelTechnician.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTechnician.Location = new System.Drawing.Point(0, 238);
             this.panelTechnician.Name = "panelTechnician";
-            this.panelTechnician.Size = new System.Drawing.Size(7, 55);
+            this.panelTechnician.Size = new System.Drawing.Size(5, 45);
             this.panelTechnician.TabIndex = 6;
             this.panelTechnician.Visible = false;
             // 
             // panelEmployee
             // 
             this.panelEmployee.BackColor = System.Drawing.Color.Yellow;
-            this.panelEmployee.Location = new System.Drawing.Point(0, 238);
-            this.panelEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelEmployee.Location = new System.Drawing.Point(0, 193);
             this.panelEmployee.Name = "panelEmployee";
-            this.panelEmployee.Size = new System.Drawing.Size(7, 55);
+            this.panelEmployee.Size = new System.Drawing.Size(5, 45);
             this.panelEmployee.TabIndex = 5;
             this.panelEmployee.Visible = false;
             // 
             // panelVendor
             // 
             this.panelVendor.BackColor = System.Drawing.Color.Yellow;
-            this.panelVendor.Location = new System.Drawing.Point(0, 182);
-            this.panelVendor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelVendor.Location = new System.Drawing.Point(0, 148);
             this.panelVendor.Name = "panelVendor";
-            this.panelVendor.Size = new System.Drawing.Size(7, 55);
+            this.panelVendor.Size = new System.Drawing.Size(5, 45);
             this.panelVendor.TabIndex = 4;
             this.panelVendor.Visible = false;
             // 
@@ -280,11 +255,10 @@
             this.Signoutbtn.ForeColor = System.Drawing.Color.White;
             this.Signoutbtn.Image = ((System.Drawing.Image)(resources.GetObject("Signoutbtn.Image")));
             this.Signoutbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Signoutbtn.Location = new System.Drawing.Point(-1, 731);
-            this.Signoutbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Signoutbtn.Location = new System.Drawing.Point(0, 579);
             this.Signoutbtn.Name = "Signoutbtn";
-            this.Signoutbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.Signoutbtn.Size = new System.Drawing.Size(224, 46);
+            this.Signoutbtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.Signoutbtn.Size = new System.Drawing.Size(168, 37);
             this.Signoutbtn.TabIndex = 11;
             this.Signoutbtn.Text = "    Sign Out";
             this.Signoutbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -293,10 +267,9 @@
             // panelVehicle
             // 
             this.panelVehicle.BackColor = System.Drawing.Color.Yellow;
-            this.panelVehicle.Location = new System.Drawing.Point(0, 127);
-            this.panelVehicle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelVehicle.Location = new System.Drawing.Point(0, 103);
             this.panelVehicle.Name = "panelVehicle";
-            this.panelVehicle.Size = new System.Drawing.Size(7, 55);
+            this.panelVehicle.Size = new System.Drawing.Size(5, 45);
             this.panelVehicle.TabIndex = 3;
             this.panelVehicle.Visible = false;
             // 
@@ -311,11 +284,10 @@
             this.vehicleBtn.ForeColor = System.Drawing.Color.White;
             this.vehicleBtn.Image = ((System.Drawing.Image)(resources.GetObject("vehicleBtn.Image")));
             this.vehicleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vehicleBtn.Location = new System.Drawing.Point(0, 127);
-            this.vehicleBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vehicleBtn.Location = new System.Drawing.Point(0, 103);
             this.vehicleBtn.Name = "vehicleBtn";
-            this.vehicleBtn.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.vehicleBtn.Size = new System.Drawing.Size(223, 55);
+            this.vehicleBtn.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.vehicleBtn.Size = new System.Drawing.Size(167, 45);
             this.vehicleBtn.TabIndex = 2;
             this.vehicleBtn.Text = "   Vehicle";
             this.vehicleBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -332,11 +304,10 @@
             this.sellBtn.ForeColor = System.Drawing.Color.White;
             this.sellBtn.Image = ((System.Drawing.Image)(resources.GetObject("sellBtn.Image")));
             this.sellBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sellBtn.Location = new System.Drawing.Point(-1, 569);
-            this.sellBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sellBtn.Location = new System.Drawing.Point(-1, 462);
             this.sellBtn.Name = "sellBtn";
-            this.sellBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.sellBtn.Size = new System.Drawing.Size(223, 55);
+            this.sellBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.sellBtn.Size = new System.Drawing.Size(167, 45);
             this.sellBtn.TabIndex = 9;
             this.sellBtn.Text = "    Sales";
             this.sellBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -353,11 +324,10 @@
             this.employeeBtn.ForeColor = System.Drawing.Color.White;
             this.employeeBtn.Image = ((System.Drawing.Image)(resources.GetObject("employeeBtn.Image")));
             this.employeeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.employeeBtn.Location = new System.Drawing.Point(0, 238);
-            this.employeeBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.employeeBtn.Location = new System.Drawing.Point(0, 193);
             this.employeeBtn.Name = "employeeBtn";
-            this.employeeBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.employeeBtn.Size = new System.Drawing.Size(223, 55);
+            this.employeeBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.employeeBtn.Size = new System.Drawing.Size(167, 45);
             this.employeeBtn.TabIndex = 6;
             this.employeeBtn.Text = "    Employee";
             this.employeeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -375,11 +345,10 @@
             this.vendorBtn.ForeColor = System.Drawing.Color.White;
             this.vendorBtn.Image = ((System.Drawing.Image)(resources.GetObject("vendorBtn.Image")));
             this.vendorBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vendorBtn.Location = new System.Drawing.Point(0, 182);
-            this.vendorBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vendorBtn.Location = new System.Drawing.Point(0, 148);
             this.vendorBtn.Name = "vendorBtn";
-            this.vendorBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.vendorBtn.Size = new System.Drawing.Size(223, 55);
+            this.vendorBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.vendorBtn.Size = new System.Drawing.Size(167, 45);
             this.vendorBtn.TabIndex = 3;
             this.vendorBtn.Text = "    Vendor";
             this.vendorBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -397,11 +366,10 @@
             this.technicianBtn.ForeColor = System.Drawing.Color.White;
             this.technicianBtn.Image = ((System.Drawing.Image)(resources.GetObject("technicianBtn.Image")));
             this.technicianBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.technicianBtn.Location = new System.Drawing.Point(0, 293);
-            this.technicianBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.technicianBtn.Location = new System.Drawing.Point(0, 238);
             this.technicianBtn.Name = "technicianBtn";
-            this.technicianBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.technicianBtn.Size = new System.Drawing.Size(223, 55);
+            this.technicianBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.technicianBtn.Size = new System.Drawing.Size(167, 45);
             this.technicianBtn.TabIndex = 5;
             this.technicianBtn.Text = "    Technician";
             this.technicianBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -418,11 +386,10 @@
             this.repairBtn.ForeColor = System.Drawing.Color.White;
             this.repairBtn.Image = ((System.Drawing.Image)(resources.GetObject("repairBtn.Image")));
             this.repairBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.repairBtn.Location = new System.Drawing.Point(-1, 402);
-            this.repairBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.repairBtn.Location = new System.Drawing.Point(-1, 327);
             this.repairBtn.Name = "repairBtn";
-            this.repairBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.repairBtn.Size = new System.Drawing.Size(223, 55);
+            this.repairBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.repairBtn.Size = new System.Drawing.Size(167, 45);
             this.repairBtn.TabIndex = 6;
             this.repairBtn.Text = "    Repair";
             this.repairBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -439,11 +406,10 @@
             this.customerBtn.ForeColor = System.Drawing.Color.White;
             this.customerBtn.Image = ((System.Drawing.Image)(resources.GetObject("customerBtn.Image")));
             this.customerBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customerBtn.Location = new System.Drawing.Point(-1, 348);
-            this.customerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.customerBtn.Location = new System.Drawing.Point(-1, 283);
             this.customerBtn.Name = "customerBtn";
-            this.customerBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.customerBtn.Size = new System.Drawing.Size(223, 55);
+            this.customerBtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.customerBtn.Size = new System.Drawing.Size(167, 45);
             this.customerBtn.TabIndex = 4;
             this.customerBtn.Text = "    Customer";
             this.customerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -453,21 +419,18 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMain.Location = new System.Drawing.Point(223, 106);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMain.Location = new System.Drawing.Point(167, 86);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1144, 759);
+            this.panelMain.Size = new System.Drawing.Size(828, 617);
             this.panelMain.TabIndex = 12;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(224, 97);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(168, 79);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(944, 1);
+            this.panel3.Size = new System.Drawing.Size(708, 1);
             this.panel3.TabIndex = 13;
             // 
             // panel4
@@ -477,37 +440,46 @@
             this.panel4.Controls.Add(this.lblTitle);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.panel4.Location = new System.Drawing.Point(223, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Location = new System.Drawing.Point(167, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1144, 119);
+            this.panel4.Size = new System.Drawing.Size(812, 97);
             this.panel4.TabIndex = 14;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(98)))), ((int)(((byte)(96)))));
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(98)))), ((int)(((byte)(96)))));
-            this.panel1.Location = new System.Drawing.Point(8, 80);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(6, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1107, 1);
+            this.panel1.Size = new System.Drawing.Size(830, 1);
             this.panel1.TabIndex = 2;
+            // 
+            // Logobtn
+            // 
+            this.Logobtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Logobtn.BackgroundImage")));
+            this.Logobtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Logobtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Logobtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Logobtn.Location = new System.Drawing.Point(0, 0);
+            this.Logobtn.Name = "Logobtn";
+            this.Logobtn.Size = new System.Drawing.Size(167, 106);
+            this.Logobtn.TabIndex = 16;
+            this.Logobtn.UseVisualStyleBackColor = true;
+            this.Logobtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1367, 865);
+            this.ClientSize = new System.Drawing.Size(979, 618);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelLeft);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Home";
             this.Text = "Form1";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing_1);
             this.Load += new System.EventHandler(this.Home_Load);
             this.panelLeft.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -541,11 +513,11 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel PaneltechVehicle;
         private System.Windows.Forms.Button techVehicleBtn;
         private System.Windows.Forms.Button sellBtn;
+        private System.Windows.Forms.Button Logobtn;
     }
 }
 

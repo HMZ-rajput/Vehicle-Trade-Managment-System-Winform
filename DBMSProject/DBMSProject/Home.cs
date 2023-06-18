@@ -131,7 +131,9 @@ namespace DBMSProject
 
         private void Home_Load(object sender, EventArgs e)
         {
-
+            hidepanels();
+            Dashboard dashboard = new Dashboard();
+            OpenChildForm(dashboard, sender);
         }
         private void hidepanels()
         {
@@ -198,6 +200,12 @@ namespace DBMSProject
             {
                 e.Cancel = true;
             }
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            hidepanels();
+            Dashboard dashboard = new Dashboard();
+            OpenChildForm(dashboard, sender);
         }
     }
 }

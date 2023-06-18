@@ -476,6 +476,10 @@ begin
 select * from Vehicles where Status='NOT REPAIR'
 end
 
+
+----------------------By Hamza 6/18/23
+
+--Technician will select vehicle he want to repair
 create procedure startVehicleRepair
 @TechnicianID int,
 @VehicleID int
@@ -483,4 +487,109 @@ as
 begin
 insert into Repairs (VehicleID,TechnicianID) values(@VehicleID,@TechnicianID)
 update Vehicles set Status='REPAIRING' where VehicleID=@VehicleID
+end
+
+--Fixed startVehicleRepair to prevent technician from selecting same car multiple times
+alter procedure startVehicleRepair
+@TechnicianID int,
+@VehicleID int
+as
+begin
+if not exists(select 1 from Repairs r inner join Technicians t on r.TechnicianID=t.TechnicianID where r.VehicleID=@VehicleID)
+begin
+insert into Repairs (VehicleID,TechnicianID) values(@VehicleID,@TechnicianID)
+update Vehicles set Status='REPAIRING' where VehicleID=@VehicleID
+end
+end
+
+--Remove Vehicle From Repairs and RepairDetails that Technician is working on
+create procedure VehicleRepairUpdate
+@TechnicianID int,
+@VehicleID int
+as
+begin
+if exists(select 1 from Repairs r inner join Technicians t on r.TechnicianID=t.TechnicianID where r.VehicleID=@VehicleID)
+begin
+	delete from RepairDetails where RepairID=(select r.RepairID from Repairs r inner join Technicians t on r.TechnicianID=t.TechnicianID where r.VehicleID=@VehicleID)
+	delete from Repairs where TechnicianID=@TechnicianID
+	update Vehicles set Status='NOT REPAIR' where VehicleID=@VehicleID 	
+end
+end
+
+--Fixed getRepair to only show relevant info to Technician
+alter procedure getRepair
+@TechnicianID int
+as
+begin
+select v.VehicleID,v.Make,v.Model,v.Year,v.Status,r.RepairDescription,r.RepairCost,r.TechnicianCharges from Repairs r inner join Vehicles v on r.VehicleID=v.VehicleID where r.TechnicianID=@TechnicianID
+end
+
+--Get Vehicles that technician is working on
+create procedure getTechnicianVehicles
+@TechnicianID int
+as
+begin
+select v.VehicleID,v.Make,v.Model from Repairs r inner join Vehicles v on r.VehicleID=v.VehicleID where r.TechnicianID=@TechnicianID and v.Status='REPAIRING'
+end
+
+--get Vehicle Repair details
+create procedure getVehicleRepairDetails
+@VehicleID int
+as
+begin
+if exists(select 1 from RepairDetails rd inner join Repairs r on rd.RepairID=r.RepairID where r.VehicleID=@VehicleID)
+begin
+	select rd.rdID as [RepairDetail ID],sp.PartName,sp.PartDescription,sp.PartCost,rd.Quantity,sum(sp.PartCost*rd.Quantity) as Total from 
+	SpareParts sp inner join  RepairDetails rd on sp.PartID=rd.PartID 
+	inner join Repairs r on rd.RepairID=r.RepairID 
+	where r.VehicleID=@VehicleID group by rd.rdID,sp.PartName,sp.PartCost,rd.Quantity,sp.PartDescription
+end
+end
+
+--update Repair Detail
+create procedure updateRepairDetail
+@rdID int,
+@Quantity int
+as
+begin
+update RepairDetails set Quantity=@Quantity where rdID=@rdID
+end
+
+--Delete From Repair Details
+create procedure deleteRepairDetail
+@rdID int
+as
+begin
+delete from RepairDetails where rdID=@rdID
+end
+
+
+--Insert into Repair Detils when part is inserted
+create procedure insertPartRepairDetail
+@VehicleID int,
+@PartID int,
+@Quantity int
+as
+begin
+insert into RepairDetails values((select RepairID from Repairs where VehicleID=@VehicleID),@PartID,@Quantity)
+end
+
+
+--When vehicle is repaired all the charges are calculated
+create procedure MarkVehicleRepaired
+@VehicleID int,
+@Description nvarchar(100),
+@Charges int
+as
+begin
+update Repairs set RepairDescription=@Description, 
+RepairCost=(select top 1 sum(sp.PartCost*rd.Quantity) as Total from 
+			SpareParts sp inner join  RepairDetails rd on sp.PartID=rd.PartID 
+			inner join Repairs r on rd.RepairID=r.RepairID 
+			where r.VehicleID=2014 group by rollup(sp.PartCost,rd.Quantity) order by Total desc), 
+CompletionDate=getdate(), 
+TechnicianCharges=@Charges 
+where VehicleID=@VehicleID
+
+update Vehicles set Cost=(select RepairCost+TechnicianCharges from Repairs where VehicleID=@VehicleID), Status='REPAIRED' where VehicleID=@VehicleID
 end

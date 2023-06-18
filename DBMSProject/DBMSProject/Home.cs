@@ -14,9 +14,13 @@ namespace DBMSProject
     public partial class Home : Form
     {
         private Form activeForm;
+        int usertype;
+        string name;
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
-        public Home()
+        public Home(int usertype, string name)
         {
+            this.usertype = usertype;
+            this.name = name;
             InitializeComponent();
             hidepanels();
             //Check connection to database
@@ -132,14 +136,27 @@ namespace DBMSProject
         private void Home_Load(object sender, EventArgs e)
         {
             hidepanels();
-            Dashboard dashboard = new Dashboard();
-            OpenChildForm(dashboard, sender);
+            if (usertype == 1)
+            {
+                ADashDecorator dashboard = new ADashDecorator(name);
+                OpenChildForm(dashboard, sender);
+            }
+            else if(usertype == 2)
+            {
+                EDashDecorator dashboard = new EDashDecorator(name);
+                OpenChildForm(dashboard, sender);
+            }
+            else if (usertype == 3)
+            {
+                TDashDecorator dashboard = new TDashDecorator(name);
+                OpenChildForm(dashboard, sender);
+            }
         }
         private void hidepanels()
         {
             
             panelCustomer.Hide();
-           customerBtn.BackColor = Color.FromArgb(32, 33, 37);
+            customerBtn.BackColor = Color.FromArgb(32, 33, 37);
             panelEmployee.Hide();
             employeeBtn.BackColor = Color.FromArgb(32, 33, 37);
             panelRepair.Hide();
@@ -186,7 +203,7 @@ namespace DBMSProject
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                DialogResult result = MessageBox.Show("Do you really want to exit?", "Dialog Title", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "BlazeWheel", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     Environment.Exit(0);
@@ -204,8 +221,22 @@ namespace DBMSProject
         private void button1_Click_1(object sender, EventArgs e)
         {
             hidepanels();
-            Dashboard dashboard = new Dashboard();
-            OpenChildForm(dashboard, sender);
+            hidepanels();
+            if (usertype == 1)
+            {
+                ADashDecorator dashboard = new ADashDecorator(name);
+                OpenChildForm(dashboard, sender);
+            }
+            else if (usertype == 2)
+            {
+                EDashDecorator dashboard = new EDashDecorator(name);
+                OpenChildForm(dashboard, sender);
+            }
+            else if (usertype == 3)
+            {
+                TDashDecorator dashboard = new TDashDecorator(name);
+                OpenChildForm(dashboard, sender);
+            }
         }
     }
 }

@@ -78,7 +78,7 @@ namespace DBMSProject
                     cmd.Parameters.AddWithValue("@Password", password);
 
                     int UserExist = (int)cmd.ExecuteScalar();
-
+                    string name = IdTB.Text;
                     if (UserExist > 0)
                     {
                         // Note!
@@ -87,7 +87,7 @@ namespace DBMSProject
                         form1.Username = IdTB.Text;
                         form1.Category = optionCB.Text;
                         conn.Close();
-                        new Home().Show();
+                        new Home(1, name).Show();
                         this.Hide();
                     }
                     else
@@ -103,7 +103,7 @@ namespace DBMSProject
                     cmd.Parameters.AddWithValue("@Password", password);
 
                     int UserExist = (int)cmd.ExecuteScalar();
-
+                    string name = IdTB.Text;
                     if (UserExist > 0)
                     {
                         LoginSingleton form1 = LoginSingleton.GetInstance();
@@ -112,7 +112,7 @@ namespace DBMSProject
                         // Note!
                         //Also send Id to next form to get correct records
                         conn.Close();
-                        new Home().Show();
+                        new Home(2, name).Show();
                         this.Hide();
                     }
                     else
@@ -128,7 +128,7 @@ namespace DBMSProject
                     cmd.Parameters.AddWithValue("@Password", password);
 
                     int UserExist = (int)cmd.ExecuteScalar();
-
+                    string name = IdTB.Text;
                     if (UserExist > 0)
                     {
                         // Note!
@@ -137,7 +137,7 @@ namespace DBMSProject
                         form1.Username = IdTB.Text;
                         form1.Category = optionCB.Text;
                         conn.Close();
-                        new Home().Show();
+                        new Home(3, name).Show();
                         this.Hide();
                     }
                     else
@@ -161,7 +161,7 @@ namespace DBMSProject
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                DialogResult result = MessageBox.Show("Do you really want to exit?", "Dialog Title", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "BlazeWheel", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     Environment.Exit(0);

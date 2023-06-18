@@ -12,7 +12,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace DBMSProject
 {
-    public partial class Dashboard : Form
+    public partial class IDashboard : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -22,7 +22,7 @@ namespace DBMSProject
            int nBottom,
            int nWidthEllipse,
            int nHeightEllipse);
-        public Dashboard()
+        public IDashboard()
         {
             InitializeComponent();
             //Application.VisualStyleState = VisualStyleState.NoneEnabled;
@@ -39,18 +39,6 @@ namespace DBMSProject
             topsellpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, topsellpanel.Width, topsellpanel.Height, 5, 5));
             label7.Text = DateTime.Now.ToString("dddd, dd MMMM");
             timer1.Start();
-            if (DateTime.Now.Hour < 12)
-            {
-                greetinglbl.Text = "Good morning";
-            }
-            else if (DateTime.Now.Hour < 18)
-            {
-                greetinglbl.Text = "Good afternoon";
-            }
-            else 
-            {
-                greetinglbl.Text = "Good evening";
-            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

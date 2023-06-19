@@ -15,6 +15,7 @@ namespace DBMSProject
 {
     public partial class IDashboard : Form
     {
+        int ID;
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -24,10 +25,11 @@ namespace DBMSProject
            int nBottom,
            int nWidthEllipse,
            int nHeightEllipse);
-        public IDashboard()
+        public IDashboard(int ID)
         {
-            
+            this.ID = ID;
             InitializeComponent();
+            
             //Application.VisualStyleState = VisualStyleState.NoneEnabled;
             BuyPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BuyPanel.Width, BuyPanel.Height, 5, 5));
             RepairPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, RepairPanel.Width, RepairPanel.Height, 5, 5));

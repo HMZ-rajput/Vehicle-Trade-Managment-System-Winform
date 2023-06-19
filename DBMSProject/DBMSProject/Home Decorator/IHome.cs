@@ -14,13 +14,12 @@ namespace DBMSProject
     public partial class IHome : Form
     {
         private Form activeForm;
-        int usertype;
-        string name;
+        int usertype, ID;
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
-        public IHome(int usertype, string name)
+        public IHome(int usertype, int ID)
         {
             this.usertype = usertype;
-            this.name = name;
+            this.ID = ID;
             InitializeComponent();
             hidepanels();
             panelLeft.BackColor = Color.Black;
@@ -70,7 +69,7 @@ namespace DBMSProject
             hidepanels();
             panelRepair.Show();
             repairBtn.BackColor = Color.FromArgb(44, 44, 37);
-            RepairCar repair = new RepairCar();
+            RepairCar repair = new RepairCar(ID);
             OpenChildForm(repair, sender);
         }
 
@@ -115,7 +114,7 @@ namespace DBMSProject
             hidepanels();
             PaneltechVehicle.Show();
             techVehicleBtn.BackColor = Color.FromArgb(44, 44, 37);
-            TechnicianVehicle techVehicle = new TechnicianVehicle();
+            TechnicianVehicle techVehicle = new TechnicianVehicle(ID);
             OpenChildForm(techVehicle, sender);
         }
         
@@ -139,17 +138,17 @@ namespace DBMSProject
             hidepanels();
             if (usertype == 1)
             {
-                ADashDecorator dashboard = new ADashDecorator(name);
+                ADashDecorator dashboard = new ADashDecorator(ID);
                 OpenChildForm(dashboard, sender);
             }
             else if(usertype == 2)
             {
-                EDashDecorator dashboard = new EDashDecorator(name);
+                EDashDecorator dashboard = new EDashDecorator(ID);
                 OpenChildForm(dashboard, sender);
             }
             else if (usertype == 3)
             {
-                TDashDecorator dashboard = new TDashDecorator(name);
+                TDashDecorator dashboard = new TDashDecorator(ID);
                 OpenChildForm(dashboard, sender);
             }
         }
@@ -243,17 +242,17 @@ namespace DBMSProject
             hidepanels();
             if (usertype == 1)
             {
-                ADashDecorator dashboard = new ADashDecorator(name);
+                ADashDecorator dashboard = new ADashDecorator(ID);
                 OpenChildForm(dashboard, sender);
             }
             else if (usertype == 2)
             {
-                EDashDecorator dashboard = new EDashDecorator(name);
+                EDashDecorator dashboard = new EDashDecorator(ID);
                 OpenChildForm(dashboard, sender);
             }
             else if (usertype == 3)
             {
-                TDashDecorator dashboard = new TDashDecorator(name);
+                TDashDecorator dashboard = new TDashDecorator(ID);
                 OpenChildForm(dashboard, sender);
             }
         }

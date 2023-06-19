@@ -9,13 +9,8 @@ namespace DBMSProject
 {
     public class THome : IHome
     {
-        public THome(int usertype, string name) : base(usertype, name)
+        public THome(int usertype, int ID) : base(usertype, ID)
         {
-
-        }
-        public override void InitializeComponent()
-        {
-            base.InitializeComponent();
             vehicleBtn.Hide();
             panelVehicle.Hide();
             vendorBtn.Hide();
@@ -31,12 +26,16 @@ namespace DBMSProject
             sellBtn.Hide();
             panelSell.Hide();
             userlbl.Text = "Technician";
-            repairBtn.Location= new Point( 0, 103);
+            repairBtn.Location = new Point(0, 103);
             panelRepair.Location = new Point(0, 103);
-            sparepartBtn.Location = new Point(0,148);
+            sparepartBtn.Location = new Point(0, 148);
             panelSpareparts.Location = new Point(0, 148);
-            techVehicleBtn.Location = new Point(0,193);
+            techVehicleBtn.Location = new Point(0, 193);
             PaneltechVehicle.Location = new Point(0, 193);
+        }
+        public override void InitializeComponent()
+        {
+            base.InitializeComponent();
         }
     }
 }

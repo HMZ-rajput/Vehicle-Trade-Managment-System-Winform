@@ -14,13 +14,13 @@ namespace DBMSProject
 {
     public partial class RepairCar : Form
     {
-        int TechID = 1002;    //Temprary Technician id, it will be replaced by id of technician that login
+           //Temprary Technician id, it will be replaced by id of technician that login
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
         SqlCommand cmd;
         SqlDataAdapter adt;
         SqlDataReader dr;
         DataTable dt;
-        int n;
+        int n, ID;
         Boolean TableLoadAllowed = false;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -31,9 +31,10 @@ namespace DBMSProject
          int nBottom,
          int nWidthEllipse,
          int nHeightEllipse);
-        public RepairCar()
+        public RepairCar(int ID)
         {
             InitializeComponent();
+            this.ID = ID;
 
             loadVehiclesCB();
             loadPartsCB();
@@ -187,7 +188,7 @@ namespace DBMSProject
                 conn.Open();
                 cmd = new SqlCommand("getTechnicianVehicles", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@TechnicianID",TechID);
+                cmd.Parameters.AddWithValue("@TechnicianID",ID);
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {

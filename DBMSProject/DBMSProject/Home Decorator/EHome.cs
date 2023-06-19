@@ -9,12 +9,8 @@ namespace DBMSProject
 {
     public class EHome : IHome
     {
-        public EHome(int usertype, string name) : base(usertype, name)
+        public EHome(int usertype, int ID) : base(usertype, ID)
         {
-        }
-        public override void InitializeComponent()
-        {
-            base.InitializeComponent();
             vehicleBtn.Hide();
             panelVehicle.Hide();
             vendorBtn.Hide();
@@ -37,6 +33,10 @@ namespace DBMSProject
             panelCustomer.Location = new Point(0, 103);
             sellBtn.Location = new Point(0, 148);
             panelSell.Location = new Point(0, 148);
+        }
+        public override void InitializeComponent()
+        {
+            base.InitializeComponent();
             
         }
     }

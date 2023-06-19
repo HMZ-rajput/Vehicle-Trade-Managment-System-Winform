@@ -9,8 +9,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
-using System.Runtime.InteropServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DBMSProject
@@ -24,7 +22,7 @@ namespace DBMSProject
         SqlDataReader dr;
         DataTable dt;
         int n;
-        int TechID;
+        int ID;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
             int nLeft,
@@ -33,15 +31,15 @@ namespace DBMSProject
             int nBottom,
             int nWidthEllipse,
             int nHeightEllipse);
-        public TechnicianVehicle()
+        public TechnicianVehicle(int ID)
         {
             InitializeComponent();
+            this.ID = ID;
 
             loadTable();
             loadComboBox();
-            SqlCommand techcmd = new SqlCommand("Select Name from Technicians where SessionStatus = 'ACTIVE'");
-            TechID = (int)techcmd.ExecuteScalar();
-        }
+            //MessageBox.Show(""+TechID);
+;        }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
@@ -52,7 +50,7 @@ namespace DBMSProject
                     conn.Open();
                     cmd = new SqlCommand("startVehicleRepair", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@TechnicianID",TechID);
+                    cmd.Parameters.AddWithValue("@TechnicianID",ID);
                     cmd.Parameters.AddWithValue("@VehicleID",vehicleCB.SelectedValue);
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -85,7 +83,7 @@ namespace DBMSProject
                         conn.Open();
                         cmd = new SqlCommand("VehicleRepairUpdate", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@TechnicianID", TechID);
+                        cmd.Parameters.AddWithValue("@TechnicianID", ID);
                         cmd.Parameters.AddWithValue("@VehicleID", int.Parse(idTB.Text));
                         cmd.ExecuteNonQuery();
                         conn.Close();
@@ -95,7 +93,7 @@ namespace DBMSProject
                     catch (Exception ex)
                     {
                         conn.Close();
-                        MessageBox.Show("Unable to remove vehicle");
+                        MessageBox.Show("Unable to remove vehicle"+ex);
                     }
                 }
                 else if (dialogResult == DialogResult.No)
@@ -121,7 +119,7 @@ namespace DBMSProject
                 conn.Open();
                 cmd = new SqlCommand("getRepair", conn);
                 cmd.CommandType = CommandType.StoredProcedure; //added
-                cmd.Parameters.AddWithValue("@TechnicianID",TechID);
+                cmd.Parameters.AddWithValue("@TechnicianID",ID);
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -150,7 +148,7 @@ namespace DBMSProject
                 conn.Open();
                 cmd = new SqlCommand("getRepairDetails", conn);
                 cmd.CommandType = CommandType.StoredProcedure; //added
-                cmd.Parameters.AddWithValue("@TechnicianID", TechID);
+                cmd.Parameters.AddWithValue("@TechnicianID", ID);
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {

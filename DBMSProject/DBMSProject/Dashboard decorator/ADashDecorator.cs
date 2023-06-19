@@ -4,40 +4,16 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DBMSProject
 {
     public class ADashDecorator : IDashboard
     {
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
-        string username;
-        public ADashDecorator(string name)
+        public ADashDecorator(int ID) : base(ID)
         {
-            username = name;
-        }
-        public void setGreetinglbl()
-        {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("select Name from Admin where SessionStatus = 'ACTIVE'", conn);
-            string username = (string)cmd.ExecuteScalar();
-            if (DateTime.Now.Hour < 12)
-            {
-                greetinglbl.Text = "Good morning, " + username;
-            }
-            else if (DateTime.Now.Hour < 18)
-            {
-                greetinglbl.Text = "Good afternoon, " + username;
-            }
-            else
-            {
-                greetinglbl.Text = "Good evening, " + username;
-            }
-            conn.Close();
-        }
-        public override void InitializeComponent() 
-        {
-            base.InitializeComponent();
-            setGreetinglbl();
+            setGreetinglbl(ID);
             conn.Open();
             SqlCommand soldcmd = new SqlCommand("select count(Status) from Vehicles where Status = 'SOLD'", conn);
             soldcountlbl.Text = Convert.ToString(soldcmd.ExecuteScalar());
@@ -50,6 +26,31 @@ namespace DBMSProject
             empcountlbl.Text = Convert.ToString(empcmd.ExecuteScalar());
             techcountlbl.Text = Convert.ToString(techcmd.ExecuteScalar());
             conn.Close();
+        }
+        public void setGreetinglbl(int ID)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select Name from Admin where AdminID = @ID and SessionStatus = 'ACTIVE'", conn);
+            cmd.Parameters.AddWithValue("@ID", ID);
+            string username = Convert.ToString(cmd.ExecuteScalar());
+            conn.Close();
+            if (DateTime.Now.Hour < 12)
+            {
+                greetinglbl.Text = "Good morning, " + username;
+            }
+            else if (DateTime.Now.Hour < 18)
+            {
+                greetinglbl.Text = "Good afternoon, " + username;
+            }
+            else
+            {
+                greetinglbl.Text = "Good evening, " + username;
+            }
+            
+        }
+        public override void InitializeComponent() 
+        {
+            base.InitializeComponent();
         }
        
     }

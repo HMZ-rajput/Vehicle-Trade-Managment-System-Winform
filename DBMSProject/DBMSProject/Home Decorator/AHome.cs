@@ -8,7 +8,7 @@ namespace DBMSProject
 {
     public class AHome : IHome
     {
-        public AHome(int usertype, string name) : base(usertype, name)
+        public AHome(int usertype, int ID) : base(usertype, ID)
         {
         }
 

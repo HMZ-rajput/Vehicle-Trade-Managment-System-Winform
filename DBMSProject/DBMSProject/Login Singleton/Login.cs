@@ -92,9 +92,12 @@ namespace DBMSProject
                         SqlCommand cmd1 = new SqlCommand("update Admin set SessionStatus = 'ACTIVE' where Name = @Name", conn);
                         cmd1.Parameters.AddWithValue("@Name", IdTB.Text);
                         cmd1.ExecuteNonQuery();
+                        SqlCommand cmdID = new SqlCommand("select AdminID from Admin where Name = @Name", conn);
+                        cmdID.Parameters.AddWithValue("@Name", IdTB.Text);
+                        int adminID = (int)cmdID.ExecuteScalar();
                         conn.Close();
                         this.Hide();
-                        new AHome(1, name).Show();
+                        new AHome(1, adminID).Show();
                     }
                     else
                     {
@@ -118,11 +121,14 @@ namespace DBMSProject
                         SqlCommand cmd1 = new SqlCommand("update Employee set SessionStatus = 'ACTIVE' where Name = @Name", conn);
                         cmd1.Parameters.AddWithValue("@Name", IdTB.Text);
                         cmd1.ExecuteNonQuery();
+                        SqlCommand cmdID = new SqlCommand("select EmployeeID from Employee where Name = @Name", conn);
+                        cmdID.Parameters.AddWithValue("@Name", IdTB.Text);
+                        int empID = (int)cmdID.ExecuteScalar();
                         // Note!
                         //Also send Id to next form to get correct records
                         conn.Close();
                         this.Hide();
-                        new EHome(2, name).Show();
+                        new EHome(2, empID).Show();
                         
                     }
                     else
@@ -149,9 +155,12 @@ namespace DBMSProject
                         SqlCommand cmd1 = new SqlCommand("update Technicians set SessionStatus = 'ACTIVE' where Name = @Name", conn);
                         cmd1.Parameters.AddWithValue("@Name", IdTB.Text);
                         cmd1.ExecuteNonQuery();
+                        SqlCommand cmdID = new SqlCommand("select TechnicianID from Technicians where Name = @Name", conn);
+                        cmdID.Parameters.AddWithValue("@Name", IdTB.Text);
+                        int techID = (int)cmdID.ExecuteScalar();
                         conn.Close();
                         this.Hide();
-                        new THome(3, name).Show();
+                        new THome(3, techID).Show();
                         
                     }
                     else

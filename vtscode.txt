@@ -186,3 +186,6 @@ drop column SessionStatus, Password
 
 alter table Technicians
 add SessionStatus varchar(10) check (SessionStatus IN ('ACTIVE','INACTIVE')), Password varchar(100)
+
+alter table Admin 
+add AdminID int identity(1,1)

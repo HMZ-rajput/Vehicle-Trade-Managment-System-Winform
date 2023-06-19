@@ -5,41 +5,18 @@ using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DBMSProject
 {
     public class TDashDecorator : IDashboard
     {
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
-        string name;
-        public TDashDecorator(string name)
+        int ID;
+        public TDashDecorator(int ID) : base(ID)
         {
-            this.name = name;
-        }
-        public void setgreetinglbl()
-        {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("select Name from Technicians where SessionStatus = 'ACTIVE'", conn);
-            string username = (string)cmd.ExecuteScalar();
-            if (DateTime.Now.Hour < 12)
-            {
-                greetinglbl.Text = "Good morning, " + username;
-            }
-            else if (DateTime.Now.Hour < 18)
-            {
-                greetinglbl.Text = "Good afternoon, " + username;
-            }
-            else
-            {
-                greetinglbl.Text = "Good evening, " + username;
-            }
-            conn.Close();
-        }
-        public override void InitializeComponent()
-        {
-            base.InitializeComponent();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IDashboard));
-            setgreetinglbl();
+            setgreetinglbl(ID);
             vendorlbl.Text = "Unrepaired";
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             Losslbl.Text = "Your Profit Today";
@@ -67,6 +44,31 @@ namespace DBMSProject
             emplbl.ForeColor = System.Drawing.Color.Black;
             empcountlbl.ForeColor = System.Drawing.Color.Black;
             topselllbl.Text = "Most Repaired Vehicle";
+        }
+        public void setgreetinglbl(int ID)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select Name from Technicians where TechnicianID = @ID and SessionStatus = 'ACTIVE'", conn);
+            cmd.Parameters.AddWithValue("@ID",ID);
+            string username = Convert.ToString(cmd.ExecuteScalar());
+            conn.Close();
+            if (DateTime.Now.Hour < 12)
+            {
+                greetinglbl.Text = "Good morning, " + username;
+            }
+            else if (DateTime.Now.Hour < 18)
+            {
+                greetinglbl.Text = "Good afternoon, " + username;
+            }
+            else
+            {
+                greetinglbl.Text = "Good evening, " + username;
+            }
+            
+        }
+        public override void InitializeComponent()
+        {
+            base.InitializeComponent();
         }
     }
 }

@@ -96,7 +96,7 @@ namespace DBMSProject
             hidepanels();
             panelSell.Show();
             sellBtn.BackColor = Color.FromArgb(44, 44, 37);
-            Sell sell = new Sell();
+            Sell sell = new Sell(ID);
             OpenChildForm(sell, sender);
         }
 

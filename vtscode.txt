@@ -189,3 +189,8 @@ add SessionStatus varchar(10) check (SessionStatus IN ('ACTIVE','INACTIVE')), Pa
 
 alter table Admin 
 add AdminID int identity(1,1)
+
+-----6/20/23 By hamza zafar, working on sell module
+--Commission column in Sale to calculate Employees total commission easily
+alter table Sale add
+Commission int

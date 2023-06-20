@@ -1252,7 +1252,10 @@ as begin
 select * from TablesAudit order by AuditID desc
 end
 
-
+create procedure getView
+as begin
+select * from VehicleData 
+end
 
 
 

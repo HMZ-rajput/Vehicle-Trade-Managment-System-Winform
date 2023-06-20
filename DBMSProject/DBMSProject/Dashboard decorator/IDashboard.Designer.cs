@@ -516,11 +516,11 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             this.label19.Location = new System.Drawing.Point(3, 34);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(290, 67);
+            this.label19.Size = new System.Drawing.Size(270, 62);
             this.label19.TabIndex = 1;
             this.label19.Text = "$00000000";
             // 
@@ -585,10 +585,10 @@
             this.profitamt.AutoSize = true;
             this.profitamt.BackColor = System.Drawing.Color.Transparent;
             this.profitamt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.profitamt.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profitamt.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profitamt.Location = new System.Drawing.Point(3, 34);
             this.profitamt.Name = "profitamt";
-            this.profitamt.Size = new System.Drawing.Size(290, 67);
+            this.profitamt.Size = new System.Drawing.Size(270, 62);
             this.profitamt.TabIndex = 1;
             this.profitamt.Text = "$00000000";
             // 

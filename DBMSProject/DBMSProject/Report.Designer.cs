@@ -28,7 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.viewDGV = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.viewDGV)).BeginInit();
             this.SuspendLayout();
+            // 
+            // viewDGV
+            // 
+            this.viewDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewDGV.Location = new System.Drawing.Point(12, 205);
+            this.viewDGV.Name = "viewDGV";
+            this.viewDGV.RowHeadersWidth = 51;
+            this.viewDGV.RowTemplate.Height = 24;
+            this.viewDGV.Size = new System.Drawing.Size(1059, 414);
+            this.viewDGV.TabIndex = 0;
             // 
             // Report
             // 
@@ -36,14 +48,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1083, 576);
+            this.Controls.Add(this.viewDGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Report";
             this.Text = "Report";
+            ((System.ComponentModel.ISupportInitialize)(this.viewDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView viewDGV;
     }
 }

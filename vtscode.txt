@@ -227,3 +227,12 @@ add LogoutTime datetime
 --Commission column in Sale to calculate Employees total commission easily
 alter table Sale add
 Commission int
+
+-----------------------views
+create view VehicleData as
+select v.VehicleID, Make, Model, Mileage, vd.Name, Cost, (rd.Quantity*sp.PartCost) as PartsCost,
+r.TechnicianCharges,  r.RepairCost, s.SalePrice, s.profit, v.BuyDate,
+r.CompletionDate as RepairDate, s.SaleDate
+from Vehicles v
+full join Repairs r on r.VehicleID = v.VehicleID full join Sale s on s.VehicleID = v.VehicleID full join Vendors vd 
+on vd.VendorID = v.VendorID full join RepairDetails rd on rd.RepairID = r.RepairID full join SpareParts sp on sp.PartID = rd.PartID

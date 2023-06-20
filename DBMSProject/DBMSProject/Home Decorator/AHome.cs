@@ -20,8 +20,8 @@ namespace DBMSProject
             panelRepair.Hide();
             sellBtn.Hide();
             panelSell.Hide();
-            technicianBtn.Hide();
-            panelTechnician.Hide();
+            //technicianBtn.Hide();
+            //panelTechnician.Hide();
             PaneltechVehicle.Hide();
             techVehicleBtn.Hide();
             

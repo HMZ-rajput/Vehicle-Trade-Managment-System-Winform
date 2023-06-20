@@ -33,6 +33,8 @@
             this.reportBtn = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.syslogpanel = new System.Windows.Forms.Panel();
+            this.syslogbtn = new System.Windows.Forms.Button();
             this.Logobtn = new System.Windows.Forms.Button();
             this.systemlogbtn = new System.Windows.Forms.Button();
             this.PaneltechVehicle = new System.Windows.Forms.Panel();
@@ -43,6 +45,7 @@
             this.panelSpareparts = new System.Windows.Forms.Panel();
             this.panelRepair = new System.Windows.Forms.Panel();
             this.panelCustomer = new System.Windows.Forms.Panel();
+            this.panelTechnician = new System.Windows.Forms.Panel();
             this.panelEmployee = new System.Windows.Forms.Panel();
             this.panelVendor = new System.Windows.Forms.Panel();
             this.Signoutbtn = new System.Windows.Forms.Button();
@@ -60,17 +63,10 @@
             this.userlbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelTechnician = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panelsystemlog = new System.Windows.Forms.Panel();
-            this.syslogbtn = new System.Windows.Forms.Button();
-            this.syslogpanel = new System.Windows.Forms.Panel();
             this.panelLeft.SuspendLayout();
             this.PaneltechVehicle.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelTechnician.SuspendLayout();
-            this.panelsystemlog.SuspendLayout();
             this.SuspendLayout();
             // 
             // sparepartBtn
@@ -164,6 +160,37 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(223, 772);
             this.panelLeft.TabIndex = 11;
+            // 
+            // syslogpanel
+            // 
+            this.syslogpanel.BackColor = System.Drawing.Color.Yellow;
+            this.syslogpanel.Location = new System.Drawing.Point(0, 513);
+            this.syslogpanel.Margin = new System.Windows.Forms.Padding(4);
+            this.syslogpanel.Name = "syslogpanel";
+            this.syslogpanel.Size = new System.Drawing.Size(7, 55);
+            this.syslogpanel.TabIndex = 10;
+            this.syslogpanel.Visible = false;
+            // 
+            // syslogbtn
+            // 
+            this.syslogbtn.BackColor = System.Drawing.Color.Black;
+            this.syslogbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.syslogbtn.FlatAppearance.BorderSize = 0;
+            this.syslogbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.syslogbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syslogbtn.ForeColor = System.Drawing.Color.White;
+            this.syslogbtn.Image = ((System.Drawing.Image)(resources.GetObject("syslogbtn.Image")));
+            this.syslogbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.syslogbtn.Location = new System.Drawing.Point(0, 512);
+            this.syslogbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.syslogbtn.Name = "syslogbtn";
+            this.syslogbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.syslogbtn.Size = new System.Drawing.Size(224, 55);
+            this.syslogbtn.TabIndex = 19;
+            this.syslogbtn.Text = "    System Log";
+            this.syslogbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.syslogbtn.UseVisualStyleBackColor = false;
+            this.syslogbtn.Click += new System.EventHandler(this.syslogbtn_Click);
             // 
             // Logobtn
             // 
@@ -276,6 +303,16 @@
             this.panelCustomer.Size = new System.Drawing.Size(7, 55);
             this.panelCustomer.TabIndex = 7;
             this.panelCustomer.Visible = false;
+            // 
+            // panelTechnician
+            // 
+            this.panelTechnician.BackColor = System.Drawing.Color.Yellow;
+            this.panelTechnician.Location = new System.Drawing.Point(0, 402);
+            this.panelTechnician.Margin = new System.Windows.Forms.Padding(4);
+            this.panelTechnician.Name = "panelTechnician";
+            this.panelTechnician.Size = new System.Drawing.Size(7, 55);
+            this.panelTechnician.TabIndex = 6;
+            this.panelTechnician.Visible = false;
             // 
             // panelEmployee
             // 
@@ -424,7 +461,7 @@
             this.technicianBtn.ForeColor = System.Drawing.Color.White;
             this.technicianBtn.Image = ((System.Drawing.Image)(resources.GetObject("technicianBtn.Image")));
             this.technicianBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.technicianBtn.Location = new System.Drawing.Point(0, 512);
+            this.technicianBtn.Location = new System.Drawing.Point(0, 403);
             this.technicianBtn.Margin = new System.Windows.Forms.Padding(4);
             this.technicianBtn.Name = "technicianBtn";
             this.technicianBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
@@ -545,69 +582,6 @@
             this.panel1.Size = new System.Drawing.Size(1107, 1);
             this.panel1.TabIndex = 2;
             // 
-            // panelTechnician
-            // 
-            this.panelTechnician.BackColor = System.Drawing.Color.Yellow;
-            this.panelTechnician.Controls.Add(this.panelsystemlog);
-            this.panelTechnician.Location = new System.Drawing.Point(0, 402);
-            this.panelTechnician.Margin = new System.Windows.Forms.Padding(4);
-            this.panelTechnician.Name = "panelTechnician";
-            this.panelTechnician.Size = new System.Drawing.Size(7, 55);
-            this.panelTechnician.TabIndex = 6;
-            this.panelTechnician.Visible = false;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Yellow;
-            this.panel6.Location = new System.Drawing.Point(1, 44);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(7, 55);
-            this.panel6.TabIndex = 16;
-            this.panel6.Visible = false;
-            // 
-            // panelsystemlog
-            // 
-            this.panelsystemlog.BackColor = System.Drawing.Color.Yellow;
-            this.panelsystemlog.Controls.Add(this.panel6);
-            this.panelsystemlog.Location = new System.Drawing.Point(0, 1);
-            this.panelsystemlog.Margin = new System.Windows.Forms.Padding(4);
-            this.panelsystemlog.Name = "panelsystemlog";
-            this.panelsystemlog.Size = new System.Drawing.Size(7, 55);
-            this.panelsystemlog.TabIndex = 18;
-            this.panelsystemlog.Visible = false;
-            // 
-            // syslogbtn
-            // 
-            this.syslogbtn.BackColor = System.Drawing.Color.Black;
-            this.syslogbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.syslogbtn.FlatAppearance.BorderSize = 0;
-            this.syslogbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syslogbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.syslogbtn.ForeColor = System.Drawing.Color.White;
-            this.syslogbtn.Image = ((System.Drawing.Image)(resources.GetObject("syslogbtn.Image")));
-            this.syslogbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.syslogbtn.Location = new System.Drawing.Point(-5, 403);
-            this.syslogbtn.Margin = new System.Windows.Forms.Padding(4);
-            this.syslogbtn.Name = "syslogbtn";
-            this.syslogbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.syslogbtn.Size = new System.Drawing.Size(224, 55);
-            this.syslogbtn.TabIndex = 19;
-            this.syslogbtn.Text = "    System Log";
-            this.syslogbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.syslogbtn.UseVisualStyleBackColor = false;
-            this.syslogbtn.Click += new System.EventHandler(this.syslogbtn_Click);
-            // 
-            // syslogpanel
-            // 
-            this.syslogpanel.BackColor = System.Drawing.Color.Yellow;
-            this.syslogpanel.Location = new System.Drawing.Point(0, 403);
-            this.syslogpanel.Margin = new System.Windows.Forms.Padding(4);
-            this.syslogpanel.Name = "syslogpanel";
-            this.syslogpanel.Size = new System.Drawing.Size(7, 55);
-            this.syslogpanel.TabIndex = 10;
-            this.syslogpanel.Visible = false;
-            // 
             // IHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -630,8 +604,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelTechnician.ResumeLayout(false);
-            this.panelsystemlog.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -671,9 +643,7 @@
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Button syslogbtn;
         protected System.Windows.Forms.Panel panelTechnician;
-        protected System.Windows.Forms.Panel panelsystemlog;
         protected System.Windows.Forms.Panel syslogpanel;
-        protected System.Windows.Forms.Panel panel6;
     }
 }
 

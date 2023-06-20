@@ -198,27 +198,6 @@
             this.Logobtn.UseVisualStyleBackColor = false;
             this.Logobtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // systemlogbtn
-            // 
-            this.systemlogbtn.BackColor = System.Drawing.Color.Black;
-            this.systemlogbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.systemlogbtn.FlatAppearance.BorderSize = 0;
-            this.systemlogbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.systemlogbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.systemlogbtn.ForeColor = System.Drawing.Color.White;
-            this.systemlogbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.systemlogbtn.Location = new System.Drawing.Point(0, 402);
-            this.systemlogbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.systemlogbtn.Name = "systemlogbtn";
-            this.systemlogbtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.systemlogbtn.Size = new System.Drawing.Size(223, 55);
-            this.systemlogbtn.TabIndex = 17;
-            this.systemlogbtn.Text = "System Log";
-            this.systemlogbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.systemlogbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.systemlogbtn.UseVisualStyleBackColor = false;
-            this.systemlogbtn.Click += new System.EventHandler(this.systemlogbtn_Click);
-            // 
             // PaneltechVehicle
             // 
             this.PaneltechVehicle.BackColor = System.Drawing.Color.Yellow;
@@ -229,16 +208,6 @@
             this.PaneltechVehicle.Size = new System.Drawing.Size(7, 55);
             this.PaneltechVehicle.TabIndex = 15;
             this.PaneltechVehicle.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Yellow;
-            this.panel2.Location = new System.Drawing.Point(1, 44);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(7, 55);
-            this.panel2.TabIndex = 16;
-            this.panel2.Visible = false;
             // 
             // techVehicleBtn
             // 

@@ -175,8 +175,8 @@ namespace DBMSProject
             vendorBtn.BackColor = Color.Black;
             PaneltechVehicle.Hide();
             techVehicleBtn.BackColor = Color.Black;
-            panelsystemlog.Hide();
-            systemlogbtn.BackColor = Color.Black;
+            syslogpanel.Hide();
+            syslogbtn.BackColor = Color.Black;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -294,8 +294,13 @@ namespace DBMSProject
 
         private void systemlogbtn_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void syslogbtn_Click(object sender, EventArgs e)
+        {
             hidepanels();
-            panelsystemlog.Show();
+            syslogpanel.Show();
             systemlogbtn.BackColor = Color.FromArgb(44, 44, 37);
             SystemLog sl = new SystemLog();
             OpenChildForm(sl, sender);
@@ -303,7 +308,7 @@ namespace DBMSProject
 
         private void userlbl_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

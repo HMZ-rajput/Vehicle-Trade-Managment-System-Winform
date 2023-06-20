@@ -35,11 +35,11 @@
             // viewDGV
             // 
             this.viewDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewDGV.Location = new System.Drawing.Point(12, 205);
+            this.viewDGV.Location = new System.Drawing.Point(12, 12);
             this.viewDGV.Name = "viewDGV";
             this.viewDGV.RowHeadersWidth = 51;
             this.viewDGV.RowTemplate.Height = 24;
-            this.viewDGV.Size = new System.Drawing.Size(1059, 414);
+            this.viewDGV.Size = new System.Drawing.Size(1059, 552);
             this.viewDGV.TabIndex = 0;
             // 
             // Report

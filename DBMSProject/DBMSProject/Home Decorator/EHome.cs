@@ -25,8 +25,8 @@ namespace DBMSProject
             panelSpareparts.Hide();
             techVehicleBtn.Hide();
             PaneltechVehicle.Hide();
-            systemlogbtn.Hide();
-            panelsystemlog.Hide();
+            syslogbtn.Hide();
+            syslogpanel.Hide();
 
             userlbl.Text = "Employee";
             vehicleBtn.Location = new Point(0, 103);

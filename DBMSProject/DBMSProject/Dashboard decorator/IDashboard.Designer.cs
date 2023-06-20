@@ -520,9 +520,9 @@
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             this.label19.Location = new System.Drawing.Point(3, 34);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(270, 62);
+            this.label19.Size = new System.Drawing.Size(189, 62);
             this.label19.TabIndex = 1;
-            this.label19.Text = "$00000000";
+            this.label19.Text = "$25000";
             // 
             // topsellpanel
             // 
@@ -588,9 +588,9 @@
             this.profitamt.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profitamt.Location = new System.Drawing.Point(3, 34);
             this.profitamt.Name = "profitamt";
-            this.profitamt.Size = new System.Drawing.Size(270, 62);
+            this.profitamt.Size = new System.Drawing.Size(189, 62);
             this.profitamt.TabIndex = 1;
-            this.profitamt.Text = "$00000000";
+            this.profitamt.Text = "$50000";
             // 
             // timer1
             // 

@@ -90,7 +90,6 @@
             this.nameTB.Name = "nameTB";
             this.nameTB.Size = new System.Drawing.Size(154, 20);
             this.nameTB.TabIndex = 4;
-            this.nameTB.Text = "Enter Name";
             // 
             // phoneTB
             // 
@@ -102,7 +101,6 @@
             this.phoneTB.Name = "phoneTB";
             this.phoneTB.Size = new System.Drawing.Size(154, 20);
             this.phoneTB.TabIndex = 5;
-            this.phoneTB.Text = "Enter Phone";
             // 
             // addressTB
             // 
@@ -114,7 +112,6 @@
             this.addressTB.Name = "addressTB";
             this.addressTB.Size = new System.Drawing.Size(154, 20);
             this.addressTB.TabIndex = 6;
-            this.addressTB.Text = "Enter Address";
             // 
             // addBtn
             // 
@@ -223,18 +220,17 @@
             this.idTB.Name = "idTB";
             this.idTB.Size = new System.Drawing.Size(154, 20);
             this.idTB.TabIndex = 4;
-            this.idTB.Text = "Enter Vendor ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label2.Location = new System.Drawing.Point(49, 50);
+            this.label2.Location = new System.Drawing.Point(11, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 20);
+            this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 13;
-            this.label2.Text = "ID";
+            this.label2.Text = "Vendor ID";
             // 
             // Vendors
             // 

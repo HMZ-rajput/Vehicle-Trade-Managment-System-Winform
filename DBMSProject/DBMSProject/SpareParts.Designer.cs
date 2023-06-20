@@ -57,7 +57,6 @@
             this.idtxt.Name = "idtxt";
             this.idtxt.Size = new System.Drawing.Size(154, 20);
             this.idtxt.TabIndex = 26;
-            this.idtxt.Text = "Enter Part ID";
             // 
             // idlbl
             // 
@@ -174,7 +173,6 @@
             this.desctxt.Name = "desctxt";
             this.desctxt.Size = new System.Drawing.Size(154, 20);
             this.desctxt.TabIndex = 29;
-            this.desctxt.Text = "Enter Part Description";
             // 
             // costtxt
             // 
@@ -186,7 +184,6 @@
             this.costtxt.Name = "costtxt";
             this.costtxt.Size = new System.Drawing.Size(154, 20);
             this.costtxt.TabIndex = 28;
-            this.costtxt.Text = "Enter Part Cost";
             // 
             // nametxt
             // 
@@ -198,7 +195,6 @@
             this.nametxt.Name = "nametxt";
             this.nametxt.Size = new System.Drawing.Size(154, 20);
             this.nametxt.TabIndex = 27;
-            this.nametxt.Text = "Enter Part Name";
             // 
             // desclbl
             // 

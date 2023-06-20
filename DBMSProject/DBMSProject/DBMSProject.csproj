@@ -133,6 +133,12 @@
     <Compile Include="SpareParts.Designer.cs">
       <DependentUpon>SpareParts.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemLog.Designer.cs">
+      <DependentUpon>SystemLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Technicians.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SpareParts.resx">
       <DependentUpon>SpareParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemLog.resx">
+      <DependentUpon>SystemLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Technicians.resx">
       <DependentUpon>Technicians.cs</DependentUpon>

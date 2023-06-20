@@ -59,7 +59,7 @@
             this.vehicleCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehicleCB.ForeColor = System.Drawing.Color.Yellow;
             this.vehicleCB.FormattingEnabled = true;
-            this.vehicleCB.Location = new System.Drawing.Point(667, 49);
+            this.vehicleCB.Location = new System.Drawing.Point(94, 127);
             this.vehicleCB.Name = "vehicleCB";
             this.vehicleCB.Size = new System.Drawing.Size(121, 26);
             this.vehicleCB.TabIndex = 11;
@@ -72,7 +72,7 @@
             this.partCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.partCB.ForeColor = System.Drawing.Color.Yellow;
             this.partCB.FormattingEnabled = true;
-            this.partCB.Location = new System.Drawing.Point(79, 44);
+            this.partCB.Location = new System.Drawing.Point(94, 42);
             this.partCB.Name = "partCB";
             this.partCB.Size = new System.Drawing.Size(122, 26);
             this.partCB.TabIndex = 14;
@@ -82,7 +82,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label6.Location = new System.Drawing.Point(7, 44);
+            this.label6.Location = new System.Drawing.Point(40, 42);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 20);
             this.label6.TabIndex = 15;
@@ -93,7 +93,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label3.Location = new System.Drawing.Point(586, 55);
+            this.label3.Location = new System.Drawing.Point(18, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 16;
@@ -109,7 +109,6 @@
             this.quantityTB.Name = "quantityTB";
             this.quantityTB.Size = new System.Drawing.Size(122, 22);
             this.quantityTB.TabIndex = 17;
-            this.quantityTB.Text = "Enter Quantity";
             // 
             // label2
             // 
@@ -256,7 +255,6 @@
             this.descTB.Name = "descTB";
             this.descTB.Size = new System.Drawing.Size(122, 22);
             this.descTB.TabIndex = 25;
-            this.descTB.Text = "Enter Description";
             // 
             // label4
             // 
@@ -279,14 +277,13 @@
             this.chargesTB.Name = "chargesTB";
             this.chargesTB.Size = new System.Drawing.Size(240, 22);
             this.chargesTB.TabIndex = 27;
-            this.chargesTB.Text = "Enter Charges of Complete Repair";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
-            this.label5.Location = new System.Drawing.Point(7, 83);
+            this.label5.Location = new System.Drawing.Point(3, 83);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 20);
             this.label5.TabIndex = 30;
@@ -298,11 +295,10 @@
             this.rdIDTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rdIDTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdIDTB.ForeColor = System.Drawing.Color.Yellow;
-            this.rdIDTB.Location = new System.Drawing.Point(98, 83);
+            this.rdIDTB.Location = new System.Drawing.Point(94, 83);
             this.rdIDTB.Name = "rdIDTB";
             this.rdIDTB.Size = new System.Drawing.Size(122, 22);
             this.rdIDTB.TabIndex = 29;
-            this.rdIDTB.Text = "Enter Description";
             // 
             // RepairCar
             // 

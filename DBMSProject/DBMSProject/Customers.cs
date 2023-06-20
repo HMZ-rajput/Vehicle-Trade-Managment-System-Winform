@@ -28,16 +28,23 @@ namespace DBMSProject
       int nBottom,
       int nWidthEllipse,
       int nHeightEllipse);
-        public Customers()
+        public Customers(int usertype)
         {
             InitializeComponent();
 
             loadTable();
+            if (usertype == 2)
+            {
+                updateBtn.Hide();
+                deleteBtn.Hide();
+
+            }
         }
 
 
         public void loadTable()
         {
+            
             try
             {
                 conn.Open();

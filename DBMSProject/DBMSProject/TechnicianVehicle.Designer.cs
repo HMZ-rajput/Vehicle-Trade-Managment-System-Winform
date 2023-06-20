@@ -116,7 +116,6 @@
             this.idTB.Name = "idTB";
             this.idTB.Size = new System.Drawing.Size(106, 20);
             this.idTB.TabIndex = 22;
-            this.idTB.Text = "Enter Car ID";
             // 
             // label6
             // 

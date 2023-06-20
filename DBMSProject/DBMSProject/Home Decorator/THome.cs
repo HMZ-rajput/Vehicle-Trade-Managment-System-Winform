@@ -25,6 +25,8 @@ namespace DBMSProject
             panelReport.Hide();
             sellBtn.Hide();
             panelSell.Hide();
+            systemlogbtn.Hide();
+            panelsystemlog.Hide();
             userlbl.Text = "Technician";
             repairBtn.Location = new Point(0, 103);
             panelRepair.Location = new Point(0, 103);

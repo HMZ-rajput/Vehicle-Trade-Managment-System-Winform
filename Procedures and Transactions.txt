@@ -713,86 +713,461 @@ begin
 update Technicians set Password = @Password where TechnicianID = @TechnicianID
 end
 
----------20/6/23 by hamza working on sell
---Load Employees Sell
-create procedure getEmplyeeSells
-@EmployeeID int
-as
-begin
-select s.SaleID,v.Make,v.Model,c.Name as Customer,s.SalePrice,s.Commission,s.profit,s.SaleDate from Sale s inner join Vehicles v on s.VehicleID=v.VehicleID inner join Customers c on c.CustomerID=s.CustomerID where s.EmployeeID=@EmployeeID
-end
+---------------------------------20/6/23 by zain
 
---load customers in CB
-create procedure readCustomers
-as
-begin
-select CustomerID,Name from Customers
-end
+create TRIGGER TrSessionEmp ON Employee
+AFTER UPDATE
+AS
+BEGIN
+    IF UPDATE(SessionStatus) 
+    BEGIN
+        DECLARE @NewSessionStatus VARCHAR(10)
+        DECLARE @OldSessionStatus VARCHAR(10)
 
---load repaired vehicle in CB
-create procedure readRepairedCar
-as
-begin
-select VehicleID,Model from Vehicles where Status='REPAIRED'
-end
+        SELECT @NewSessionStatus = SessionStatus
+        FROM inserted
 
---get Employee Commission Perc
-create procedure getEmployeeComPerc
-@EmployeeID int
-as
-begin
-select CommisionPercentage from Employee where EmployeeID=@EmployeeID
-end
+        SELECT @OldSessionStatus = SessionStatus
+        FROM deleted
 
---get Vehicle Cost
-create procedure getVehicleCost
-@VehicleID int
-as
-begin
-select Cost from Vehicles where VehicleID=@VehicleID
-end
+        -- Check if SessionStatus changed to 'ACTIVE' or 'INACTIVE'
+        IF (@NewSessionStatus = 'ACTIVE' and @OldSessionStatus = 'INACTIVE')
+            AND (@OldSessionStatus != @NewSessionStatus)
+        BEGIN
+            INSERT INTO SessionLog (Usertype, UserID, Username, LoginTime)
+            SELECT 'Employee',i.EmployeeID,i.Name, GETDATE()
+            FROM inserted i
+        END
+		IF (@NewSessionStatus = 'INACTIVE' and @OldSessionStatus = 'ACTIVE')
+            AND (@OldSessionStatus != @NewSessionStatus)
+        BEGIN
+			update SessionLog 
+			set LogoutTime = GETDATE() where Usertype = 'Employee' and UserID in (select UserID from inserted)
+			and LogoutTime is null
+        END
+    END
+END
 
---get vehicle repair cost
-create procedure getVehicleRepairCost
-@VehicleID int
-as
-begin
-select r.RepairCost from Vehicles v inner join Repairs r on v.VehicleID=r.VehicleID where v.VehicleID=@VehicleID
-end
+---------------------------------------------------Technician login/logout trigger
 
---Fixed get repair details for Technician
-alter procedure getRepairDetails
-@TechnicianID int
-as
-begin
-select rd.rdID as [Repair Detail ID],v.Model,sp.PartName,sp.PartCost,rd.Quantity, (sp.PartCost*rd.Quantity) as Total from RepairDetails rd inner join Repairs r on rd.RepairID=r.RepairID inner join SpareParts sp on sp.PartID=rd.PartID inner join Vehicles v on r.VehicleID=v.VehicleID where r.TechnicianID=@TechnicianID
-end
+create TRIGGER TrSessionTech ON Technicians
+AFTER UPDATE
+AS
+BEGIN
+    IF UPDATE(SessionStatus) 
+    BEGIN
+        DECLARE @NewSessionStatus VARCHAR(10)
+        DECLARE @OldSessionStatus VARCHAR(10)
 
---Sell Caralter procedure sellCar
-@EmployeeID int,
-@VehicleID int,
-@CustomerID int,
-@SalePrice int,
-@Commission int,
-@profit int
-as
-begin
-insert into Sale values(@VehicleID,@CustomerID,@SalePrice,getdate(),@profit,@EmployeeID,@Commission)
-update Vehicles set SaleDate=getdate(), Status='SOLD' where VehicleID=@VehicleID
-end
+        SELECT @NewSessionStatus = SessionStatus
+        FROM inserted
 
---Delete Sale		
-create procedure deleteSale
-@SaleID int,
-@EmployeeID int
-as
-begin
-if exists(select 1 from Sale where SaleID=@SaleID and EmployeeID=@EmployeeID)
-begin
-declare @VehicleID int;
-set @VehicleID=(select VehicleID from Sale where SaleID=@SaleID)
+        SELECT @OldSessionStatus = SessionStatus
+        FROM deleted
 
-update Vehicles set SaleDate=NULL, Status='REPAIRED' where VehicleID=@VehicleID
-delete from Sale where SaleID=@SaleID
-end
-end
+        -- Check if SessionStatus changed to 'ACTIVE' or 'INACTIVE'
+        IF (@NewSessionStatus = 'ACTIVE' and @OldSessionStatus = 'INACTIVE')
+            AND (@OldSessionStatus != @NewSessionStatus)
+        BEGIN
+            INSERT INTO SessionLog (Usertype, UserID, Username, LoginTime)
+            SELECT 'Technician',i.TechnicianID,i.Name, GETDATE()
+            FROM inserted i
+        END
+		IF (@NewSessionStatus = 'INACTIVE' and @OldSessionStatus = 'ACTIVE')
+            AND (@OldSessionStatus != @NewSessionStatus)
+        BEGIN
+			update SessionLog 
+			set LogoutTime = GETDATE() where Usertype = 'Technician' and UserID in (select UserID from inserted)
+			and LogoutTime is null
+        END
+    END
+END
+
+---------------------------------------------admin login/logout
+create TRIGGER TrSessionAdmin ON Admin
+AFTER UPDATE
+AS
+BEGIN
+    IF UPDATE(SessionStatus) 
+    BEGIN
+        DECLARE @NewSessionStatus VARCHAR(10)
+        DECLARE @OldSessionStatus VARCHAR(10)
+
+        SELECT @NewSessionStatus = SessionStatus
+        FROM inserted
+
+        SELECT @OldSessionStatus = SessionStatus
+        FROM deleted
+
+        -- Check if SessionStatus changed to 'ACTIVE' or 'INACTIVE'
+        IF (@NewSessionStatus = 'ACTIVE' and @OldSessionStatus = 'INACTIVE')
+            AND (@OldSessionStatus != @NewSessionStatus)
+        BEGIN
+            INSERT INTO SessionLog (Usertype, UserID, Username, LoginTime)
+            SELECT 'Administrator',i.AdminID,i.Name, GETDATE()
+            FROM inserted i
+        END
+		IF (@NewSessionStatus = 'INACTIVE' and @OldSessionStatus = 'ACTIVE')
+            AND (@OldSessionStatus != @NewSessionStatus)
+        BEGIN
+			update SessionLog 
+			set LogoutTime = GETDATE() where Usertype = 'Administrator' and UserID in (select UserID from inserted)
+			and LogoutTime is null
+        END
+    END
+END
+
+---------------------------------------------------customer
+create trigger TrAuditCust on Customers
+    after insert, update, delete
+as
+    declare @login_name varchar(128)
+ 
+    SELECT @login_name = Username
+    FROM   SessionLog
+    WHERE  LogoutTime is null and LoginTime is not null
+ 
+    if exists ( select 0 from Deleted )
+        begin
+            if exists ( select 0 from Inserted )
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'Customer',D.CustomerID , @login_name, GETDATE(),'UPDATION'
+                            from deleted D
+                end
+            else
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'Customer',D.CustomerID , @login_name, GETDATE(),'DELETION' from deleted D
+                end  
+        end
+    else
+        begin
+            insert into TablesAudit
+                    ( TableName,
+					  TableID,
+					  ModifiedBy,
+				      ModifiedDate,
+					  Operation
+                    )
+                   select 'Customer',I.CustomerID , @login_name, GETDATE(),'ADDITION' from inserted I
+        end
+go
+----------------------------------------------RD
+create trigger TrAuditRD on RepairDetails
+    after insert, update, delete
+as
+    declare @login_name varchar(128)
+ 
+    SELECT @login_name = Username
+    FROM   SessionLog
+    WHERE  LogoutTime is null and LoginTime is not null
+ 
+    if exists ( select 0 from Deleted )
+        begin
+            if exists ( select 0 from Inserted )
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'RepairDetails',D.rdID , @login_name, GETDATE(),'UPDATION'
+                            from deleted D
+                end
+            else
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'RepairDetails',D.rdID , @login_name, GETDATE(),'DELETION' from deleted D
+                end  
+        end
+    else
+        begin
+            insert into TablesAudit
+                    ( TableName,
+					  TableID,
+					  ModifiedBy,
+				      ModifiedDate,
+					  Operation
+                    )
+                   select 'RepairDetails',I.rdID , @login_name, GETDATE(),'ADDITION' from inserted I
+        end
+go
+
+create trigger TrAuditRepair on Repairs
+    after insert, update, delete
+as
+    declare @login_name varchar(128)
+ 
+    SELECT @login_name = Username
+    FROM   SessionLog
+    WHERE  LogoutTime is null and LoginTime is not null
+ 
+    if exists ( select 0 from Deleted )
+        begin
+            if exists ( select 0 from Inserted )
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'Repairs',D.RepairID , @login_name, GETDATE(),'UPDATION'
+                            from deleted D
+                end
+            else
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'Repairs',D.RepairID , @login_name, GETDATE(),'DELETION' from deleted D
+                end  
+        end
+    else
+        begin
+            insert into TablesAudit
+                    ( TableName,
+					  TableID,
+					  ModifiedBy,
+				      ModifiedDate,
+					  Operation
+                    )
+                   select 'Repairs',I.RepairID , @login_name, GETDATE(),'ADDITION' from inserted I
+        end
+go
+
+create trigger TrAuditSales on Sale
+    after insert, update, delete
+as
+    declare @login_name varchar(128)
+ 
+    SELECT @login_name = Username
+    FROM   SessionLog
+    WHERE  LogoutTime is null and LoginTime is not null
+ 
+    if exists ( select 0 from Deleted )
+        begin
+            if exists ( select 0 from Inserted )
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'Sale',D.SaleID , @login_name, GETDATE(),'UPDATION'
+                            from deleted D
+                end
+            else
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'Sale',D.SaleID , @login_name, GETDATE(),'DELETION' from deleted D
+                end  
+        end
+    else
+        begin
+            insert into TablesAudit
+                    ( TableName,
+					  TableID,
+					  ModifiedBy,
+				      ModifiedDate,
+					  Operation
+                    )
+                   select 'Sale',I.SaleID , @login_name, GETDATE(),'ADDITION' from inserted I
+        end
+go
+
+
+
+create trigger TrAuditSP on SpareParts
+    after insert, update, delete
+as
+    declare @login_name varchar(128)
+ 
+    SELECT @login_name = Username
+    FROM   SessionLog
+    WHERE  LogoutTime is null and LoginTime is not null
+ 
+    if exists ( select 0 from Deleted )
+        begin
+            if exists ( select 0 from Inserted )
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'SpareParts',D.PartID , @login_name, GETDATE(),'UPDATION'
+                            from deleted D
+                end
+            else
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'SpareParts',D.PartID , @login_name, GETDATE(),'DELETION' from deleted D
+                end  
+        end
+    else
+        begin
+            insert into TablesAudit
+                    ( TableName,
+					  TableID,
+					  ModifiedBy,
+				      ModifiedDate,
+					  Operation
+                    )
+                   select 'SpareParts',I.PartID , @login_name, GETDATE(),'ADDITION' from inserted I
+        end
+go
+
+
+
+create trigger TrAuditVehicle on Vehicles
+    after insert, update, delete
+as
+    declare @login_name varchar(128)
+ 
+    SELECT @login_name = Username
+    FROM   SessionLog
+    WHERE  LogoutTime is null and LoginTime is not null
+ 
+    if exists ( select 0 from Deleted )
+        begin
+            if exists ( select 0 from Inserted )
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'Vehicles',D.VehicleID , @login_name, GETDATE(),'UPDATION'
+                            from deleted D
+                end
+            else
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'Vehicles',D.VehicleID , @login_name, GETDATE(),'DELETION' from deleted D
+                end  
+        end
+    else
+        begin
+            insert into TablesAudit
+                    ( TableName,
+					  TableID,
+					  ModifiedBy,
+				      ModifiedDate,
+					  Operation
+                    )
+                   select 'Vehicles',I.VehicleID , @login_name, GETDATE(),'ADDITION' from inserted I
+        end
+go
+
+create trigger TrAuditVendors on Vendors
+    after insert, update, delete
+as
+    declare @login_name varchar(128)
+ 
+    SELECT @login_name = Username
+    FROM   SessionLog
+    WHERE  LogoutTime is null and LoginTime is not null
+ 
+    if exists ( select 0 from Deleted )
+        begin
+            if exists ( select 0 from Inserted )
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'Vendors',D.VendorID , @login_name, GETDATE(),'UPDATION'
+                            from deleted D
+                end
+            else
+                begin
+                    insert into TablesAudit
+                            ( TableName,
+							  TableID,
+							  ModifiedBy,
+							  ModifiedDate,
+							  Operation
+                            )
+                            select 'Vendors',D.VendorID , @login_name, GETDATE(),'DELETION' from deleted D
+                end  
+        end
+    else
+        begin
+            insert into TablesAudit
+                    ( TableName,
+					  TableID,
+					  ModifiedBy,
+				      ModifiedDate,
+					  Operation
+                    )
+                   select 'Vendors',I.VendorID , @login_name, GETDATE(),'ADDITION' from inserted I
+        end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+

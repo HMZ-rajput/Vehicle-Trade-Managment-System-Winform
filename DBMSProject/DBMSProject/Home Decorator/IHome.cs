@@ -52,7 +52,7 @@ namespace DBMSProject
             hidepanels();
             panelCustomer.Show();
             customerBtn.BackColor = Color.FromArgb(44, 44, 37);
-            Customers customer = new Customers();
+            Customers customer = new Customers(usertype);
             OpenChildForm(customer, sender);
         }
             private void technicianBtn_Click(object sender, EventArgs e)

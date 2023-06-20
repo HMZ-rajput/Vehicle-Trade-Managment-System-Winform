@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,16 @@ namespace DBMSProject
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
         public EDashDecorator(int ID) : base(ID)
         {
+            label21.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label21.Location = new System.Drawing.Point(4, 26);
             setgreetinglbl(ID);
             Losslbl.Text = "Your Sales Today";
             losspanel.BackColor = System.Drawing.Color.Black;
             Losslbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             avgpartlbl.Text = "Top Selling Car";
-            label11.Text = "Toyota";
-            label11.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            avgcountbl.Text = "Toyota";
+            avgcountbl.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             pictureBox5.Hide();
             topselllbl.Text = "Your Sales This Month";
             label21.Text = "$34,000";
@@ -39,6 +42,8 @@ namespace DBMSProject
             custcountlbl.Text = Convert.ToString(custcmd.ExecuteScalar());
             empcountlbl.Text = Convert.ToString(empcmd.ExecuteScalar());
             techcountlbl.Text = Convert.ToString(techcmd.ExecuteScalar());
+            avgcountbl.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            avgcountbl.Location = new System.Drawing.Point(8, 34);
             conn.Close();
         }
         public void setgreetinglbl(int ID)
@@ -65,6 +70,49 @@ namespace DBMSProject
         {
             base.InitializeComponent();
             
+        }
+        int seconds = 0;
+        protected override void carpaneltimer_Tick(object sender, EventArgs e)
+        {
+            seconds++;
+            if (seconds == 1)
+            {
+                conn.Open();
+                avgpartlbl.Text = "Top Selling Vehicle";
+                SqlCommand cmd = new SqlCommand("select max(Make+' '+Model) from Vehicles where Status = 'SOLD'", conn);
+                avgcountbl.Text = Convert.ToString(cmd.ExecuteScalar());
+                conn.Close();
+                carpaneltimer_Tick(sender, e);
+            }
+            if (seconds == 7)
+            {
+                partspanel.BackColor = Color.Black;
+                avgcountbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
+                avgpartlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
+                conn.Open();
+                avgpartlbl.Text = "Most Repaired Vehicle";
+                SqlCommand cmd = new SqlCommand("select max(Make+' '+Model) from Vehicles where Status = 'REPAIRED'", conn);
+                avgcountbl.Text = Convert.ToString(cmd.ExecuteScalar());
+                conn.Close();
+                carpaneltimer_Tick(sender, e);
+            }
+            if (seconds == 12)
+            {
+                partspanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
+                avgpartlbl.ForeColor = Color.Black;
+                avgcountbl.ForeColor = Color.Black;
+                conn.Open();
+                avgpartlbl.Text = "Most Unrepaired Vehicle";
+                SqlCommand cmd = new SqlCommand("select max(Make+' '+Model) from Vehicles where Status = 'NOT REPAIR'", conn);
+                avgcountbl.Text = Convert.ToString(cmd.ExecuteScalar());
+                conn.Close();
+                carpaneltimer_Tick(sender, e);
+            }
+            if (seconds == 17)
+            {
+                seconds = 0;
+                carpaneltimer_Tick(sender, e);
+            }
         }
     }
 }

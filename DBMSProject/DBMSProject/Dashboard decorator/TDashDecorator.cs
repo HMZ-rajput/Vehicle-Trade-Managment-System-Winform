@@ -44,6 +44,21 @@ namespace DBMSProject
             emplbl.ForeColor = System.Drawing.Color.Black;
             empcountlbl.ForeColor = System.Drawing.Color.Black;
             topselllbl.Text = "Most Repaired Vehicle";
+            conn.Open();
+            SqlCommand avgcmd = new SqlCommand("select sum(rd.Quantity)/count(rd.RepairID) as 'AvgPartsPerCar' from RepairDetails rd", conn);
+            avgcountbl.Text = Convert.ToString(avgcmd.ExecuteScalar());
+            SqlCommand spcmd = new SqlCommand("select count(*) from SpareParts", conn);
+            empcountlbl.Text = Convert.ToString(spcmd.ExecuteScalar());
+            SqlCommand custcmd = new SqlCommand("select count(*) from Customers", conn);
+            techcountlbl.Text = Convert.ToString(custcmd.ExecuteScalar());
+            SqlCommand soldcmd = new SqlCommand("select count(Status) from Vehicles where Status = 'SOLD'", conn);
+            custcountlbl.Text = Convert.ToString(soldcmd.ExecuteScalar());
+            SqlCommand unrepcmd = new SqlCommand("select count(Status) from Vehicles where Status != 'REPAIRED' and Status != 'SOLD'", conn);
+            vendorcountlbl.Text = Convert.ToString(unrepcmd.ExecuteScalar());
+            SqlCommand asscmd = new SqlCommand("select count(RepairID) from Repairs where TechnicianID = @ID", conn);
+            asscmd.Parameters.AddWithValue("@ID",ID);
+            soldcountlbl.Text = Convert.ToString(asscmd.ExecuteScalar());
+            conn.Close();
         }
         public void setgreetinglbl(int ID)
         {

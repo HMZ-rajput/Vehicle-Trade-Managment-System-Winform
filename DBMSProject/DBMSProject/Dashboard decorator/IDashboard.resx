@@ -121,7 +121,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAGVsSURBVHhe7d0J
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAGVsSURBVHhe7d0J
         3HXV3P/xu3kuzSPNJEXIWCJDVEKmNOCJNCkZQhlDIkShFEWGTCFjMpYhER5EPMiUKVOozJ7n///8al9a
         97p/13Wfvdba++y1z/f7er29tO/rWmvvfe11zjr77LXWov/3//7fYshKeCLOxFfxd9g/zIrr8Hm8Bg+P
         z4+IiMyPrIqd8Gg8F6/CWXgXPgp7ff0GrsJv8Tf8E3/AT3EFLsVFeC/Owal4EQ7GLljPq1vaWfw/Fi26
@@ -1965,6 +1965,9 @@
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="carpaneltimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>118, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>54</value>

@@ -189,3 +189,37 @@ add SessionStatus varchar(10) check (SessionStatus IN ('ACTIVE','INACTIVE')), Pa
 
 alter table Admin 
 add AdminID int identity(1,1)
+
+--------------------------------------6/20/2023 by zain
+create table TablesAudit(
+  AuditID int not null identity(1, 1),
+  TableName varchar(20),
+  TableID int,
+  ModifiedBy varchar(128),
+  ModifiedDate datetime,
+  Operation varchar(10)
+)
+
+drop table SystemLog
+
+create table SessionLog(
+SessionID int identity(1,1),
+Usertype varchar(20),
+UserID int,
+Username varchar(50),
+DateTime datetime, 
+operation varchar(10)
+)
+
+alter table SessionLog
+drop column operation
+
+alter table SessionLog
+drop column DateTime
+
+alter table SessionLog
+add LoginTime datetime
+
+alter table SessionLog
+add LogoutTime datetime
+

@@ -14,7 +14,7 @@ namespace DBMSProject
 {
     public partial class RepairCar : Form
     {
-           //Temprary Technician id, it will be replaced by id of technician that login
+        
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
         SqlCommand cmd;
         SqlDataAdapter adt;

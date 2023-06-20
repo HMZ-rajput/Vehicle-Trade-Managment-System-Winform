@@ -44,6 +44,7 @@ namespace DBMSProject
             topsellpanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, topsellpanel.Width, topsellpanel.Height, 5, 5));
             label7.Text = DateTime.Now.ToString("dddd, dd MMMM");
             timer1.Start();
+            carpaneltimer.Start();
             conn.Open();
             SqlCommand veh = new SqlCommand("select count(*) from Vehicles",conn);
             boughtlbl.Text = Convert.ToString(veh.ExecuteScalar());
@@ -69,6 +70,49 @@ namespace DBMSProject
         private void timer1_Tick(object sender, EventArgs e)
         {
             timelbl.Text = DateTime.Now.ToString("hh:mm tt");
+        }
+        int seconds=0;
+        protected virtual void carpaneltimer_Tick(object sender, EventArgs e)
+        {
+            seconds++;
+            if(seconds == 1)
+            {
+                conn.Open();
+                topselllbl.Text = "Top Selling Vehicle";
+                SqlCommand cmd = new SqlCommand("select max(Make+' '+Model) from Vehicles where Status = 'SOLD'",conn);
+                label21.Text = Convert.ToString(cmd.ExecuteScalar());
+                conn.Close();
+                carpaneltimer_Tick(sender,e);
+            }
+            if (seconds == 7)
+            {
+                topsellpanel.BackColor = Color.Black;
+                topselllbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
+                label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
+                conn.Open();
+                topselllbl.Text = "Most Repaired Vehicle";
+                SqlCommand cmd = new SqlCommand("select max(Make+' '+Model) from Vehicles where Status = 'REPAIRED'",conn);
+                label21.Text = Convert.ToString(cmd.ExecuteScalar());
+                conn.Close();
+                carpaneltimer_Tick(sender, e);
+            }
+            if(seconds == 12)
+            {
+                topsellpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
+                topselllbl.ForeColor = Color.Black;
+                label21.ForeColor = Color.Black;
+                conn.Open();
+                topselllbl.Text = "Most Unrepaired Vehicle";
+                SqlCommand cmd = new SqlCommand("select max(Make+' '+Model) from Vehicles where Status = 'NOT REPAIR'",conn);
+                label21.Text = Convert.ToString(cmd.ExecuteScalar());
+                conn.Close();
+                carpaneltimer_Tick(sender, e);    
+            }
+            if(seconds == 17)
+            {
+                seconds = 0;
+                carpaneltimer_Tick(sender, e);
+            }
         }
     }
 }

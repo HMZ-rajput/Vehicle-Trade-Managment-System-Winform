@@ -25,6 +25,10 @@ namespace DBMSProject
             custcountlbl.Text = Convert.ToString(custcmd.ExecuteScalar());
             empcountlbl.Text = Convert.ToString(empcmd.ExecuteScalar());
             techcountlbl.Text = Convert.ToString(techcmd.ExecuteScalar());
+            SqlCommand avgcmd = new SqlCommand("select sum(rd.Quantity)/count(rd.RepairID) as 'AvgPartsPerCar' from RepairDetails rd", conn);
+            avgcountbl.Text = Convert.ToString(avgcmd.ExecuteScalar());
+            
+            
             conn.Close();
         }
         public void setGreetinglbl(int ID)

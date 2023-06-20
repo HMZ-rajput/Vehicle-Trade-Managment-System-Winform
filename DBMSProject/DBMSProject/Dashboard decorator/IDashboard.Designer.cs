@@ -51,7 +51,7 @@
             this.partspanel = new System.Windows.Forms.Panel();
             this.avgpartlbl = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.avgcountbl = new System.Windows.Forms.Label();
             this.custpanel = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.custlbl = new System.Windows.Forms.Label();
@@ -76,6 +76,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.citylbl = new System.Windows.Forms.Label();
             this.timelbl = new System.Windows.Forms.Label();
+            this.carpaneltimer = new System.Windows.Forms.Timer(this.components);
             this.BuyPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.RepairPanel.SuspendLayout();
@@ -139,9 +140,9 @@
             this.boughtlbl.Font = new System.Drawing.Font("Segoe UI", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boughtlbl.Location = new System.Drawing.Point(4, 26);
             this.boughtlbl.Name = "boughtlbl";
-            this.boughtlbl.Size = new System.Drawing.Size(116, 89);
+            this.boughtlbl.Size = new System.Drawing.Size(65, 89);
             this.boughtlbl.TabIndex = 1;
-            this.boughtlbl.Text = "69";
+            this.boughtlbl.Text = "-";
             // 
             // RepairPanel
             // 
@@ -184,9 +185,9 @@
             this.repaircountlbl.Font = new System.Drawing.Font("Segoe UI", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.repaircountlbl.Location = new System.Drawing.Point(4, 26);
             this.repaircountlbl.Name = "repaircountlbl";
-            this.repaircountlbl.Size = new System.Drawing.Size(116, 89);
+            this.repaircountlbl.Size = new System.Drawing.Size(65, 89);
             this.repaircountlbl.TabIndex = 1;
-            this.repaircountlbl.Text = "31";
+            this.repaircountlbl.Text = "-";
             // 
             // SoldPanel
             // 
@@ -229,9 +230,9 @@
             this.soldcountlbl.Font = new System.Drawing.Font("Segoe UI", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soldcountlbl.Location = new System.Drawing.Point(4, 26);
             this.soldcountlbl.Name = "soldcountlbl";
-            this.soldcountlbl.Size = new System.Drawing.Size(116, 89);
+            this.soldcountlbl.Size = new System.Drawing.Size(65, 89);
             this.soldcountlbl.TabIndex = 1;
-            this.soldcountlbl.Text = "24";
+            this.soldcountlbl.Text = "-";
             // 
             // greetinglbl
             // 
@@ -297,9 +298,9 @@
             this.vendorcountlbl.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vendorcountlbl.Location = new System.Drawing.Point(3, 37);
             this.vendorcountlbl.Name = "vendorcountlbl";
-            this.vendorcountlbl.Size = new System.Drawing.Size(54, 62);
+            this.vendorcountlbl.Size = new System.Drawing.Size(46, 62);
             this.vendorcountlbl.TabIndex = 1;
-            this.vendorcountlbl.Text = "5";
+            this.vendorcountlbl.Text = "-";
             this.vendorcountlbl.Click += new System.EventHandler(this.label9_Click);
             // 
             // partspanel
@@ -307,7 +308,7 @@
             this.partspanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             this.partspanel.Controls.Add(this.avgpartlbl);
             this.partspanel.Controls.Add(this.pictureBox5);
-            this.partspanel.Controls.Add(this.label11);
+            this.partspanel.Controls.Add(this.avgcountbl);
             this.partspanel.Location = new System.Drawing.Point(394, 413);
             this.partspanel.Name = "partspanel";
             this.partspanel.Size = new System.Drawing.Size(293, 126);
@@ -336,17 +337,17 @@
             this.pictureBox5.TabIndex = 2;
             this.pictureBox5.TabStop = false;
             // 
-            // label11
+            // avgcountbl
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(4, 26);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 89);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "3";
+            this.avgcountbl.AutoSize = true;
+            this.avgcountbl.BackColor = System.Drawing.Color.Transparent;
+            this.avgcountbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.avgcountbl.Font = new System.Drawing.Font("Segoe UI", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avgcountbl.Location = new System.Drawing.Point(4, 26);
+            this.avgcountbl.Name = "avgcountbl";
+            this.avgcountbl.Size = new System.Drawing.Size(65, 89);
+            this.avgcountbl.TabIndex = 1;
+            this.avgcountbl.Text = "-";
             // 
             // custpanel
             // 
@@ -391,9 +392,9 @@
             this.custcountlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             this.custcountlbl.Location = new System.Drawing.Point(3, 37);
             this.custcountlbl.Name = "custcountlbl";
-            this.custcountlbl.Size = new System.Drawing.Size(81, 62);
+            this.custcountlbl.Size = new System.Drawing.Size(46, 62);
             this.custcountlbl.TabIndex = 1;
-            this.custcountlbl.Text = "57";
+            this.custcountlbl.Text = "-";
             // 
             // emppanel
             // 
@@ -438,9 +439,9 @@
             this.empcountlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             this.empcountlbl.Location = new System.Drawing.Point(3, 37);
             this.empcountlbl.Name = "empcountlbl";
-            this.empcountlbl.Size = new System.Drawing.Size(81, 62);
+            this.empcountlbl.Size = new System.Drawing.Size(46, 62);
             this.empcountlbl.TabIndex = 1;
-            this.empcountlbl.Text = "28";
+            this.empcountlbl.Text = "-";
             // 
             // techpanel
             // 
@@ -483,9 +484,9 @@
             this.techcountlbl.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.techcountlbl.Location = new System.Drawing.Point(-1, 37);
             this.techcountlbl.Name = "techcountlbl";
-            this.techcountlbl.Size = new System.Drawing.Size(81, 62);
+            this.techcountlbl.Size = new System.Drawing.Size(46, 62);
             this.techcountlbl.TabIndex = 1;
-            this.techcountlbl.Text = "10";
+            this.techcountlbl.Text = "-";
             // 
             // losspanel
             // 
@@ -548,12 +549,12 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(4, 26);
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(8, 41);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(225, 81);
+            this.label21.Size = new System.Drawing.Size(182, 45);
             this.label21.TabIndex = 1;
-            this.label21.Text = "Toyota";
+            this.label21.Text = "Initializing";
             // 
             // profitpanel
             // 
@@ -573,9 +574,9 @@
             this.profitlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profitlbl.Location = new System.Drawing.Point(14, 14);
             this.profitlbl.Name = "profitlbl";
-            this.profitlbl.Size = new System.Drawing.Size(121, 25);
+            this.profitlbl.Size = new System.Drawing.Size(102, 25);
             this.profitlbl.TabIndex = 1;
-            this.profitlbl.Text = "Profit Earned";
+            this.profitlbl.Text = "Profit/Loss";
             // 
             // profitamt
             // 
@@ -583,7 +584,7 @@
             this.profitamt.BackColor = System.Drawing.Color.Transparent;
             this.profitamt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profitamt.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profitamt.Location = new System.Drawing.Point(5, 26);
+            this.profitamt.Location = new System.Drawing.Point(4, 26);
             this.profitamt.Name = "profitamt";
             this.profitamt.Size = new System.Drawing.Size(261, 81);
             this.profitamt.TabIndex = 1;
@@ -618,6 +619,11 @@
             this.timelbl.Size = new System.Drawing.Size(109, 31);
             this.timelbl.TabIndex = 11;
             this.timelbl.Text = "00:00 AM";
+            // 
+            // carpaneltimer
+            // 
+            this.carpaneltimer.Interval = 1000;
+            this.carpaneltimer.Tick += new System.EventHandler(this.carpaneltimer_Tick);
             // 
             // IDashboard
             // 
@@ -699,7 +705,7 @@
         protected System.Windows.Forms.Label vendorcountlbl;
         protected System.Windows.Forms.Panel partspanel;
         protected System.Windows.Forms.PictureBox pictureBox5;
-        protected System.Windows.Forms.Label label11;
+        protected System.Windows.Forms.Label avgcountbl;
         protected System.Windows.Forms.Panel custpanel;
         protected System.Windows.Forms.PictureBox pictureBox6;
         protected System.Windows.Forms.Label custlbl;
@@ -725,5 +731,6 @@
         protected System.Windows.Forms.Timer timer1;
         protected System.Windows.Forms.Label citylbl;
         protected System.Windows.Forms.Label timelbl;
+        protected System.Windows.Forms.Timer carpaneltimer;
     }
 }

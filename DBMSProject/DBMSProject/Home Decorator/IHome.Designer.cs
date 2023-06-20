@@ -33,8 +33,12 @@
             this.reportBtn = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.panelsystemlog = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.Logobtn = new System.Windows.Forms.Button();
+            this.systemlogbtn = new System.Windows.Forms.Button();
             this.PaneltechVehicle = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.techVehicleBtn = new System.Windows.Forms.Button();
             this.panelSell = new System.Windows.Forms.Panel();
             this.panelReport = new System.Windows.Forms.Panel();
@@ -59,15 +63,11 @@
             this.userlbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.systemlogbtn = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelsystemlog = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panelLeft.SuspendLayout();
+            this.panelsystemlog.SuspendLayout();
             this.PaneltechVehicle.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelsystemlog.SuspendLayout();
             this.SuspendLayout();
             // 
             // sparepartBtn
@@ -157,6 +157,25 @@
             this.panelLeft.Size = new System.Drawing.Size(167, 627);
             this.panelLeft.TabIndex = 11;
             // 
+            // panelsystemlog
+            // 
+            this.panelsystemlog.BackColor = System.Drawing.Color.Yellow;
+            this.panelsystemlog.Controls.Add(this.panel6);
+            this.panelsystemlog.Location = new System.Drawing.Point(1, 543);
+            this.panelsystemlog.Name = "panelsystemlog";
+            this.panelsystemlog.Size = new System.Drawing.Size(5, 45);
+            this.panelsystemlog.TabIndex = 17;
+            this.panelsystemlog.Visible = false;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Yellow;
+            this.panel6.Location = new System.Drawing.Point(1, 36);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(5, 45);
+            this.panel6.TabIndex = 16;
+            this.panel6.Visible = false;
+            // 
             // Logobtn
             // 
             this.Logobtn.BackColor = System.Drawing.Color.Black;
@@ -172,6 +191,25 @@
             this.Logobtn.UseVisualStyleBackColor = false;
             this.Logobtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // systemlogbtn
+            // 
+            this.systemlogbtn.BackColor = System.Drawing.Color.Black;
+            this.systemlogbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.systemlogbtn.FlatAppearance.BorderSize = 0;
+            this.systemlogbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.systemlogbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.systemlogbtn.ForeColor = System.Drawing.Color.White;
+            this.systemlogbtn.Image = ((System.Drawing.Image)(resources.GetObject("systemlogbtn.Image")));
+            this.systemlogbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.systemlogbtn.Location = new System.Drawing.Point(0, 543);
+            this.systemlogbtn.Name = "systemlogbtn";
+            this.systemlogbtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.systemlogbtn.Size = new System.Drawing.Size(167, 45);
+            this.systemlogbtn.TabIndex = 17;
+            this.systemlogbtn.Text = "System Log";
+            this.systemlogbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.systemlogbtn.UseVisualStyleBackColor = false;
+            // 
             // PaneltechVehicle
             // 
             this.PaneltechVehicle.BackColor = System.Drawing.Color.Yellow;
@@ -181,6 +219,15 @@
             this.PaneltechVehicle.Size = new System.Drawing.Size(5, 45);
             this.PaneltechVehicle.TabIndex = 15;
             this.PaneltechVehicle.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Yellow;
+            this.panel2.Location = new System.Drawing.Point(1, 36);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 45);
+            this.panel2.TabIndex = 16;
+            this.panel2.Visible = false;
             // 
             // techVehicleBtn
             // 
@@ -510,52 +557,6 @@
             this.panel1.Size = new System.Drawing.Size(830, 1);
             this.panel1.TabIndex = 2;
             // 
-            // systemlogbtn
-            // 
-            this.systemlogbtn.BackColor = System.Drawing.Color.Black;
-            this.systemlogbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.systemlogbtn.FlatAppearance.BorderSize = 0;
-            this.systemlogbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.systemlogbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.systemlogbtn.ForeColor = System.Drawing.Color.White;
-            this.systemlogbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.systemlogbtn.Location = new System.Drawing.Point(0, 543);
-            this.systemlogbtn.Name = "systemlogbtn";
-            this.systemlogbtn.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
-            this.systemlogbtn.Size = new System.Drawing.Size(167, 45);
-            this.systemlogbtn.TabIndex = 17;
-            this.systemlogbtn.Text = "System Log";
-            this.systemlogbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.systemlogbtn.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Yellow;
-            this.panel2.Location = new System.Drawing.Point(1, 36);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 45);
-            this.panel2.TabIndex = 16;
-            this.panel2.Visible = false;
-            // 
-            // panelsystemlog
-            // 
-            this.panelsystemlog.BackColor = System.Drawing.Color.Yellow;
-            this.panelsystemlog.Controls.Add(this.panel6);
-            this.panelsystemlog.Location = new System.Drawing.Point(1, 543);
-            this.panelsystemlog.Name = "panelsystemlog";
-            this.panelsystemlog.Size = new System.Drawing.Size(5, 45);
-            this.panelsystemlog.TabIndex = 17;
-            this.panelsystemlog.Visible = false;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Yellow;
-            this.panel6.Location = new System.Drawing.Point(1, 36);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 45);
-            this.panel6.TabIndex = 16;
-            this.panel6.Visible = false;
-            // 
             // IHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,11 +574,11 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing_1);
             this.Load += new System.EventHandler(this.Home_Load);
             this.panelLeft.ResumeLayout(false);
+            this.panelsystemlog.ResumeLayout(false);
             this.PaneltechVehicle.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelsystemlog.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

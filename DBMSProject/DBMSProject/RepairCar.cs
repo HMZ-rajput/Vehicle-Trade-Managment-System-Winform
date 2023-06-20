@@ -14,7 +14,7 @@ namespace DBMSProject
 {
     public partial class RepairCar : Form
     {
-        
+           //Temprary Technician id, it will be replaced by id of technician that login
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\local;Initial Catalog=VehicleTrade;Integrated Security=True");
         SqlCommand cmd;
         SqlDataAdapter adt;
@@ -249,32 +249,36 @@ namespace DBMSProject
         {
             repairDGV.DataSource = null;
             repairDGV.DataSource = null;
-            try
+
+            if (vehicleCB.SelectedValue != null)
             {
-                conn.Open();
-                cmd = new SqlCommand("getVehicleRepairDetails", conn);
-                cmd.CommandType = CommandType.StoredProcedure; //added
-                cmd.Parameters.AddWithValue("@VehicleID", vehicleCB.SelectedValue);
-                
-                dr = cmd.ExecuteReader();
-                if (dr.Read())
+                try
                 {
-                    dr.Close();
-                    adt = new SqlDataAdapter(cmd);
-                    dt = new DataTable();
-                    adt.Fill(dt);
-                    repairDGV.DataSource = dt;
+                    conn.Open();
+                    cmd = new SqlCommand("getVehicleRepairDetails", conn);
+                    cmd.CommandType = CommandType.StoredProcedure; //added
+                    cmd.Parameters.AddWithValue("@VehicleID", vehicleCB.SelectedValue);
+
+                    dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        dr.Close();
+                        adt = new SqlDataAdapter(cmd);
+                        dt = new DataTable();
+                        adt.Fill(dt);
+                        repairDGV.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No available data in Vehicle Repair");
+                    }
+                    conn.Close();
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("No available data in Vehicle Repair");
+                    conn.Close();
+                    MessageBox.Show("Unable to load Vehicle Repair Details Table.\n" + ex.Message);
                 }
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                conn.Close();
-                MessageBox.Show("Unable to load Vehicle Repair Details Table.\n" + ex.Message);
             }
         }
 

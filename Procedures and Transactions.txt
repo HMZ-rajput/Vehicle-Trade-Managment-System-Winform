@@ -1164,6 +1164,89 @@ select * from SessionLog order by SessionID desc
 end
 
 
+---------------Sell
+---------20/6/23 by hamza working on sell
+--Load Employees Sell
+create procedure getEmplyeeSells
+@EmployeeID int
+as
+begin
+select s.SaleID,v.Make,v.Model,c.Name as Customer,s.SalePrice,s.Commission,s.profit,s.SaleDate from Sale s inner join Vehicles v on s.VehicleID=v.VehicleID inner join Customers c on c.CustomerID=s.CustomerID where s.EmployeeID=@EmployeeID
+end
+
+--load customers in CB
+create procedure readCustomers
+as
+begin
+select CustomerID,Name from Customers
+end
+
+--load repaired vehicle in CB
+create procedure readRepairedCar
+as
+begin
+select VehicleID,Model from Vehicles where Status='REPAIRED'
+end
+
+--get Employee Commission Perc
+create procedure getEmployeeComPerc
+@EmployeeID int
+as
+begin
+select CommisionPercentage from Employee where EmployeeID=@EmployeeID
+end
+
+--get Vehicle Cost
+create procedure getVehicleCost
+@VehicleID int
+as
+begin
+select Cost from Vehicles where VehicleID=@VehicleID
+end
+
+--get vehicle repair cost
+create procedure getVehicleRepairCost
+@VehicleID int
+as
+begin
+select r.RepairCost from Vehicles v inner join Repairs r on v.VehicleID=r.VehicleID where v.VehicleID=@VehicleID
+end
+
+--Fixed get repair details for Technician
+alter procedure getRepairDetails
+@TechnicianID int
+as
+begin
+select rd.rdID as [Repair Detail ID],v.Model,sp.PartName,sp.PartCost,rd.Quantity, (sp.PartCost*rd.Quantity) as Total from RepairDetails rd inner join Repairs r on rd.RepairID=r.RepairID inner join SpareParts sp on sp.PartID=rd.PartID inner join Vehicles v on r.VehicleID=v.VehicleID where r.TechnicianID=@TechnicianID
+end
+
+--Sell Caralter procedure sellCar
+@EmployeeID int,
+@VehicleID int,
+@CustomerID int,
+@SalePrice int,
+@Commission int,
+@profit int
+as
+begin
+insert into Sale values(@VehicleID,@CustomerID,@SalePrice,getdate(),@profit,@EmployeeID,@Commission)
+update Vehicles set SaleDate=getdate(), Status='SOLD' where VehicleID=@VehicleID
+end
+
+--Delete Sale		
+create procedure deleteSale
+@SaleID int,
+@EmployeeID int
+as
+begin
+if exists(select 1 from Sale where SaleID=@SaleID and EmployeeID=@EmployeeID)
+begin
+declare @VehicleID int;
+set @VehicleID=(select VehicleID from Sale where SaleID=@SaleID)
+update Vehicles set SaleDate=NULL, Status='REPAIRED' where VehicleID=@VehicleID
+delete from Sale where SaleID=@SaleID
+end
+end
 create procedure getTablesAudit
 as begin
 select * from TablesAudit order by AuditID desc

@@ -223,3 +223,7 @@ add LoginTime datetime
 alter table SessionLog
 add LogoutTime datetime
 
+-----6/20/23 By hamza zafar, working on sell module
+--Commission column in Sale to calculate Employees total commission easily
+alter table Sale add
+Commission int

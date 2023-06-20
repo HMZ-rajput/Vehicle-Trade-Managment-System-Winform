@@ -11,8 +11,6 @@ namespace DBMSProject
     {
         public EHome(int usertype, int ID) : base(usertype, ID)
         {
-            vehicleBtn.Hide();
-            panelVehicle.Hide();
             vendorBtn.Hide();
             panelVendor.Hide();
             employeeBtn.Hide();
@@ -31,10 +29,12 @@ namespace DBMSProject
             panelsystemlog.Hide();
 
             userlbl.Text = "Employee";
-            customerBtn.Location = new Point(0, 103);
-            panelCustomer.Location = new Point(0, 103);
-            sellBtn.Location = new Point(0, 148);
-            panelSell.Location = new Point(0, 148);
+            vehicleBtn.Location = new Point(0, 103);
+            panelVehicle.Location = new Point(0, 103);
+            customerBtn.Location = new Point(0, 148);
+            panelCustomer.Location = new Point(0, 148);
+            sellBtn.Location = new Point(0, 193);
+            panelSell.Location = new Point(0, 193);
         }
         public override void InitializeComponent()
         {

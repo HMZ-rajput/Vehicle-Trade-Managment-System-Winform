@@ -1158,7 +1158,16 @@ as
         end
 go
 
+create procedure getSessionLog
+as begin
+select * from SessionLog order by SessionID desc
+end
 
+
+create procedure getTablesAudit
+as begin
+select * from TablesAudit order by AuditID desc
+end
 
 
 

@@ -84,7 +84,7 @@ namespace DBMSProject
                 conn.Close();
                 carpaneltimer_Tick(sender, e);
             }
-            if (seconds == 7)
+            if (seconds == 6)
             {
                 partspanel.BackColor = Color.Black;
                 avgcountbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
@@ -96,7 +96,7 @@ namespace DBMSProject
                 conn.Close();
                 carpaneltimer_Tick(sender, e);
             }
-            if (seconds == 12)
+            if (seconds == 11)
             {
                 partspanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
                 avgpartlbl.ForeColor = Color.Black;
@@ -108,7 +108,7 @@ namespace DBMSProject
                 conn.Close();
                 carpaneltimer_Tick(sender, e);
             }
-            if (seconds == 17)
+            if (seconds == 16)
             {
                 seconds = 0;
                 carpaneltimer_Tick(sender, e);

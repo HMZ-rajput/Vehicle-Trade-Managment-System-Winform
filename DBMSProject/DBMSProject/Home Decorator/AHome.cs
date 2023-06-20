@@ -21,14 +21,16 @@ namespace DBMSProject
             sellBtn.Hide();
             panelSell.Hide();
             technicianBtn.Hide();
+            panelTechnician.Hide();
             PaneltechVehicle.Hide();
+            techVehicleBtn.Hide();
             
-            sparepartBtn.Location = new Point(0, 327);
-            panelSpareparts.Location = new Point(0, 327);
-            reportBtn.Location = new Point(0, 371);
-            panelReport.Location = new Point(0, 371);
-            systemlogbtn.Location = new Point(0, 416);
-            panelsystemlog.Location = new Point(0, 416);
+            //sparepartBtn.Location = new Point(0, 402);
+            //panelSpareparts.Location = new Point(0, 402);
+            //reportBtn.Location = new Point(0, 371);
+            //panelReport.Location = new Point(0, 371);
+            //systemlogbtn.Location = new Point(0, 348);
+            //panelsystemlog.Location = new Point(0, 348);
         }
     }
 }

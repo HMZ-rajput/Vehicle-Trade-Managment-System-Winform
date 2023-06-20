@@ -173,7 +173,10 @@ namespace DBMSProject
             vehicleBtn.BackColor = Color.Black;
             panelVendor.Hide();
             vendorBtn.BackColor = Color.Black;
+            PaneltechVehicle.Hide();
             techVehicleBtn.BackColor = Color.Black;
+            panelsystemlog.Hide();
+            systemlogbtn.BackColor = Color.Black;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -287,6 +290,15 @@ namespace DBMSProject
             conn.Close();
             this.Hide();
             new Login().Show();
+        }
+
+        private void systemlogbtn_Click(object sender, EventArgs e)
+        {
+            hidepanels();
+            panelsystemlog.Show();
+            systemlogbtn.BackColor = Color.FromArgb(44, 44, 37);
+            SystemLog sl = new SystemLog();
+            OpenChildForm(sl, sender);
         }
 
         private void userlbl_Click(object sender, EventArgs e)

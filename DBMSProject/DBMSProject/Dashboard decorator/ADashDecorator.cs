@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,21 @@ namespace DBMSProject
             techcountlbl.Text = Convert.ToString(techcmd.ExecuteScalar());
             SqlCommand avgcmd = new SqlCommand("select sum(rd.Quantity)/count(rd.RepairID) as 'AvgPartsPerCar' from RepairDetails rd", conn);
             avgcountbl.Text = Convert.ToString(avgcmd.ExecuteScalar());
-            
+            SqlCommand profitcmd = new SqlCommand("select coalesce(sum(profit),0) from Sale",conn);
+            int profit = Convert.ToInt32(profitcmd.ExecuteScalar());
+            profitamt.Text = "$"+Convert.ToString(profit);
+            if (profit <= 0)
+            {
+                profitlbl.Text = "Total Loss";
+                profitpanel.BackColor = System.Drawing.Color.Firebrick;
+                
+            }
+            else
+            {
+                profitlbl.Text = "Total Profit";
+                profitpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            }
+            carpaneltimer.Start();
             
             conn.Close();
         }
@@ -56,6 +71,43 @@ namespace DBMSProject
         {
             base.InitializeComponent();
         }
-       
+        int seconds=0;
+        protected override void carpaneltimer_Tick(object sender, EventArgs e)
+        {
+            base.carpaneltimer_Tick(sender,e);
+            seconds++;
+            if (seconds == 1)
+            {
+                conn.Open();
+                Losslbl.Text = "Total Cost Price";
+                SqlCommand cmd = new SqlCommand("select sum(Cost) from Vehicles", conn);
+                label19.Text = "$"+Convert.ToString(cmd.ExecuteScalar());
+                conn.Close();
+                carpaneltimer_Tick(sender, e);
+            }
+            if (seconds == 6)
+            {
+                conn.Open();
+                Losslbl.Text = "Total Repair Cost";
+                SqlCommand cmd = new SqlCommand("select sum(RepairCost) from Repairs", conn);
+                label19.Text = "$"+Convert.ToString(cmd.ExecuteScalar());
+                conn.Close();
+                carpaneltimer_Tick(sender, e);
+            }
+            if (seconds == 11)
+            {
+                conn.Open();
+                Losslbl.Text = "Total Selling Price";
+                SqlCommand cmd = new SqlCommand("select sum(SalePrice) from Sale", conn);
+                label19.Text = "$"+Convert.ToString(cmd.ExecuteScalar());
+                conn.Close();
+                carpaneltimer_Tick(sender, e);
+            }
+            if (seconds == 16)
+            {
+                seconds = 0;
+                carpaneltimer_Tick(sender, e);
+            }
+        }
     }
 }

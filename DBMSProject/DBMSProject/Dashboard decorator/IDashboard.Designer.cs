@@ -490,7 +490,7 @@
             // 
             // losspanel
             // 
-            this.losspanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.losspanel.BackColor = System.Drawing.Color.Black;
             this.losspanel.Controls.Add(this.Losslbl);
             this.losspanel.Controls.Add(this.label19);
             this.losspanel.Location = new System.Drawing.Point(711, 119);
@@ -504,23 +504,25 @@
             this.Losslbl.AutoSize = true;
             this.Losslbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Losslbl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Losslbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
             this.Losslbl.Location = new System.Drawing.Point(14, 14);
             this.Losslbl.Name = "Losslbl";
-            this.Losslbl.Size = new System.Drawing.Size(111, 25);
+            this.Losslbl.Size = new System.Drawing.Size(181, 25);
             this.Losslbl.TabIndex = 1;
-            this.Losslbl.Text = "Loss Beared";
+            this.Losslbl.Text = "Total Repair Charges";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(4, 26);
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(4)))));
+            this.label19.Location = new System.Drawing.Point(3, 34);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(261, 81);
+            this.label19.Size = new System.Drawing.Size(290, 67);
             this.label19.TabIndex = 1;
-            this.label19.Text = "$11,345";
+            this.label19.Text = "$00000000";
             // 
             // topsellpanel
             // 
@@ -574,21 +576,21 @@
             this.profitlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profitlbl.Location = new System.Drawing.Point(14, 14);
             this.profitlbl.Name = "profitlbl";
-            this.profitlbl.Size = new System.Drawing.Size(102, 25);
+            this.profitlbl.Size = new System.Drawing.Size(147, 25);
             this.profitlbl.TabIndex = 1;
-            this.profitlbl.Text = "Profit/Loss";
+            this.profitlbl.Text = "Total Profit/Loss";
             // 
             // profitamt
             // 
             this.profitamt.AutoSize = true;
             this.profitamt.BackColor = System.Drawing.Color.Transparent;
             this.profitamt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.profitamt.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profitamt.Location = new System.Drawing.Point(4, 26);
+            this.profitamt.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profitamt.Location = new System.Drawing.Point(3, 34);
             this.profitamt.Name = "profitamt";
-            this.profitamt.Size = new System.Drawing.Size(261, 81);
+            this.profitamt.Size = new System.Drawing.Size(290, 67);
             this.profitamt.TabIndex = 1;
-            this.profitamt.Text = "$72,000";
+            this.profitamt.Text = "$00000000";
             // 
             // timer1
             // 

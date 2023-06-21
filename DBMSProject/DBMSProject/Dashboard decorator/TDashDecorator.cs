@@ -57,6 +57,13 @@ namespace DBMSProject
             vendorcountlbl.Text = Convert.ToString(unrepcmd.ExecuteScalar());
             SqlCommand asscmd = new SqlCommand("select count(RepairID) from Repairs where TechnicianID = @ID", conn);
             asscmd.Parameters.AddWithValue("@ID",ID);
+            SqlCommand profitcmd = new SqlCommand("select coalesce(sum(TechnicianCharges),0) from Repairs where TechnicianID = @ID", conn);
+            profitcmd.Parameters.AddWithValue("@ID", ID);
+            label19.Text = "$"+Convert.ToString(profitcmd.ExecuteScalar());
+            SqlCommand profitttlcmd = new SqlCommand("select coalesce(sum(TechnicianCharges),0) from Repairs where TechnicianID = @ID", conn);
+            profitttlcmd.Parameters.AddWithValue("@ID", ID);
+            profitamt.Text = "$" + Convert.ToString(profitcmd.ExecuteScalar());
+            profitamt.Text = "$"+Convert.ToString(profitttlcmd.ExecuteScalar());
             soldcountlbl.Text = Convert.ToString(asscmd.ExecuteScalar());
             conn.Close();
         }

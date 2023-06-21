@@ -42,6 +42,16 @@ namespace DBMSProject
             custcountlbl.Text = Convert.ToString(custcmd.ExecuteScalar());
             empcountlbl.Text = Convert.ToString(empcmd.ExecuteScalar());
             techcountlbl.Text = Convert.ToString(techcmd.ExecuteScalar());
+            SqlCommand cmd9 = new SqlCommand("select coalesce(Commission,0) from Sale where EmployeeID = @ID", conn);
+            SqlCommand cmd8 = new SqlCommand("select coalesce(Commission,0) from Sale where EmployeeID = @ID", conn);
+            SqlCommand cmd7 = new SqlCommand("select coalesce(Commission,0) from Sale where EmployeeID = @ID", conn);
+            cmd9.Parameters.AddWithValue("@ID", ID);
+            cmd8.Parameters.AddWithValue("@ID", ID);
+            cmd7.Parameters.AddWithValue("@ID", ID);
+            label19.Text = "$"+Convert.ToString(cmd9.ExecuteScalar());
+            label21.Text = "$" + Convert.ToString(cmd8.ExecuteScalar());
+            label21.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            profitamt.Text = "$" + Convert.ToString(cmd7.ExecuteScalar());
             avgcountbl.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             avgcountbl.Location = new System.Drawing.Point(8, 34);
             conn.Close();

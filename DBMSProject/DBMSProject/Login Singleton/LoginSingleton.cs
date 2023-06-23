@@ -13,10 +13,12 @@ namespace DBMSProject
         public string Username { get; set; }
         public string Category { get; set; }
         // Private constructor to prevent direct instantiation
+
         private LoginSingleton()
         {
-             
+
         }
+        
         private static LoginSingleton instance;
         public static LoginSingleton GetInstance()
         {
@@ -26,7 +28,7 @@ namespace DBMSProject
             }
             else
             {
-                DialogResult result = MessageBox.Show("Instance Already created","Dialog", MessageBoxButtons.OK);
+                MessageBox.Show("Instance Already created","Dialog", MessageBoxButtons.OK);
             }
             return instance;
         }
@@ -34,5 +36,6 @@ namespace DBMSProject
         {
             instance = null;
         }
+        
     }
 }

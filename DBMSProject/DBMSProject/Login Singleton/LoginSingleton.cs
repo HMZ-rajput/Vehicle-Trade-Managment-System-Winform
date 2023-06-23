@@ -26,7 +26,7 @@ namespace DBMSProject
             }
             else
             {
-                DialogResult result = MessageBox.Show("Instance Already created","Dialog", MessageBoxButtons.OK);
+                MessageBox.Show("Instance Already created","Dialog", MessageBoxButtons.OK);
             }
             return instance;
         }

@@ -76,7 +76,7 @@ namespace DBMSProject
 
                 if (optionCB.Text == "Administrator")
                 {
-                    SqlCommand cmd = new SqlCommand("Select Count(*) From Admin Where Name = @Name and Password = @Password", conn);
+                    SqlCommand cmd = new SqlCommand("Select Count(*) From Admin Where Name = @Name and Password = @Password and SessionStatus='INACTIVE'", conn);
                     cmd.Parameters.AddWithValue("@Name", IdTB.Text);
                     cmd.Parameters.AddWithValue("@Password", password);
 
@@ -101,13 +101,14 @@ namespace DBMSProject
                     }
                     else
                     {
+                        MessageBox.Show("Instance Already created", "Dialog", MessageBoxButtons.OK);
                         MessageBox.Show("Wrong Username or Password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         conn.Close();
                     }
                 }
                 if (optionCB.Text == "Employee")
                 {
-                    SqlCommand cmd = new SqlCommand("Select Count(*) From Employee Where Name = @Name and Password = @Password", conn);
+                    SqlCommand cmd = new SqlCommand("Select Count(*) From Employee Where Name = @Name and Password = @Password and SessionStatus='INACTIVE'", conn);
                     cmd.Parameters.AddWithValue("@Name", IdTB.Text);
                     cmd.Parameters.AddWithValue("@Password", password);
 
@@ -133,13 +134,15 @@ namespace DBMSProject
                     }
                     else
                     {
+                        MessageBox.Show("Instance Already created", "Dialog", MessageBoxButtons.OK);
+
                         MessageBox.Show("Wrong Username or Password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         conn.Close();
                     }
                 }
                 else if (optionCB.Text == "Technician")
                 {
-                    SqlCommand cmd = new SqlCommand("Select Count(*) From Technicians Where Name = @Name and Password = @Password", conn);
+                    SqlCommand cmd = new SqlCommand("Select Count(*) From Technicians Where Name = @Name and Password = @Password and SessionStatus='INACTIVE'", conn);
                     cmd.Parameters.AddWithValue("@Name", IdTB.Text);
                     cmd.Parameters.AddWithValue("@Password", password);
 
@@ -165,6 +168,7 @@ namespace DBMSProject
                     }
                     else
                     {
+                        MessageBox.Show("Instance Already created", "Dialog", MessageBoxButtons.OK);
                         MessageBox.Show("Wrong Username or Password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         conn.Close();
                     }

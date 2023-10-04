@@ -1,4 +1,3 @@
-# DBMS_ProjectV1.0
-Full Shapater Project Bnega InshahAllah
-Isme thore kire krke dekho. Pull,Push,Commit,Branch wagera ye cheezen dekhlo thora or khudse kire kro dekho kia hota. good luck
-hello
+4th semester DBMS project
+main features are database design and implimantation using advance SQL concepts + ultimate UI/UX
+please note that the databse needs to be created on mssql server and the server link string needs to be replaced in visualstudio

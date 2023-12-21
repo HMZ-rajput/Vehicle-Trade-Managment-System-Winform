@@ -28,12 +28,12 @@ namespace DBMSProject
             syslogbtn.Hide();
             syslogpanel.Hide();
             userlbl.Text = "Technician";
-            repairBtn.Location = new Point(0, 103);
-            panelRepair.Location = new Point(0, 103);
+            repairBtn.Location = new Point(0, 193);
+            panelRepair.Location = new Point(0, 193);
             sparepartBtn.Location = new Point(0, 148);
             panelSpareparts.Location = new Point(0, 148);
-            techVehicleBtn.Location = new Point(0, 193);
-            PaneltechVehicle.Location = new Point(0, 193);
+            techVehicleBtn.Location = new Point(0, 103);
+            PaneltechVehicle.Location = new Point(0, 103);
         }
         public override void InitializeComponent()
         {

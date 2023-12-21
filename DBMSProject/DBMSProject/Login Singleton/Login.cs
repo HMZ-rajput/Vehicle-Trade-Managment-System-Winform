@@ -81,7 +81,7 @@ namespace DBMSProject
                     cmd.Parameters.AddWithValue("@Password", password);
 
                     int UserExist = (int)cmd.ExecuteScalar();
-                    MessageBox.Show(UserExist+"");
+                    //MessageBox.Show(UserExist+"");
                     string name = IdTB.Text;
                     if (UserExist > 0)
                     {

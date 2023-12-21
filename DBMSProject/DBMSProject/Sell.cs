@@ -52,7 +52,8 @@ namespace DBMSProject
 
                     loadVehicleCB();
                     loadTable();
-                }catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     conn.Close();
                     MessageBox.Show("Unable to Sell car\n"+ex.Message);
@@ -146,6 +147,7 @@ namespace DBMSProject
 
         public void loadVehicleCB()
         {
+            vehicleCB.DataSource = null;
             try
             {
                 LabelLoadAllowed = false;
@@ -263,7 +265,7 @@ namespace DBMSProject
                 if ((int.Parse(priceTB.Text)-int.Parse(totalLB.Text))>0)
                 {
                     //commisison = (sell price - total cost) * comission%
-                    commissionLB.Text = ((double)(int.Parse(priceTB.Text)-int.Parse(totalLB.Text)) * ((double)int.Parse(commissionPercLB.Text) / 100)).ToString();
+                    commissionLB.Text = Convert.ToInt32(((double)(int.Parse(priceTB.Text) - int.Parse(totalLB.Text)) * ((double)int.Parse(commissionPercLB.Text) / 100))).ToString();
                 }
                 else
                 {

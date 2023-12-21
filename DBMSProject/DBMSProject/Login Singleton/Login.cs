@@ -117,6 +117,7 @@ namespace DBMSProject
                     string name = IdTB.Text;
                     if (UserExist > 0)
                     {
+                        //oisdhodihfW
                         LoginSingleton form1 = LoginSingleton.GetInstance();
                         form1.Username = IdTB.Text;
                         form1.Category = optionCB.Text;
